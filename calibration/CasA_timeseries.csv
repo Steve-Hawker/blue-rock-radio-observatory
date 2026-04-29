@@ -1,0 +1,21 @@
+# Cassiopeia A Flux Monitoring Time Series
+# Blue Rock Radio Observatory
+# San Jose CA — Observer: Steve Hawker
+#
+# Cas A coordinates: RA 23h 23m 27.9s, Dec +58° 48' 42" (J2000)
+# Reference flux at 1420 MHz: 2723 Jy (epoch J2000, Baars et al. 1977 scale)
+# Secular decrease: ~0.77% per year
+# Expected flux at 2026.0: ~2567 Jy (apply correction: F = F0 * (1 - 0.0077)^(year-2000))
+#
+# Columns:
+# date_utc        — ISO date of observation (YYYY-MM-DD)
+# session_id      — links to session log file
+# equip_version   — equipment log version in effect
+# int_time_min    — total integration time in minutes
+# peak_Ta_K       — measured peak antenna temperature (K)
+# tsys_derived_K  — system temperature derived from this observation (K)
+# sefd_derived_Jy — SEFD derived from this observation (Jy)
+# notes           — any relevant notes
+#
+date_utc,session_id,equip_version,int_time_min,peak_Ta_K,tsys_derived_K,sefd_derived_Jy,notes
+# (entries to be added after each Cas A observation)
