@@ -3,7 +3,7 @@
 **Observer:** Steve Hawker BEng MBA FRAS  
 **Observatory:** Blue Rock Radio Observatory, Blue Rock Court, San Jose, California, USA  
 **Repository:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
-**Plan version:** 1.2  
+**Plan version:** 1.3  
 **Date:** 2026-04-30  
 **Academic context:** BSc Honours Astronomy (Distance Learning), University of Lancashire  
 **Anticipated supervisor:** Dr Megan Argo, University of Lancashire  
@@ -108,6 +108,7 @@ Full equipment details maintained in versioned equipment log files (equipment/E0
 | 1 | M31 | Spiral galaxy | 00h 42m 44s | +41° 16' 09" | Sep–Jan | Primary extragalactic science target |
 | 1 | Complex C | HVC | ~15h 30m | ~+55° | Year-round | Primary HVC monitoring target |
 | 2 | M33 | Spiral galaxy | 01h 33m 51s | +30° 39' 37" | Sep–Jan | Secondary extragalactic target |
+| 2 | M1 | Pulsar wind nebula | 05h 34m 32s | +22° 00' 52" | Oct–Feb | Secondary calibrator, personal science target |
 | 2 | Galactic plane | ISM | Various | Various | Year-round | Spiral arm structure, pipeline validation |
 | 3 | M81 | Spiral galaxy | 09h 55m 34s | +69° 03' 55" | Year-round | Stretch goal, circumpolar from San Jose |
 
@@ -182,11 +183,30 @@ space. This requires consistent Doppler correction across all sessions — see S
 
 ## 6. Software and Pipeline Plan
 
-### Phase 1 — Year 1 (2026–2027): EZRa primary
-Use EZRa for all data acquisition. EZRa handles frequency switching, baseline
-subtraction, and Doppler correction automatically. Focus is on establishing
-reliable observing routine, characterising system performance, and beginning
-data accumulation on all primary targets.
+### Phase 1 — 2025/26 — RFI Characterisation and Commissioning
+
+**Pre-dish (immediate — April 2026):**
+RTL-SDR Blog V4 + dipole antenna connected to MacBook Pro. The dish
+ships in July 2026 — rather than waiting, this period is used productively
+for systematic RFI characterisation of the Blue Rock site at 1420 MHz.
+
+A nearly omnidirectional dipole antenna provides an unfiltered view of
+the full RFI environment — showing all interference sources without the
+directional selectivity of the dish and SAW filters. This pre-dish baseline
+is independently valuable and documents the site environment before any
+HI observations begin.
+
+Activities:
+- RTL-SDR V4 drivers and GQRX installed and operational on MacBook
+- Systematic RFI surveys at multiple times of day and week
+- Persistent and intermittent RFI sources catalogued
+- Temporal patterns documented (weekday/weekend, day/night)
+- Software familiarity developed before dish arrives
+
+**On dish arrival (July 2026):**
+Full system assembled — Discovery Dish, HI Feed, Discovery Drive,
+RTL-SDR V4, Raspberry Pi 3. EZRa installed and operational.
+First light on Cas A. Initial HI observations begin.
 
 ### Phase 2 — Year 2 (2027–2028): GNU Radio development
 Develop a custom signal processing pipeline in GNU Radio and Python running
@@ -406,6 +426,7 @@ Blue Rock Court, San Jose, California.
 | 1.0 | 2026-04-28 | Initial plan |
 | 1.1 | 2026-04-30 | Section 5 — expanded observing strategy, daytime observing, flexible scheduling |
 | 1.2 | 2026-04-30 | Revised timeline to reflect actual degree structure 2025–2031, four years observations, thesis 2030/31 |
+| 1.3 | 2026-04-30 | Phased hardware approach — RTL-SDR V4 + dipole for pre-dish RFI characterisation from April 2026, dish arrival July 2026 |
 
 ---
 
