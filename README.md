@@ -14,8 +14,8 @@
 
 ## Observer
 
-Steve Hawker  
-BSc Honours Astronomy (Distance Learning), University of Central Lancashire  
+Steve Hawker BEng MBA FRAS  
+BSc Honours Astronomy (Distance Learning), University of Lancashire  
 Fellow of the Royal Astronomical Society (FRAS)  
 Member, Society of Amateur Radio Astronomers (SARA)  
 Member, San Jose Astronomical Association (SJAA)
@@ -41,7 +41,11 @@ thesis and potential MRes research. Primary science goals:
 ```
 blue-rock-radio-observatory/
 ├── README.md                        ← this file
+├── RESEARCH_PLAN.md                 ← full 3-year programme plan
+├── LEARNING_PLAN.md                 ← structured self-study programme
+├── TOOLS_PLAN.md                    ← tools roles and workflow
 ├── QUICK_REFERENCE.md               ← pre/post session checklists and key data
+├── .gitignore                       ← excluded files (credentials, data, clutter)
 ├── equipment/                       ← versioned equipment state records
 │   └── E001_YYYY-MM-DD.md
 ├── sessions/                        ← per-observation session logs
@@ -49,10 +53,20 @@ blue-rock-radio-observatory/
 │       └── YYYY-MM-DD_TARGET.md
 ├── calibration/                     ← calibration time series and notes
 │   └── CasA_timeseries.csv
-└── targets/                         ← static reference data for each target
-    ├── M31.md
-    ├── CasA.md
-    └── ComplexC_HVC.md
+├── targets/                         ← static reference data for each target
+│   ├── M31.md
+│   ├── CasA.md
+│   └── ComplexC_HVC.md
+├── rfi/                             ← RFI environment characterisation
+│   ├── RFI_OVERVIEW.md
+│   └── SURVEY_TEMPLATE.md
+├── investigations/                  ← structured engineering investigations
+│   ├── INVESTIGATIONS.md
+│   ├── INV001_noise_budget/
+│   ├── INV002_digital_filters/
+│   └── INV003_rfi_flagging/
+└── writing/                         ← chapter outlines, thesis drafts, notes
+    └── SITE_ASSESSMENT_CHAPTER_OUTLINE.md
 ```
 
 ---
