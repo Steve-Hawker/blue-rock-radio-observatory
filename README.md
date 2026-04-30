@@ -54,6 +54,7 @@ blue-rock-radio-observatory/
 ├── calibration/                     ← calibration time series and notes
 │   └── CasA_timeseries.csv
 ├── targets/                         ← static reference data for each target
+│   ├── M1_CrabNebula.md
 │   ├── M31.md
 │   ├── CasA.md
 │   └── ComplexC_HVC.md
@@ -114,5 +115,6 @@ Secular decrease: ~0.77% per year.
 | Cas A | SNR / calibrator | Primary | Year-round |
 | M31 | Spiral galaxy | Primary science | Sep — Jan |
 | Complex C | High-velocity cloud | Primary science | Year-round |
+| M1 | Pulsar wind nebula | Secondary / calibrator | Oct — Feb |
 | M33 | Spiral galaxy | Secondary | Sep — Jan |
 

@@ -108,6 +108,7 @@ Full equipment details maintained in versioned equipment log files (equipment/E0
 | 1 | M31 | Spiral galaxy | 00h 42m 44s | +41° 16' 09" | Sep–Jan | Primary extragalactic science target |
 | 1 | Complex C | HVC | ~15h 30m | ~+55° | Year-round | Primary HVC monitoring target |
 | 2 | M33 | Spiral galaxy | 01h 33m 51s | +30° 39' 37" | Sep–Jan | Secondary extragalactic target |
+| 2 | M1 | Pulsar wind nebula | 05h 34m 32s | +22° 00' 52" | Oct–Feb | Secondary calibrator, personal science target |
 | 2 | Galactic plane | ISM | Various | Various | Year-round | Spiral arm structure, pipeline validation |
 | 3 | M81 | Spiral galaxy | 09h 55m 34s | +69° 03' 55" | Year-round | Stretch goal, circumpolar from San Jose |
 
