@@ -42,10 +42,19 @@ at 1420.405 MHz. This underpins every scientific claim made in the thesis.
 
 | Resource | Type | Priority | Status |
 |---|---|---|---|
-| Carroll & Ostlie — *Introduction to Modern Astrophysics* Ch. 12 (ISM) | Textbook | Essential | Not started |
-| Kalberla & Kerp 2009 — *ARA&A* 47, 27 "The HI Distribution of the Milky Way" | Review paper | Essential | Not started |
-| Rohlfs & Wilson — *Tools of Radio Astronomy* Ch. 1-2 | Textbook | Essential | Not started |
-| Dickey & Lockman 1990 — *ARA&A* 28, 215 "HI in the Galaxy" | Review paper | Recommended | Not started |
+| Carroll & Ostlie — *Introduction to Modern Astrophysics* Ch. 31 (ISM) | Textbook | Essential | Not started |
+| NRAO Essential Radio Astronomy — HI and ISM chapters | Online, free | Essential | Not started |
+| Kalberla & Kerp 2009 — *ARA&A* 47, 27 "The HI Distribution of the Milky Way" | Review paper, free via NASA ADS | Essential | Not started |
+| Dickey & Lockman 1990 — *ARA&A* 28, 215 "HI in the Galaxy" | Review paper, free via NASA ADS | Recommended | Not started |
+| Lequeux — *The Interstellar Medium* | Textbook, request via interlibrary loan | Recommended | Not started |
+
+**Access notes:**
+- Carroll & Ostlie Ch. 31 — not available online via University of Lancashire library.
+  Request physical copy via interlibrary loan, or use NRAO Essential Radio Astronomy
+  as the primary free alternative — it covers the same material at equivalent depth.
+- All review papers freely available via NASA ADS: `ui.adsabs.harvard.edu`
+- NRAO Essential Radio Astronomy: `www.cv.nrao.edu/~sransom/web/xxx.html`
+- NASA ADS has a direct Zotero connector — pull citation metadata into Zotero with one click
 
 ### Notes
 *(Add notes here as reading progresses — key insights, questions, connections to observations)*
@@ -322,6 +331,7 @@ and answered over time.*
 | Version | Date | Changes |
 |---|---|---|
 | 1.0 | 2026-04-28 | Initial plan |
+| 1.1 | 2026-04-28 | Topic 1 — corrected Carroll & Ostlie chapter number (Ch.31 not Ch.12), added NRAO Essential Radio Astronomy as free primary alternative, added NASA ADS and Lequeux, added access notes |
 
 ---
 
