@@ -3,7 +3,7 @@
 **Observer:** Steve Hawker BEng MBA FRAS  
 **Observatory:** Blue Rock Radio Observatory, Blue Rock Court, San Jose, California, USA  
 **Repository:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
-**Plan version:** 1.0  
+**Plan version:** 1.1  
 **Date:** 2026-04-28  
 **Academic context:** BSc Honours Astronomy (Distance Learning), University of Lancashire  
 **Anticipated supervisor:** Dr Megan Argo, University of Lancashire  
@@ -108,20 +108,56 @@ Full equipment details maintained in versioned equipment log files (equipment/E0
 
 ## 5. Observing Strategy
 
-### Session cadence
-- Target minimum: two sessions per week during active periods
-- Cas A: observed at least monthly as calibration anchor, and at every equipment change
-- M31: concentrated observing during September–January when object is best placed
-- Complex C: year-round, lower priority in M31 season
+### Scheduling philosophy
 
-### Session structure
-Each session follows a standard sequence:
-1. Equipment state check and log
-2. Pointing verification
-3. Cas A calibration observation (if scheduled)
-4. Primary target observation
-5. Data backup
-6. Session log completion and Git commit
+Radio astronomy at 1420 MHz does not require darkness. The observer has
+full schedule flexibility through part-time working arrangements and distance
+learning, with complete control over working hours. This is a significant
+operational advantage over observers constrained to fixed night-time windows.
+
+Observations are conducted whenever the following conditions are simultaneously met:
+- Target is above useful elevation (>30°, ideally >45°)
+- Cas A is accessible for calibration
+- RFI environment is acceptable (determined by brief pre-session survey)
+- No adverse weather (high wind primarily)
+
+This opportunistic scheduling approach maximises total integration time
+accumulated over the three-year programme. Two sessions per week is a
+**minimum floor** not a target ceiling. During prime M31 season (Sep–Jan)
+with good conditions, significantly more sessions per week are anticipated.
+
+### Daytime observing
+
+Daytime observations are explicitly part of the programme. At 1420 MHz
+the Sun does not affect observations provided the beam is not pointed
+within ~20–30° of the solar position. Stellarium is used to verify
+solar separation before each session.
+
+The practical daytime constraint is wind (affects pointing stability)
+rather than solar illumination. San Jose afternoons can be windy —
+morning sessions on calm days are often preferable to afternoon sessions.
+
+### Session cadence
+- Minimum: two sessions per week during active periods
+- Expected average: three to five sessions per week in prime season
+- Cas A: observed at start and end of every science session for calibration
+- M31: concentrated observing September–January
+- Complex C: year-round, lower priority during M31 season
+
+### Standard session structure
+Each session follows this sequence:
+
+1. Check equipment state — confirm equipment log version current (5 min)
+2. Brief RFI survey — confirm band is usable (5 min)
+3. Point to Cas A — opening calibration spectrum (15 min)
+4. Slew to primary target — integrate (1–4 hours, set and monitor remotely)
+5. Return to Cas A — closing calibration check (15 min)
+6. Data backup to secondary storage
+7. Session log completion and Git commit (15 min)
+
+**Total active time per session: ~50 minutes regardless of integration length.**
+The integration itself runs unattended. This ratio makes frequent sessions
+practical even on working days.
 
 ### Integration strategy
 Long-baseline co-addition is the primary sensitivity strategy. Individual sessions
@@ -131,7 +167,7 @@ space. This requires consistent Doppler correction across all sessions — see S
 ### Seasonal planning
 | Season | Primary focus |
 |---|---|
-| Sep — Jan | M31 (high elevation, best sensitivity) |
+| Sep — Jan | M31 (high elevation, best sensitivity) — maximum session frequency |
 | Feb — Apr | Complex C, Galactic plane, pipeline development |
 | May — Aug | Complex C, M81, calibration, software work |
 
@@ -319,6 +355,7 @@ Blue Rock Court, San Jose, California.
 | Version | Date | Changes |
 |---|---|---|
 | 1.0 | 2026-04-28 | Initial plan |
+| 1.1 | 2026-04-30 | Section 5 — expanded observing strategy to reflect full scheduling flexibility, daytime observing policy, opportunistic session model, and revised session cadence |
 
 ---
 

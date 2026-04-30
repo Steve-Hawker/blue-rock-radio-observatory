@@ -331,7 +331,7 @@ and answered over time.*
 | Version | Date | Changes |
 |---|---|---|
 | 1.0 | 2026-04-28 | Initial plan |
-| 1.1 | 2026-04-28 | Topic 1 — corrected Carroll & Ostlie chapter number (Ch.31 not Ch.12), added NRAO Essential Radio Astronomy as free primary alternative, added NASA ADS and Lequeux, added access notes |
+| 1.1 | 2026-04-30 | Topic 1 — corrected Carroll & Ostlie chapter number (Ch.31 not Ch.12), added NRAO Essential Radio Astronomy as free primary alternative, added NASA ADS and Lequeux, added access notes |
 
 ---
 
