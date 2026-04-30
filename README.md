@@ -65,8 +65,10 @@ blue-rock-radio-observatory/
 │   ├── INV001_noise_budget/
 │   ├── INV002_digital_filters/
 │   └── INV003_rfi_flagging/
-└── writing/                         ← chapter outlines, thesis drafts, notes
-    └── SITE_ASSESSMENT_CHAPTER_OUTLINE.md
+├── writing/                         ← chapter outlines, thesis drafts, notes
+│   └── SITE_ASSESSMENT_CHAPTER_OUTLINE.md
+└── setup/                           ← hardware and software setup guides
+    └── RASPBERRY_PI_SETUP.md
 ```
 
 ---
