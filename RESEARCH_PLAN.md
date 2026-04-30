@@ -3,8 +3,8 @@
 **Observer:** Steve Hawker BEng MBA FRAS  
 **Observatory:** Blue Rock Radio Observatory, Blue Rock Court, San Jose, California, USA  
 **Repository:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
-**Plan version:** 1.1  
-**Date:** 2026-04-28  
+**Plan version:** 1.2  
+**Date:** 2026-04-30  
 **Academic context:** BSc Honours Astronomy (Distance Learning), University of Lancashire  
 **Anticipated supervisor:** Dr Megan Argo, University of Lancashire  
 
@@ -13,13 +13,20 @@
 ## 1. Overview
 
 This document describes the planned observing programme at Blue Rock Radio Observatory
-for the period 2026–2029, in support of a BSc Honours thesis in Astronomy and potential
+for the period 2026–2031, in support of a BSc Honours thesis in Astronomy and potential
 subsequent MRes research. The programme focuses on systematic hydrogen line (HI, 1420.405 MHz)
 observations using a 70cm parabolic dish with AZ/EL tracking capability.
 
-The author's background in engineering informs both the instrumentation design and signal processing pipeline development aspects of this programme. The central motivation is to develop and validate techniques for low-cost, small-aperture
-HI spectroscopy from an urban site, and to apply those techniques to produce scientifically
-meaningful results comparable with professional survey data.
+The BSc Honours degree (University of Lancashire, distance learning) requires 360 credit
+points across 18 courses, with thesis submission anticipated in 2030/31. This gives
+approximately four years of systematic observations before write-up, strengthening the
+dataset considerably compared with an earlier projected completion date.
+
+The author's background in engineering informs both the instrumentation design and signal
+processing pipeline development aspects of this programme. The central motivation is to
+develop and validate techniques for low-cost, small-aperture HI spectroscopy from an urban
+site, and to apply those techniques to produce scientifically meaningful results comparable
+with professional survey data.
 
 ---
 
@@ -284,38 +291,80 @@ flux measurements. Not corrected in Phase 1; may be addressed in Phase 2 pipelin
 
 ---
 
-## 10. Timeline and Milestones
+## 10. Academic Schedule and Observing Timeline
 
-### Year 1 — 2026/2027
+### Degree Credit Structure
+
+| Academic Year | Courses | Credits | Cumulative | Notes |
+|---|---|---|---|---|
+| 2025/26 | 2 | 40 | 40 | Current year |
+| 2026 | 2 | 40 | 80 | Accredited from BEng |
+| 2026/27 | 3 | 60 | 140 | Approved to proceed |
+| 2027/28 | 3 | 60 | 200 | |
+| 2028/29 | 3 | 60 | 260 | |
+| 2029/30 | 3 | 60 | 320 | |
+| 2030/31 | 2 + thesis | 40 | 360 | Thesis from this project |
+
+Total: 360 credits (18 courses) for BSc Honours.
+Two courses accredited from BEng — formal recognition of engineering background.
+Thesis submission anticipated: 2030/31.
+
+### Observing Milestones
+
+### Year 1 — 2025/26 — Commissioning
 - [ ] Complete observatory construction and first light
-- [ ] E001 equipment log completed
-- [ ] Cas A first detection — system temperature measured
+- [ ] E001 equipment log completed — full system documented
+- [ ] Cas A first detection — system temperature measured (E002 created)
 - [ ] EZRa pipeline operational
-- [ ] RFI characterisation begun
+- [ ] First RFI survey completed
+- [ ] RFI characterisation programme begun
 - [ ] M31 first detection attempt
 - [ ] Complex C first detection attempt
-- [ ] Begin BSc thesis background reading and literature review
+- [ ] Formal site assessment completed — horizon profile measured
+- [ ] Begin BSc background reading and literature review
+- [ ] Raspberry Pi 3 configured and operational
 
-### Year 2 — 2027/2028
-- [ ] M31 integrated spectrum with SNR > 10
+### Year 2 — 2026/27 — Establishment
+- [ ] M31 integrated spectrum with SNR > 5
 - [ ] Complex C integrated spectrum confirmed
-- [ ] GNU Radio custom pipeline in development
-- [ ] HI absorption toward Cas A detected (velocity calibration confirmed)
+- [ ] HI absorption toward Cas A detected — velocity calibration confirmed
+- [ ] Cas A secular decrease monitoring — first full year data
+- [ ] RFI environment fully characterised — flagging algorithm operational
+- [ ] GNU Radio custom pipeline begun
 - [ ] M33 detection attempted
-- [ ] Cas A secular decrease monitoring — first year data complete
-- [ ] BSc thesis outline agreed with supervisor
+- [ ] DDOEE installed — Pi and SDR moved to mast (autumn 2026)
 
-### Year 3 — 2028/2029
-- [ ] Custom pipeline validated against EZRa
-- [ ] Full three-year M31 dataset co-added
-- [ ] Full three-year Complex C dataset co-added
-- [ ] Cas A secular decrease — three year baseline complete
-- [ ] All results compared quantitatively with HI4PI and reference literature
+### Year 3 — 2027/28 — Development
+- [ ] M31 integrated spectrum with SNR > 10
+- [ ] GNU Radio custom pipeline validated against EZRa
+- [ ] Custom pipeline becomes primary data acquisition tool
+- [ ] M31 velocity structure — offset pointing programme begun
+- [ ] Cas A secular decrease — two year baseline
+- [ ] INV001 noise budget analysis complete
+- [ ] INV002 digital filter investigation complete
+- [ ] Upgrade path decision made — implement if warranted
+
+### Year 4 — 2028/29 — Maturity
+- [ ] Full science programme running on custom pipeline
+- [ ] M31 four-year dataset accumulating
+- [ ] Complex C four-year monitoring dataset
+- [ ] Cas A secular decrease — three year baseline
+- [ ] INV003 RFI flagging investigation complete
+- [ ] Begin thesis outline discussions with supervisor
+- [ ] SARA proceedings paper drafted
+
+### Year 5 — 2029/30 — Final Observations
+- [ ] Final observations season — maximum integration on primary targets
+- [ ] All datasets complete and archived
+- [ ] Full quantitative comparison with HI4PI and reference literature
+- [ ] Thesis outline agreed with supervisor
+- [ ] Begin thesis writing
+
+### Year 6 — 2030/31 — Write Up
 - [ ] BSc thesis written and submitted
-
-### Year 4 — 2029/2030
-- [ ] MRes application (if pursued) — dataset available as supporting evidence
-- [ ] SARA proceedings paper (if results warrant)
+- [ ] Four years of observations behind the thesis
+- [ ] MRes application considered — dataset available as supporting evidence
+- [ ] SARA proceedings paper submitted
 
 ---
 
@@ -355,7 +404,8 @@ Blue Rock Court, San Jose, California.
 | Version | Date | Changes |
 |---|---|---|
 | 1.0 | 2026-04-28 | Initial plan |
-| 1.1 | 2026-04-30 | Section 5 — expanded observing strategy to reflect full scheduling flexibility, daytime observing policy, opportunistic session model, and revised session cadence |
+| 1.1 | 2026-04-30 | Section 5 — expanded observing strategy, daytime observing, flexible scheduling |
+| 1.2 | 2026-04-30 | Revised timeline to reflect actual degree structure 2025–2031, four years observations, thesis 2030/31 |
 
 ---
 
