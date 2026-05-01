@@ -119,6 +119,10 @@ blue-rock-radio-observatory/
 │   ├── M1_VECTOR_ANALYSIS.md
 │   └── SITE_ASSESSMENT_CHAPTER_OUTLINE.md
 │
+├── reading_notes/                   ← notes on papers and books read
+│   ├── README_READING_NOTES.md
+│   └── NOTES_TEMPLATE.md
+│
 ├── branding/                        ← visual identity
 │   ├── BRRO_target_map.svg         ← full annotated target map
 │   ├── BRRO_target_map_badge.svg   ← minimal badge version
