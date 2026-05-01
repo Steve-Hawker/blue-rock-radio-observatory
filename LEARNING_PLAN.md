@@ -2,7 +2,7 @@
 
 **Observer:** Steve Hawker BEng MBA FRAS  
 **Repository:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
-**Plan version:** 1.2  
+**Plan version:** 1.3  
 **Date:** 2026-04-30  
 
 *This is a living document. Update it as reading is completed, understanding develops,
@@ -177,7 +177,8 @@ and to explain every design decision.
 
 | Resource | Type | Priority | Status |
 |---|---|---|---|
-| Clark & Clark — *Practical SDR* | Textbook | **Essential — primary reference** | Owned, skimmed |
+| Clark & Clark — *Practical SDR* | Textbook | **Essential — primary GNU Radio reference** | Owned, skimmed |
+| Laufer — *The Hobbyist's Guide to the RTL-SDR* | Textbook | **Essential — primary RTL-SDR reference** | Owned (assumed) |
 | GNU Radio documentation and tutorials (gnuradio.org) | Online | Essential | Not started |
 | EZRa documentation — read carefully for methodology | Online | Essential | Not started |
 | Lyons — *Understanding Digital Signal Processing* | Textbook | Recommended | Not started |
@@ -223,12 +224,58 @@ theoretical models.
 
 *Transmitting* — not applicable to this programme.
 
+### Laufer — The Hobbyist's Guide to the RTL-SDR — Reading Guide
+
+Written by Carl Laufer, the designer of the Discovery Dish, Feed,
+Drive, and KrakenSDR — this book is the authoritative practical
+reference for the RTL-SDR V4 hardware used in Chain A.
+
+**Priority chapters for the Blue Rock programme:**
+
+*Improving RTL-SDR performance* — **read first.** Real-world V4
+performance characterisation, practical techniques for maximising
+sensitivity and dynamic range. Directly informs INV001 noise budget
+and ADC_BIT_RESOLUTION.md. The author knows the hardware intimately.
+
+*Measuring filters and SWR with low cost equipment* — **read before
+commissioning.** RTL-SDR based filter measurement techniques that
+provide empirical SAW filter characterisation without a VNA. Directly
+informs SAW_FILTER_DESIGN.md commissioning measurements — update
+that document's measurement plan after reading this chapter.
+
+*Guide to antennas, cables and adapters* — covers dipole construction,
+cable selection, connector types. Complements DIPOLE_ANTENNA_DESIGN.md
+and INTERFEROMETER_UPGRADE.md cable matching methodology.
+
+*Introduction to GNU Radio* — Laufer's perspective on GNU Radio
+complements Clark & Clark. Useful to read both — the hardware
+author's view of the software vs the software-focused textbook.
+
+*Receiving Inmarsat, AERO, Iridium L-Band* — these signals fall
+near the HI feed passband (1530–1630 MHz). Understanding them
+helps identify and characterise adjacent-band RFI in surveys.
+Informs RFI_OVERVIEW.md and SURVEY_TEMPLATE.md.
+
+*ADS-B aircraft radar* — aircraft transponders at 1090 MHz are
+a potential RFI source. Understanding the signal character aids
+identification in RFI surveys.
+
+*RTL-SDR tricks and oddities* — essential commissioning reading.
+Saves hours of debugging unexpected V4 behaviour during Phase 1.
+
+**Chapters less relevant to this programme:**
+Weather satellites, trunked radio, pagers, HF modes, digital voice —
+fascinating but outside the Blue Rock science programme.
+
 ### Recommended reading sequence
 
-1. Skim Section 1 early (Phase 1) — get GNU Radio running
-2. Read Section 2 carefully before building the custom pipeline (Phase 2)
-3. Read relevant Section 3 chapters as each topic becomes active
-4. Return to Section 1 in detail as pipeline complexity grows
+1. Laufer — RTL-SDR tricks and performance chapter (before first use of V4)
+2. Laufer — Antennas, cables, adapters (before building dipole)
+3. Clark & Clark Section 1 (as GNU Radio installation begins)
+4. Laufer — Measuring filters chapter (before commissioning)
+5. Clark & Clark Section 2 (before custom pipeline development)
+6. Clark & Clark Section 3 relevant chapters (as each topic becomes active)
+7. Laufer — L-Band satellite chapters (during RFI survey programme)
 
 ### Notes
 *(Add notes here as reading progresses)*
@@ -387,7 +434,8 @@ and answered over time.*
 |---|---|---|
 | 1.0 | 2026-04-28 | Initial plan |
 | 1.1 | 2026-04-30 | Topic 1 — corrected Carroll & Ostlie chapter number, added NRAO ERA and NASA ADS |
-| 1.2 | 2026-04-30 | Topic 4 — added Clark & Clark Practical SDR as primary reference, expanded core concepts, added reading guide |
+| 1.2 | 2026-04-30 | Topic 4 — added Clark & Clark Practical SDR as primary reference |
+| 1.3 | 2026-04-30 | Topic 4 — added Laufer RTL-SDR guide, expanded reading guides, recommended sequence |
 
 ---
 
