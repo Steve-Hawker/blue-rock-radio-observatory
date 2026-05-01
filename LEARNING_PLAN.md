@@ -2,8 +2,8 @@
 
 **Observer:** Steve Hawker BEng MBA FRAS  
 **Repository:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
-**Plan version:** 1.0  
-**Date:** 2026-04-28  
+**Plan version:** 1.2  
+**Date:** 2026-04-30  
 
 *This is a living document. Update it as reading is completed, understanding develops,
 and new topics are identified. Commit each update with a version note.*
@@ -169,21 +169,76 @@ and to explain every design decision.
 - RFI flagging strategies
 - GNU Radio flowgraph architecture
 - SDR hardware — ADC, IQ sampling, dynamic range
+- Direct conversion (zero-IF) architecture and its limitations
+- DC offset, IQ imbalance, LO phase noise — mitigations in GNU Radio
+- Receiver chain design — LNA, filters, mixer, ADC as a system
 
 ### Resources
 
 | Resource | Type | Priority | Status |
 |---|---|---|---|
+| Clark & Clark — *Practical SDR* | Textbook | **Essential — primary reference** | Owned, skimmed |
 | GNU Radio documentation and tutorials (gnuradio.org) | Online | Essential | Not started |
 | EZRa documentation — read carefully for methodology | Online | Essential | Not started |
 | Lyons — *Understanding Digital Signal Processing* | Textbook | Recommended | Not started |
 | NRAO Essential Radio Astronomy — spectral line chapter | Online | Essential | Not started |
 | Python NumPy/SciPy FFT documentation | Online | Essential | Not started |
 
+### Clark & Clark — Practical SDR — Reading Guide
+
+This is the course book for GNU Radio and the primary practical reference
+for the signal processing pipeline. The three sections map directly onto
+Blue Rock programme requirements:
+
+**Section 1 — Building a Basic Receiver**
+Practical GNU Radio flowgraph construction. Read alongside INV002 digital
+filter design. The implementation counterpart to the theory in Topic 2.
+Read during Phase 1 / early Phase 2 as GNU Radio pipeline development begins.
+
+**Section 2 — Inside the Receiver**
+Direct conversion architecture, DC offset, IQ imbalance, LO phase noise.
+This section is the practical companion to DOWNCONVERSION_ARCHITECTURE.md
+in the design/ directory. The book provides the GNU Radio implementation;
+the design document provides the theoretical analysis and mitigation strategy.
+Cross-reference these two sources actively.
+
+**Section 3 — Working with SDR Hardware**
+
+Particularly relevant chapters:
+
+*Physics of Radio Signals* — bridges HI physics (Topic 1) and SDR
+implementation. Read after Topic 1 foundations are established.
+
+*GNU Radio Flowgraphs with SDR Hardware* — direct application to
+Phase 2 pipeline development. Essential reading before building
+the custom pipeline.
+
+*SDR Hardware Under the Hood* — complements ADC_BIT_RESOLUTION.md
+and DOWNCONVERSION_ARCHITECTURE.md. Real hardware behaviour vs
+theoretical models.
+
+*Peripheral Hardware* — relevant to dual-SDR architecture
+(DUAL_SDR_ARCHITECTURE.md) and eventual interferometer array
+(INTERFEROMETER_UPGRADE.md).
+
+*Transmitting* — not applicable to this programme.
+
+### Recommended reading sequence
+
+1. Skim Section 1 early (Phase 1) — get GNU Radio running
+2. Read Section 2 carefully before building the custom pipeline (Phase 2)
+3. Read relevant Section 3 chapters as each topic becomes active
+4. Return to Section 1 in detail as pipeline complexity grows
+
 ### Notes
 *(Add notes here as reading progresses)*
 
 ### Status
+- [ ] Section 1 read — GNU Radio basics operational
+- [ ] Section 2 read — direct conversion architecture understood in practice
+- [ ] Section 3 Physics of Radio Signals read
+- [ ] Section 3 GNU Radio Flowgraphs with SDR Hardware read
+- [ ] Section 3 SDR Hardware Under the Hood read
 - [ ] GNU Radio basics — can build and run a simple flowgraph
 - [ ] Understand frequency switching and can implement it
 - [ ] Understand baseline subtraction and can implement it
@@ -331,7 +386,8 @@ and answered over time.*
 | Version | Date | Changes |
 |---|---|---|
 | 1.0 | 2026-04-28 | Initial plan |
-| 1.1 | 2026-04-30 | Topic 1 — corrected Carroll & Ostlie chapter number (Ch.31 not Ch.12), added NRAO Essential Radio Astronomy as free primary alternative, added NASA ADS and Lequeux, added access notes |
+| 1.1 | 2026-04-30 | Topic 1 — corrected Carroll & Ostlie chapter number, added NRAO ERA and NASA ADS |
+| 1.2 | 2026-04-30 | Topic 4 — added Clark & Clark Practical SDR as primary reference, expanded core concepts, added reading guide |
 
 ---
 
