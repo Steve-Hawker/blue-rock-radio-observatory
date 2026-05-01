@@ -70,10 +70,12 @@ blue-rock-radio-observatory/
 │   └── INV003_rfi_flagging/
 ├── writing/                         ← chapter outlines, thesis drafts, notes
 │   ├── SITE_ASSESSMENT_CHAPTER_OUTLINE.md
-│   ├── LOGO_DESIGN_BRIEF.md
-│   └── M1_VECTOR_ANALYSIS.md
+│   ├── M1_VECTOR_ANALYSIS.md
+│   └── (thesis drafts as developed)
 ├── branding/                        ← visual identity and observatory graphics
-│   └── BRRO_target_map.svg
+│   ├── LOGO_DESIGN_BRIEF.md
+│   ├── BRRO_target_map.svg
+│   └── BRRO_target_map_badge.svg
 └── setup/                           ← hardware and software setup guides
     └── RASPBERRY_PI_SETUP.md
 ```
