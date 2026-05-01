@@ -127,9 +127,33 @@ as a label, as on a scientific instrument scale.
 The spectral element should be rendered in gold — warm, precise, embedded
 in the lapis as naturally as the pyrite inclusions surrounding it.
 
-### Composition
+### Vector map assets — included in this package
 
-The mineral strip may be oriented:
+Two SVG files are included alongside this brief. Both are provided as
+raw material for the designer — not as final artwork, but as precise
+scientific diagrams that may inform the composition or be incorporated
+directly into the logo design.
+
+**BRRO_target_map.svg** — the full annotated vector map with legend,
+HI frequency annotation, and observatory identification. Shows the
+complete scientific context. Use as reference and for understanding
+the programme.
+
+![Full annotated target map](../branding/BRRO_target_map.svg)
+
+**BRRO_target_map_badge.svg** — the minimal version: seven vectors,
+distance rings, pyrite flecks, Earth dot. No annotations. This is
+the raw mark — clean enough to use directly as a logo element or
+to inspire the mineral strip composition.
+
+![Minimal badge vector map](../branding/BRRO_target_map_badge.svg)
+
+The minimal badge in particular carries the Voyager plaque aesthetic
+directly — encoded scientific information as graphic design, readable
+to anyone with the knowledge, beautiful to everyone else. The designer
+should study both files before beginning work.
+
+---
 - **Horizontally** — the spectrum runs left to right across the lapis,
   wordmark above or below
 - **Vertically** — the strip runs top to bottom beside the wordmark,
@@ -177,8 +201,10 @@ if a two-line treatment is used.
 
 ---
 
-## Reference Images to Share with the Designer
+## Reference Images Included in This Package
 
+- **BRRO_target_map.svg** — full annotated vector map
+- **BRRO_target_map_badge.svg** — minimal badge version — the raw mark
 - Pioneer 10/11 plaque — note how scientific information becomes graphic design
 - Voyager Golden Record cover — the HI line used as a unit of measurement
 - High quality photographs of raw lapis lazuli with visible pyrite inclusions
@@ -211,4 +237,5 @@ should too.
 | Version | Date | Changes |
 |---|---|---|
 | 1.0 | 2026-04-30 | Initial brief — three concept directions |
-| 1.1 | 2026-04-30 | Refined to mineral strip direction — Voyager plaque reference added as primary aesthetic inspiration |
+| 1.1 | 2026-04-30 | Refined to mineral strip direction — Voyager plaque reference added |
+| 1.2 | 2026-04-30 | SVG vector map assets incorporated — full and minimal badge versions |
