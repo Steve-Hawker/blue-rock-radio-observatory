@@ -2,6 +2,8 @@
 
 **HI Observation Log**
 
+![Blue Rock Radio Observatory Target Map](branding/BRRO_target_map.svg)
+
 **Observer:** Steve Hawker  
 **Observatory:** Blue Rock Radio Observatory, Blue Rock Court, San Jose, California, USA  
 **Latitude:** 37.3382° N  
@@ -67,7 +69,11 @@ blue-rock-radio-observatory/
 │   ├── INV002_digital_filters/
 │   └── INV003_rfi_flagging/
 ├── writing/                         ← chapter outlines, thesis drafts, notes
-│   └── SITE_ASSESSMENT_CHAPTER_OUTLINE.md
+│   ├── SITE_ASSESSMENT_CHAPTER_OUTLINE.md
+│   ├── LOGO_DESIGN_BRIEF.md
+│   └── M1_VECTOR_ANALYSIS.md
+├── branding/                        ← visual identity and observatory graphics
+│   └── BRRO_target_map.svg
 └── setup/                           ← hardware and software setup guides
     └── RASPBERRY_PI_SETUP.md
 ```
