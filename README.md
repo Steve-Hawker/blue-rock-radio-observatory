@@ -4,12 +4,12 @@
 
 ![Blue Rock Radio Observatory Target Map](branding/BRRO_target_map.svg)
 
-**Observer:** Steve Hawker  
+**Observer:** Steve Hawker BEng MBA FRAS  
 **Observatory:** Blue Rock Radio Observatory, Blue Rock Court, San Jose, California, USA  
 **Latitude:** 37.3382° N  
 **Longitude:** -121.8863° W  
 **Elevation:** ~25m ASL  
-**Program start:** 2026-04-28  
+**Programme start:** 2026-04-30  
 **Repository:** https://github.com/Steve-Hawker/blue-rock-radio-observatory
 
 ---
@@ -26,15 +26,40 @@ Member, San Jose Astronomical Association (SJAA)
 
 ---
 
-## Program Purpose
+## Programme Purpose
 
-Systematic hydrogen line (1420.405 MHz) observing program in support of BSc Honours
-thesis and potential MRes research. Primary science goals:
+Systematic hydrogen line (HI, 1420.405 MHz) observing programme in support
+of BSc Honours thesis and potential MRes research. Central motivation: develop
+and validate techniques for low-cost, small-aperture HI spectroscopy from an
+urban site, producing scientifically meaningful results comparable with
+professional survey data.
 
-- HI velocity mapping of M31 (Andromeda Galaxy)
-- High-velocity cloud (HVC) monitoring — Complex C
-- Galactic HI emission along selected sightlines
-- RFI environment characterisation at 1420 MHz from an urban site, San Jose CA
+---
+
+## Equipment Summary
+
+- **Antenna:** 70cm Discovery Dish parabolic dish, AZ/EL tracking mount
+- **Mount:** Discovery Drive — WiFi controlled, 0–90° elevation, rotctl compatible
+- **Signal chain:** Feed (LNA1 QPL9547 → SAW Filter → LNA2 → SAW Filter) → SDR
+- **Chain A (RFI monitoring):** RTL-SDR Blog V4 + dipole antenna
+- **Chain B (Science):** Airspy R2 + Discovery Dish HI Feed
+- **Target frequency:** 1420.405 MHz (hydrogen line)
+- **Software:** EZRa (Phase 1) / GNU Radio (Phase 2)
+
+Full equipment details in `equipment/` directory.
+
+---
+
+## Primary Targets
+
+| Target | Type | Priority | Transit El | Best season |
+|---|---|---|---|---|
+| Cas A | SNR / calibrator | Primary | 68.5° | Year-round |
+| M31 | Spiral galaxy | Primary science | 86.1° | Sep — Jan |
+| Complex C | High-velocity cloud | Primary science | 72.3° | Year-round |
+| M1 | Pulsar wind nebula | Secondary / calibrator | 74.7° | Oct — Feb |
+| M33 | Spiral galaxy | Secondary | 83.3° | Sep — Jan |
+| M81 | Spiral galaxy | Stretch goal | 58.3° | Year-round |
 
 ---
 
@@ -42,89 +67,82 @@ thesis and potential MRes research. Primary science goals:
 
 ```
 blue-rock-radio-observatory/
+│
 ├── README.md                        ← this file
-├── RESEARCH_PLAN.md                 ← full 3-year programme plan
+├── RESEARCH_PLAN.md                 ← full programme plan 2026–2031
 ├── LEARNING_PLAN.md                 ← structured self-study programme
 ├── TOOLS_PLAN.md                    ← tools roles and workflow
-├── QUICK_REFERENCE.md               ← pre/post session checklists and key data
-├── .gitignore                       ← excluded files (credentials, data, clutter)
+├── QUICK_REFERENCE.md               ← pre/post session checklists
+├── .gitignore                       ← excluded files
+│
 ├── equipment/                       ← versioned equipment state records
-│   └── E001_YYYY-MM-DD.md
+│   └── E001_2026-04-30.md          ← initial system — hardware on order
+│
 ├── sessions/                        ← per-observation session logs
-│   └── YYYY/
-│       └── YYYY-MM-DD_TARGET.md
-├── calibration/                     ← calibration time series and notes
+│   └── SESSION_TEMPLATE.md
+│
+├── calibration/                     ← calibration time series
 │   └── CasA_timeseries.csv
-├── targets/                         ← static reference data for each target
+│
+├── targets/                         ← reference data for each target
+│   ├── CasA.md
+│   ├── ComplexC_HVC.md
 │   ├── M1_CrabNebula.md
 │   ├── M31.md
-│   ├── CasA.md
-│   └── ComplexC_HVC.md
+│   ├── M33.md
+│   └── M81.md
+│
 ├── rfi/                             ← RFI environment characterisation
 │   ├── RFI_OVERVIEW.md
 │   └── SURVEY_TEMPLATE.md
-├── investigations/                  ← structured system performance investigations
+│
+├── design/                          ← engineering design decisions
+│   ├── ADC_BIT_RESOLUTION.md
+│   ├── BEAM_AND_RESOLUTION.md
+│   ├── DIPOLE_ANTENNA_DESIGN.md
+│   ├── DOWNCONVERSION_ARCHITECTURE.md
+│   ├── DUAL_SDR_ARCHITECTURE.md
+│   ├── OBSERVING_STRATEGY.md
+│   ├── SAW_FILTER_DESIGN.md        ← v0.1 pending KrakenRF response
+│   └── SDR_SELECTION.md
+│
+├── investigations/                  ← system performance investigations
 │   ├── INVESTIGATIONS.md
 │   ├── INV001_noise_budget/
+│   │   └── INV001_noise_budget.md
 │   ├── INV002_digital_filters/
+│   │   └── INV002_digital_filters.md
 │   └── INV003_rfi_flagging/
-├── design/                          ← engineering design decisions and rationale
-│   └── SDR_SELECTION.md
-├── writing/                         ← chapter outlines, thesis drafts, notes
-│   ├── SITE_ASSESSMENT_CHAPTER_OUTLINE.md
+│       └── INV003_rfi_flagging.md
+│
+├── writing/                         ← thesis drafts and chapter outlines
 │   ├── M1_VECTOR_ANALYSIS.md
-│   └── (thesis drafts as developed)
-├── branding/                        ← visual identity and observatory graphics
+│   └── SITE_ASSESSMENT_CHAPTER_OUTLINE.md
+│
+├── branding/                        ← visual identity
+│   ├── BRRO_target_map.svg         ← full annotated target map
+│   ├── BRRO_target_map_badge.svg   ← minimal badge version
 │   ├── LOGO_DESIGN_BRIEF.md
-│   ├── BRRO_target_map.svg
-│   └── BRRO_target_map_badge.svg
+│   └── LOGO_DESIGN_BRIEF.html      ← self-contained with embedded SVGs
+│
 └── setup/                           ← hardware and software setup guides
     └── RASPBERRY_PI_SETUP.md
 ```
 
 ---
 
-## Equipment Summary
-
-- **Antenna:** 70cm parabolic dish, AZ/EL tracking mount
-- **Signal chain:** Antenna → LNA1 (QPL9547) → SAW Filter → LNA2 → SAW Filter → SDR
-- **Target frequency:** 1420.405 MHz (hydrogen line)
-- **Software:** EZRa / GNU Radio
-
-Full equipment details in `equipment/E001_YYYY-MM-DD.md`.
-
----
-
 ## Equipment Log Versioning
 
-Every change to the signal chain creates a new equipment version (E001, E002, ...).
+Every change to the signal chain creates a new equipment version (E001, E002...).
 Session logs reference the equipment version in effect at time of observation.
-This ensures full traceability of how any system change affects the data.
-
----
 
 ## Time Standard
 
-**All times in UTC.** Local time (PST/PDT) may be noted parenthetically but
-UTC is the primary record. LST is recorded at session start.
-
----
+All times in UTC. LST recorded at session start.
 
 ## Calibration Standard
 
-Cassiopeia A (Cas A) is used as the primary flux calibration standard.  
-Known flux at 1420 MHz: ~2723 Jy (epoch J2000, Baars et al. 1977 scale).  
-Secular decrease: ~0.77% per year.
-
----
-
-## Primary Targets
-
-| Target | Type | Priority | Best season |
-|---|---|---|---|
-| Cas A | SNR / calibrator | Primary | Year-round |
-| M31 | Spiral galaxy | Primary science | Sep — Jan |
-| Complex C | High-velocity cloud | Primary science | Year-round |
-| M1 | Pulsar wind nebula | Secondary / calibrator | Oct — Feb |
-| M33 | Spiral galaxy | Secondary | Sep — Jan |
-
+Cassiopeia A — primary flux calibration standard.
+Reference flux: 2723 Jy at 1420 MHz (J2000, Baars et al. 1977).
+Secular decrease: 0.77% per year.
+Expected 2026: ~2567 Jy.
