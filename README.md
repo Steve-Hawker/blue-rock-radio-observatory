@@ -63,11 +63,13 @@ blue-rock-radio-observatory/
 ├── rfi/                             ← RFI environment characterisation
 │   ├── RFI_OVERVIEW.md
 │   └── SURVEY_TEMPLATE.md
-├── investigations/                  ← structured engineering investigations
+├── investigations/                  ← structured system performance investigations
 │   ├── INVESTIGATIONS.md
 │   ├── INV001_noise_budget/
 │   ├── INV002_digital_filters/
 │   └── INV003_rfi_flagging/
+├── design/                          ← engineering design decisions and rationale
+│   └── SDR_SELECTION.md
 ├── writing/                         ← chapter outlines, thesis drafts, notes
 │   ├── SITE_ASSESSMENT_CHAPTER_OUTLINE.md
 │   ├── M1_VECTOR_ANALYSIS.md
