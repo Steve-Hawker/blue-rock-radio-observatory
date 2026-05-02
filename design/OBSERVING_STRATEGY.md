@@ -52,10 +52,12 @@ session planning well in advance. Slewing between targets is a single click
 
 ---
 
-## Monthly Night-time Availability
+## Monthly Observing Quality
 
-Night-time availability based on whether target transits during dark hours.
-Daytime observations are possible at 1420 MHz — see note below table.
+Shows the time of day when each target transits — indicating whether
+sessions will be daytime or evening/overnight. At 1420 MHz all symbols
+represent valid observing conditions — this is not an availability table,
+it is a scheduling guide.
 
 | Target | Jan | Feb | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -66,20 +68,25 @@ Daytime observations are possible at 1420 MHz — see note below table.
 | M33 | ◑ | ○ | ○ | ○ | ○ | ○ | ○ | ◑ | ● | ● | ● | ◑ |
 | M81 | ● | ● | ● | ◑ | ◑ | ○ | ○ | ○ | ○ | ○ | ○ | ◑ |
 
-**Key:** ● Best (transits near midnight) ◑ Moderate ○ Poor (daylight transit)
+**Key:**
+- ● Target transits at night — evening or overnight sessions
+- ◑ Target transits near dawn or dusk — flexible scheduling
+- ○ Target transits during the day — daytime sessions
+- ✗ Never rises above 30° — not observable (Galactic centre)
 
-**Important — daytime observing note:** At 1420 MHz observations are valid
-in daylight provided the beam avoids the Sun (keep >20–30° solar separation).
-Targets marked ○ are not unavailable — they transit during the day and are
-perfectly observable. The table indicates night-time quality only. The
-observer has full schedule flexibility and exploits daytime windows actively.
+All three symbols represent valid observing conditions at 1420 MHz.
+The observer has full schedule flexibility and exploits daytime
+windows actively. Solar separation >20–30° must be maintained
+regardless of time of day.
 
-**Practical implication of daytime availability:**
+**Practical implication:**
 
-- M31 marked ○ in Jan–Jun transits during the day in those months — still
-  observable, just requires daytime scheduling
-- Cas A marked ○ in Jan–Jun similarly — daytime calibration sessions viable
-- This significantly extends the effective observing season for all targets
+- M31 ○ in Jan–Jun — transits midday, perfectly observable on a
+  calm weekday morning or afternoon
+- Complex C ○ in Sep–Dec — transits overnight in M31 season,
+  natural fill-in target between M31 integrations
+- M81 ● in Jan–Mar — transits at night in winter, natural
+  complement to M31 season targets
 
 ---
 
@@ -286,3 +293,4 @@ but is not planned for the current programme.
 | Version | Date | Changes |
 |---|---|---|
 | 1.0 | 2026-04-30 | Initial document — seasonal schedule, monthly availability table, sequencing principles, co-addition strategy |
+| 1.1 | 2026-04-30 | Renamed monthly table to "Monthly Observing Quality" — reframed as scheduling guide not availability, updated key |

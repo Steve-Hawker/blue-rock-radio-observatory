@@ -122,7 +122,9 @@ def print_summary():
         print(f"{name:<14} {el:>9.1f}°  {hrs:>10.1f} hrs{flag}")
 
     print("\n")
-    print("Monthly night-time availability")
+    print("Monthly observing quality — time of day when target transits")
+    print("All symbols represent valid observing conditions at 1420 MHz")
+    print("● transits at night   ◑ transits dawn/dusk   ○ transits daytime   ✗ never rises")
     print("● best  ◑ moderate  ○ poor/daytime  ✗ never rises")
     print()
 
