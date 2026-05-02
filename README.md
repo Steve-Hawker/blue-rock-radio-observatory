@@ -127,6 +127,9 @@ blue-rock-radio-observatory/
 │   ├── BUILD_JOURNAL.md
 │   └── photos/
 │
+├── calendar/                        ← observing window calendar files
+│   └── BRRO_observing_windows_202609_202701.ics
+│
 ├── branding/                        ← visual identity
 │   ├── BRRO_target_map.svg         ← full annotated target map
 │   ├── BRRO_target_map_badge.svg   ← minimal badge version
