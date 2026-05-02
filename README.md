@@ -123,6 +123,10 @@ blue-rock-radio-observatory/
 │   ├── README_READING_NOTES.md
 │   └── NOTES_TEMPLATE.md
 │
+├── build/                           ← construction journal and photos
+│   ├── BUILD_JOURNAL.md
+│   └── photos/
+│
 ├── branding/                        ← visual identity
 │   ├── BRRO_target_map.svg         ← full annotated target map
 │   ├── BRRO_target_map_badge.svg   ← minimal badge version
