@@ -41,7 +41,7 @@ professional survey data.
 - **Antenna:** 70cm Discovery Dish parabolic dish, AZ/EL tracking mount
 - **Mount:** Discovery Drive — WiFi controlled, 0–90° elevation, rotctl compatible
 - **Signal chain:** Feed (LNA1 QPL9547 → SAW Filter → LNA2 → SAW Filter) → SDR
-- **Chain A (RFI monitoring):** RTL-SDR Blog V4 + dipole antenna
+- **Chain A (RFI monitoring):** RTL-SDR Blog V4c + dipole antenna
 - **Chain B (Science):** Airspy R2 + Discovery Dish HI Feed
 - **Target frequency:** 1420.405 MHz (hydrogen line)
 - **Software:** EZRa (Phase 1) / GNU Radio (Phase 2)
@@ -96,12 +96,18 @@ blue-rock-radio-observatory/
 │   ├── RFI_OVERVIEW.md
 │   └── SURVEY_TEMPLATE.md
 │
-├── design/                          ← engineering design decisions
+├── design/                          ← engineering design decisions and rationale
+│   ├── diagrams/                    ← system architecture diagrams
+│   │   ├── BRRO_system_architecture_v5.svg
+│   │   └── BRRO_system_architecture_v5.mermaid
 │   ├── ADC_BIT_RESOLUTION.md
 │   ├── BEAM_AND_RESOLUTION.md
+│   ├── DAILY_OBSERVING_WINDOWS.md
 │   ├── DIPOLE_ANTENNA_DESIGN.md
 │   ├── DOWNCONVERSION_ARCHITECTURE.md
 │   ├── DUAL_SDR_ARCHITECTURE.md
+│   ├── GALACTIC_PLANE_TRACKING.md
+│   ├── INTERFEROMETER_UPGRADE.md   ← v0.2 KrakenSDR 5-element array
 │   ├── OBSERVING_STRATEGY.md
 │   ├── SAW_FILTER_DESIGN.md        ← v0.1 pending KrakenRF response
 │   └── SDR_SELECTION.md
@@ -117,7 +123,8 @@ blue-rock-radio-observatory/
 │
 ├── writing/                         ← thesis drafts and chapter outlines
 │   ├── M1_VECTOR_ANALYSIS.md
-│   └── SITE_ASSESSMENT_CHAPTER_OUTLINE.md
+│   ├── SITE_ASSESSMENT_CHAPTER_OUTLINE.md
+│   └── SITE_ASSESSMENT_METHODOLOGY.md  ← v0.1 for SARA publication
 │
 ├── reading_notes/                   ← notes on papers and books read
 │   ├── README_READING_NOTES.md
@@ -130,14 +137,20 @@ blue-rock-radio-observatory/
 ├── calendar/                        ← observing window calendar files
 │   └── BRRO_observing_windows_202609_202701.ics
 │
+├── scripts/                         ← Python utility scripts
+│   ├── target_visibility.py         ← transit elevations and availability
+│   ├── generate_calendar.py         ← generate .ics observing windows
+│   └── galactic_plane_track.py      ← Galactic plane coordinate transforms
+│
 ├── branding/                        ← visual identity
-│   ├── BRRO_target_map.svg         ← full annotated target map
-│   ├── BRRO_target_map_badge.svg   ← minimal badge version
+│   ├── BRRO_target_map.svg          ← full annotated target map
+│   ├── BRRO_target_map_badge.svg    ← minimal badge version
 │   ├── LOGO_DESIGN_BRIEF.md
-│   └── LOGO_DESIGN_BRIEF.html      ← self-contained with embedded SVGs
+│   └── LOGO_DESIGN_BRIEF.html       ← self-contained with embedded SVGs
 │
 └── setup/                           ← hardware and software setup guides
-    └── RASPBERRY_PI_SETUP.md
+    ├── RASPBERRY_PI_SETUP.md
+    └── SITE_ASSESSMENT_CHECKLIST.md ← field measurement checklist
 ```
 
 ---
