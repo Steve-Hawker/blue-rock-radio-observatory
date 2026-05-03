@@ -1,0 +1,69 @@
+---
+title: Blue Rock Radio Observatory — System Architecture
+---
+flowchart TB
+
+  subgraph TRIPOD["Tripod assembly"]
+    direction TB
+
+    subgraph TOP["Antenna and mount"]
+      direction LR
+      DISH["Discovery Dish\n70cm parabolic"]
+      DRIVE["Discovery Drive\nAZ/EL · 0–90° · WiFi"]
+      DISH -- mount --> DRIVE
+    end
+
+    DISH -- short coax --> FEED
+    DIPOLE["Dipole antenna\n5.25cm per arm · 1420 MHz"]
+
+    FEED["HI Feed\n1380–1460 MHz\nLNA1 · SAW · LNA2 · SAW\nIP65 · bias tee powered"]
+
+    subgraph DDOEE["DDOEE enclosure (IP66)"]
+      direction TB
+
+      subgraph SDRS["SDRs"]
+        direction LR
+        AIRSPY["Airspy R2\n12-bit · bias tee on"]
+        V4C["RTL-SDR V4c\n8-bit · USB-C · bias tee off"]
+      end
+
+      subgraph PIS["Raspberry Pis"]
+        direction LR
+        PI3["Raspberry Pi 3\nEZRa · rotctl"]
+        PI2["Raspberry Pi 2\nrtl_power · RFI logs"]
+      end
+
+      POE["PoE splitter\nPowers all DDOEE components\nSingle PoE cable to house"]
+
+      AIRSPY --> PI3
+      V4C --> PI2
+      PI3 --> POE
+      PI2 --> POE
+    end
+
+    FEED -- feed output cable --> AIRSPY
+    DIPOLE --> V4C
+
+  end
+
+  subgraph INDOORS["Indoors"]
+    direction TB
+
+    MAC["MacBook Pro\nmacOS Sonoma\n---\nGQRX · RFI analysis\nEZRa · GNU Radio\nStellarium\nPython · Astropy\nGit · VS Code\nZotero\nGoogle Calendar\nSSH to Pis\nGitHub repository\nReading notes\nSession logs"]
+
+    LOG["Physical log book\nIndexed · dated · signed"]
+  end
+
+  DRIVE -- "WiFi — rotctl / Stellarium" --> MAC
+  POE -- "PoE (single cable)" --> MAC
+  MAC -. reference .- LOG
+
+  classDef science fill:#e6f1fb,stroke:#185fa5,color:#0c447c
+  classDef rfi fill:#e1f5ee,stroke:#0f6e56,color:#085041
+  classDef mount fill:#faeeda,stroke:#854f0b,color:#633806
+  classDef shared fill:#f1efe8,stroke:#5f5e5a,color:#444441
+
+  class DISH,FEED,AIRSPY,PI3 science
+  class DIPOLE,V4C,PI2 rfi
+  class DRIVE mount
+  class MAC,LOG,POE shared
