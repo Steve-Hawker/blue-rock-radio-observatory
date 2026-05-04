@@ -3,7 +3,7 @@
 **Author:** Steve Hawker BEng MBA FRAS  
 **Observatory:** Blue Rock Radio Observatory  
 **Date:** 2026-04-30  
-**Version:** 1.0  
+**Version:** 1.1  
 
 ---
 
@@ -34,11 +34,30 @@ The first null beamwidth (wider than HPBW):
 
 $$\theta_{null} \approx 70 \frac{\lambda}{D} \approx 21°$$
 
-**Adopted value: 17° HPBW** — used throughout programme documentation.
+**Theoretical value: ~17.5° HPBW**
+
+**KrakenRF simulation value: 20–22° HPBW** — from the Discovery Dish
+CrowdSupply product page gain/return loss simulation plots at 1.42 GHz:
+- Phi=0 plane: angular width (3dB) = 22.6°
+- Phi=90 plane: angular width (3dB) = 20.3°
+- Main lobe gain: 17.7 dBi
+- Sidelobe level: -19.0 dB (Phi=0), -15.1 dB (Phi=90)
+
+The simulation accounts for the actual feed illumination pattern and
+aperture efficiency of the Discovery Dish design, which the theoretical
+formula does not. The simulation value is therefore more reliable than
+the theoretical estimate as a prior for the commissioning measurement.
+
+**Adopted prior: ~21° HPBW** (mean of simulation values) pending
+commissioning measurement from Cas A beam scan.
+
+**Note on dish gain:** The simulation gives 17.7 dBi main lobe gain
+at 1.42 GHz. This feeds directly into the SEFD calculation in INV001
+and improves the sensitivity estimate compared with earlier approximations.
 
 This beamwidth must be measured directly from Cas A observations during
-commissioning. The theoretical value assumes perfect aperture illumination
-and surface accuracy. Measured value may differ — see Section 4.
+commissioning. The simulation value is a prior, not a measurement.
+Measured value supersedes all estimates — see Section 4.
 
 ---
 
@@ -309,3 +328,4 @@ achievable with the 70cm dish.
 | Version | Date | Changes |
 |---|---|---|
 | 1.0 | 2026-04-30 | Initial document — beam derivation, target implications, spatial discrimination strategies, upgrade path |
+| 1.1 | 2026-05-04 | Updated beamwidth — KrakenRF simulation gives 20–22° HPBW and 17.7 dBi gain at 1.42 GHz; cable corrected to LMR240-equivalent |
