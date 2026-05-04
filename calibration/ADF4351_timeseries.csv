@@ -5,15 +5,22 @@ date,equipment_version,cal_procedure,parameter,value,unit,notes
 # Columns:
 #   date            — ISO 8601 date YYYY-MM-DD
 #   equipment_version — E001, E002 etc (from equipment/ log)
-#   cal_procedure   — CAL-001 through CAL-005
+#   cal_procedure   — CAL-000 through CAL-005
 #   parameter       — what was measured
 #   value           — measured value
 #   unit            — unit of measurement
 #   notes           — any relevant observations
+#
+# CAL-000 parameters (SDR baseline, pre-feed):
+#   lo_frequency_error_hz, lo_velocity_error_kms
+#   iq_irr_db, max_useful_gain_db
+#   suffix: -V4c or -Airspy to distinguish SDR
 #
 # CAL-001 parameters: lo_frequency_error_hz, lo_velocity_error_kms
 # CAL-002 parameters: passband_3db_low_mhz, passband_3db_high_mhz, passband_ripple_db
 # CAL-003 parameters: chain_gain_db, friis_prediction_db, discrepancy_db
 # CAL-004 parameters: iq_irr_uncorrected_db, iq_irr_corrected_db
 #
-# First entry to be made during commissioning (Phase 1, est. Aug/Sep 2026)
+# CAL-000-V4c first entry: when V4c arrives (est. May 21 – Jun 12 2026)
+# CAL-000-Airspy entry: when Airspy R2 arrives (Phase 2)
+# CAL-001 first entry: commissioning (est. Aug/Sep 2026)

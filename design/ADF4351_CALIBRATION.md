@@ -116,7 +116,59 @@ should be installed during commissioning and noted in E002.
 
 ## Calibration Procedures
 
-### CAL-001 — LO Frequency Verification
+### CAL-000 — SDR Baseline (pre-feed, SDR only)
+
+**Purpose:** Characterise each SDR independently before connection to
+the HI feed or dipole. Establishes baseline frequency accuracy, dynamic
+range, and IQ imbalance figures for the SDR alone — independent of the
+feed and LNA chain. Enables direct comparison between V4c (Chain A)
+and Airspy R2 (Chain B).
+
+This procedure can be performed as soon as each SDR arrives — no feed,
+no LNA, no dish required. The V4c can be characterised during Phase 1a
+(end May 2026) before the dish arrives in August.
+
+**Attenuation requirements:**
+- V4c (no LNA): 20 dB attenuator — SDR input max ~-20 dBm
+- Airspy R2 (no LNA): 20 dB attenuator — SDR input max ~-20 dBm
+- HI feed input (with LNA1): 30 dB minimum — see CAL-001 to CAL-004
+
+**Procedure:**
+1. Connect ADF4351 → 20 dB attenuator → SDR input directly (no feed)
+2. Open GQRX, set LO to 1422.000 MHz
+
+**Step 1 — LO frequency accuracy:**
+- Set ADF4351 to 1421.000 MHz
+- Measure tone offset from expected -1.000 MHz in baseband
+- Record frequency error in Hz and velocity equivalent in km/s
+
+**Step 2 — Wideband response:**
+- Step ADF4351 from 1360 to 1480 MHz in 2 MHz steps
+- Record SDR power at each step
+- Plot response — reveals SDR's own frequency-dependent gain variation
+  (independent of SAW filters)
+- This is the SDR contribution to the system passband
+
+**Step 3 — IQ imbalance:**
+- Set ADF4351 to LO + 500 kHz = 1422.500 MHz
+- Measure true tone at +500 kHz and image at -500 kHz
+- Record image rejection ratio (IRR) in dB
+
+**Step 4 — Dynamic range check:**
+- Set ADF4351 to 1420.000 MHz at nominal power
+- Increase SDR gain until tone just saturates ADC
+- Note maximum useful gain setting
+- Record recommended operating gain for HI observations
+
+**Record all results in ADF4351_timeseries.csv with:**
+- equipment_version: E001 (V4c pre-feed) or E002 (when assigned)
+- cal_procedure: CAL-000-V4c or CAL-000-Airspy
+- Repeat for Airspy R2 when it arrives (Phase 2)
+
+**Comparison value:** Running CAL-000 on both SDRs with identical
+setup gives a direct hardware comparison — V4c vs Airspy R2 frequency
+accuracy, IQ balance, and dynamic range under identical conditions.
+This is a useful cross-check independent of any feed or LNA variables.
 
 **Purpose:** Verify SDR LO frequency accuracy. Frequency error converts
 directly to velocity error in HI spectroscopy.
@@ -284,3 +336,4 @@ pipeline development (INV002).
 | Version | Date | Changes |
 |---|---|---|
 | 1.0 | 2026-05-02 | Initial document — four calibration procedures, hardware specification, LNA protection requirements, annual programme |
+| 1.1 | 2026-05-02 | Add CAL-000 SDR baseline — pre-feed V4c characterisation, direct V4c vs Airspy R2 comparison |
