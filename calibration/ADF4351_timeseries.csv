@@ -1,0 +1,19 @@
+date,equipment_version,cal_procedure,parameter,value,unit,notes
+# Blue Rock Radio Observatory — ADF4351 Calibration Time Series
+# See design/ADF4351_CALIBRATION.md for procedure definitions
+#
+# Columns:
+#   date            — ISO 8601 date YYYY-MM-DD
+#   equipment_version — E001, E002 etc (from equipment/ log)
+#   cal_procedure   — CAL-001 through CAL-005
+#   parameter       — what was measured
+#   value           — measured value
+#   unit            — unit of measurement
+#   notes           — any relevant observations
+#
+# CAL-001 parameters: lo_frequency_error_hz, lo_velocity_error_kms
+# CAL-002 parameters: passband_3db_low_mhz, passband_3db_high_mhz, passband_ripple_db
+# CAL-003 parameters: chain_gain_db, friis_prediction_db, discrepancy_db
+# CAL-004 parameters: iq_irr_uncorrected_db, iq_irr_corrected_db
+#
+# First entry to be made during commissioning (Phase 1, est. Aug/Sep 2026)

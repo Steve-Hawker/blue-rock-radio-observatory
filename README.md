@@ -81,8 +81,9 @@ blue-rock-radio-observatory/
 ├── sessions/                        ← per-observation session logs
 │   └── SESSION_TEMPLATE.md
 │
-├── calibration/                     ← calibration time series
-│   └── CasA_timeseries.csv
+├── calibration/                     ← calibration time series data
+│   ├── CasA_timeseries.csv
+│   └── ADF4351_timeseries.csv       ← annual system calibration record
 │
 ├── targets/                         ← reference data for each target
 │   ├── CasA.md
@@ -101,6 +102,7 @@ blue-rock-radio-observatory/
 │   │   ├── BRRO_system_architecture_v5.svg
 │   │   └── BRRO_system_architecture_v5.mermaid
 │   ├── ADC_BIT_RESOLUTION.md
+│   ├── ADF4351_CALIBRATION.md       ← signal source calibration procedures
 │   ├── BEAM_AND_RESOLUTION.md
 │   ├── DAILY_OBSERVING_WINDOWS.md
 │   ├── DIPOLE_ANTENNA_DESIGN.md
