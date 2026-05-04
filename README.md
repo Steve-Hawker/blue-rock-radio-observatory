@@ -102,7 +102,7 @@ blue-rock-radio-observatory/
 │   │   ├── BRRO_system_architecture_v5.svg
 │   │   └── BRRO_system_architecture_v5.mermaid
 │   ├── ADC_BIT_RESOLUTION.md
-│   ├── ADF4351_CALIBRATION.md       ← signal source calibration procedures
+│   ├── ADF4351_CALIBRATION.md       ← signal source calibration procedures v1.1
 │   ├── BEAM_AND_RESOLUTION.md
 │   ├── DAILY_OBSERVING_WINDOWS.md
 │   ├── DIPOLE_ANTENNA_DESIGN.md
