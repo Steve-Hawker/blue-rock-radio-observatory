@@ -76,7 +76,15 @@ blue-rock-radio-observatory/
 ├── .gitignore                       ← excluded files
 │
 ├── equipment/                       ← versioned equipment state records
-│   └── E001_2026-04-30.md          ← initial system — hardware on order
+│   ├── E001_2026-04-30.md          ← initial system — hardware on order
+│   └── datasheets/                  ← component datasheets and product docs
+│       ├── README_DATASHEETS.md     ← index with key extracted values
+│       ├── QPL9547_Data_Sheet.pdf
+│       ├── RTLSDR_V4_Datasheet_V_1_0.pdf
+│       ├── Discovery_Dish_CrowdSupply.pdf
+│       ├── RTL-SDR_Dipole_Set_eBay.pdf
+│       ├── ADF4351_board_eBay.pdf
+│       └── SMA_attenuator_30dB_eBay.pdf
 │
 ├── sessions/                        ← per-observation session logs
 │   └── SESSION_TEMPLATE.md
