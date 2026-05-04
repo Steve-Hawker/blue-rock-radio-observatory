@@ -15,6 +15,9 @@ Radio Observatory hardware.
 | RTL-SDR_Dipole_Set_eBay.pdf | RTL-SDR Blog dipole set | Short arms to 13cm · Long arms to 100cm · SMA | 2026-05-04 |
 | ADF4351_board_eBay.pdf | ADF4351 signal source | 35M-4.4GHz · ±50ppm · SPI control · 5V USB | 2026-05-04 |
 | SMA_attenuator_30dB_eBay.pdf | Gwave SMA attenuator 30dB | DC-8GHz · brass body · SMA M-F | 2026-05-04 |
+| RTL-SDR_Blog_V3_Dongles_User_Guide.pdf | RTL-SDR Blog V3 user guide | Bias tee · direct sampling · clock sharing | 2026-05-04 |
+| RTL-SDR_Blog_V4_Users_Guide.pdf | RTL-SDR Blog V4 user guide | Driver install · MacOS GQRX · bias tee · EEPROM | 2026-05-04 |
+| Using_our_new_Dipole_Antenna_Kit.pdf | RTL-SDR dipole kit guide | Arm lengths · 2cm internal metal · M5 thread · mounting | 2026-05-04 |
 
 ---
 
@@ -65,7 +68,9 @@ with the measured value from commissioning Cas A beam scan.
 
 ## Updates Required
 
-- [ ] Update BEAM_AND_RESOLUTION.md — beamwidth 17° → 20-22° (from simulation)
-- [ ] Update BEAM_AND_RESOLUTION.md — cable is LMR240-equivalent not LMR200
+- [x] Update BEAM_AND_RESOLUTION.md — beamwidth 17° → 20-22° (from simulation) — done v1.1
+- [x] Update BEAM_AND_RESOLUTION.md — cable is LMR240-equivalent not LMR200 — done v1.1
+- [x] Update DIPOLE_ANTENNA_DESIGN.md — stock arms cannot reach 1420 MHz resonant length; custom brass elements required — done v2.0
 - [ ] Complete INV001 with QPL9547 interpolated values at 1420 MHz
 - [ ] Note V4c triplexer improvement in SDR_SELECTION.md and RFI_OVERVIEW.md
+- [ ] Add GQRX MacOS bias tee device string to RASPBERRY_PI_SETUP.md: rtl=0,bias=1
