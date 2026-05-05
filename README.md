@@ -43,6 +43,7 @@ professional survey data.
 - **Signal chain:** Feed (LNA1 QPL9547 → SAW Filter → LNA2 → SAW Filter) → SDR
 - **Chain A (RFI monitoring):** RTL-SDR Blog V4c + dipole antenna
 - **Chain B (Science):** Airspy R2 + Discovery Dish HI Feed
+- **Enclosure:** QILIPSU 304 stainless steel IP65 350×250×150mm — replaces KrakenRF DDOEE
 - **Target frequency:** 1420.405 MHz (hydrogen line)
 - **Software:** EZRa (Phase 1) / GNU Radio (Phase 2)
 
@@ -119,6 +120,7 @@ blue-rock-radio-observatory/
 │   ├── GALACTIC_PLANE_TRACKING.md
 │   ├── INTERFEROMETER_UPGRADE.md   ← v0.2 KrakenSDR 5-element array
 │   ├── OBSERVING_STRATEGY.md
+│   ├── POWER_ARCHITECTURE.md       ← PoE power distribution, dual budget (Pi3+2 / Pi5)
 │   ├── SAW_FILTER_DESIGN.md        ← v0.1 pending KrakenRF response
 │   └── SDR_SELECTION.md
 │

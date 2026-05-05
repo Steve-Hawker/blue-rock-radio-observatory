@@ -21,6 +21,7 @@ Radio Observatory hardware.
 | Phihong_POE48-120BT-R.pdf | Phihong PoE splitter 48W | 12V@4A output · **MAX +40°C — disqualified for outdoor use** | 2026-05-04 |
 | Tycon_POE-SPLT-BT-UNI-P.pdf | Tycon PoE splitter 90W | 5V@14A + 12V@5.9A · -40°C to +75°C · DIN mount · **selected** | 2026-05-04 |
 | TP-Link_TL-POE170S.pdf | TP-Link PoE injector 60W | 802.3bt · 60W max · 0°C to 45°C · indoor use · **selected** | 2026-05-04 |
+| QILIPSU_Enclosure_350x250x150.pdf | QILIPSU IP65 stainless enclosure | 304 SS · 350×250×150mm · IP65 · DIN plate · lockable · $89.99 · **selected over KrakenRF DDOEE** | 2026-05-04 |
 
 ---
 
