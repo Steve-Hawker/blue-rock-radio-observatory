@@ -20,6 +20,7 @@ Radio Observatory hardware.
 | Using_our_new_Dipole_Antenna_Kit.pdf | RTL-SDR dipole kit guide | Arm lengths · 2cm internal metal · M5 thread · mounting | 2026-05-04 |
 | Phihong_POE48-120BT-R.pdf | Phihong PoE splitter 48W | 12V@4A output · **MAX +40°C — disqualified for outdoor use** | 2026-05-04 |
 | Tycon_POE-SPLT-BT-UNI-P.pdf | Tycon PoE splitter 90W | 5V@14A + 12V@5.9A · -40°C to +75°C · DIN mount · **selected** | 2026-05-04 |
+| TP-Link_TL-POE170S.pdf | TP-Link PoE injector 60W | 802.3bt · 60W max · 0°C to 45°C · indoor use · **selected** | 2026-05-04 |
 
 ---
 
@@ -68,7 +69,25 @@ with the measured value from commissioning Cas A beam scan.
 
 ---
 
-## Updates Required
+## Power Budget
+
+| Component | Voltage | Est. current | Est. power |
+|---|---|---|---|
+| Raspberry Pi 5 | 5V | ~2.5A | ~12.5W |
+| Airspy R2 | 5V | ~0.5A | ~2.5W |
+| RTL-SDR V4c | 5V | ~0.27A | ~1.4W |
+| ADF4351 board | 5V | ~0.5A | ~2.5W |
+| Discovery Drive | 12V | ~1A typical | ~12W |
+| **Total load** | | | **~31W** |
+| TL-POE170S output | — | — | 60W max |
+| Tycon splitter efficiency | — | — | 80% min |
+| **Available at load** | | | **~48W** |
+| **Headroom** | | | **~17W** |
+
+Comfortable margin. Discovery Drive current draw under slewing load to be
+confirmed — if significantly above 1A, revisit budget.
+
+---
 
 - [x] Update BEAM_AND_RESOLUTION.md — beamwidth 17° → 20-22° (from simulation) — done v1.1
 - [x] Update BEAM_AND_RESOLUTION.md — cable is LMR240-equivalent not LMR200 — done v1.1
