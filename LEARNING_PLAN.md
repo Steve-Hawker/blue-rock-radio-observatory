@@ -2,8 +2,8 @@
 
 **Observer:** Steve Hawker BEng MBA FRAS  
 **Repository:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
-**Plan version:** 1.3  
-**Date:** 2026-04-30  
+**Plan version:** 1.5  
+**Date:** 2026-05-04  
 
 *This is a living document. Update it as reading is completed, understanding develops,
 and new topics are identified. Commit each update with a version note.*
@@ -405,9 +405,260 @@ write a scientific paper is a skill requiring deliberate development.
 
 ---
 
-## Reading Progress Log
+## Reading by Programme Phase
 
-*Record each item completed here with date and brief note on key takeaways.*
+This section maps each learning topic to the programme phase where that
+knowledge is needed. The goal is to complete each topic's core reading
+**before** the corresponding phase begins — not during it.
+
+### Phase 1 — Infrastructure and Planning ✓ Complete
+*No specific reading prerequisite — this phase is about setting up the
+programme, not conducting science.*
+
+Reading to do **during Phase 1** (i.e. now):
+- Topic 4: Laufer — RTL-SDR tricks and performance (before V4c arrives)
+- Topic 4: Laufer — Antennas, cables and adapters (before dipole setup)
+- Topic 2: QPL9547 datasheet — already in equipment/datasheets/
+
+---
+
+### Phase 2 — Site Survey (May 7 2026)
+*Minimal reading prerequisite — site assessment is primarily practical.*
+
+Reading to complete **before Phase 2:**
+- Topic 4: Laufer — Measuring filters chapter (informs commissioning plan)
+
+Reading to do **during Phase 2:**
+- Begin Topic 2: Radio Telescope Fundamentals (Wilson et al. Ch. 1)
+- Begin Topic 1: HI Physics (NRAO Essential Radio Astronomy)
+
+---
+
+### Phase 3 — RFI Commissioning (May–Aug 2026)
+*Need enough SDR and signal chain knowledge to interpret what you're seeing.*
+
+Reading to complete **before Phase 3:**
+- Topic 4: Laufer — RTL-SDR tricks, performance, antennas ✓ (in progress)
+- Topic 4: Clark & Clark Section 1 — GNU Radio basics
+- Topic 2: NRAO Essential Radio Astronomy — receiver systems chapter
+
+Reading to do **during Phase 3:**
+- Topic 4: Clark & Clark Section 2 — Inside the Receiver
+- Topic 2: Friis formula — apply to Blue Rock signal chain (INV001)
+- Topic 4: Laufer — L-Band satellite chapters (identify RFI sources)
+
+---
+
+### Phase 4 — Basic HI Observations (Aug 2026–2027)
+*This is where the science begins. Need solid foundations in HI physics,
+telescope fundamentals, calibration, and Doppler corrections before
+first light.*
+
+Reading to complete **before Phase 4:**
+- **Topic 1: HI Physics — complete** (understand what you're observing)
+- **Topic 2: Radio Telescope Fundamentals — complete** (Friis, SEFD, radiometer)
+- **Topic 6: Calibration Methods — complete** (Baars flux scale, Y-factor, Cas A)
+- **Topic 5: Doppler Corrections — core concepts** (LSR frame, Astropy)
+- Topic 4: Clark & Clark Section 2 — direct conversion architecture
+- Topic 4: EZRa documentation — read before first use
+
+Reading to do **during Phase 4:**
+- Topic 3: HI in Galaxies — M31 rotation curve, double-horn profile
+- Topic 5: Doppler pipeline implementation and validation
+- Topic 6: Calibration pipeline validation against Cas A
+- Topic 4: Clark & Clark Section 3 — GNU Radio with SDR hardware
+
+---
+
+### Phase 5 — Advanced HI Observations (2027–2030)
+*Custom pipeline, offset pointing, co-addition. Need full command of
+signal processing, data reduction, and the science of what M31 is telling you.*
+
+Reading to complete **before Phase 5:**
+- **Topic 3: HI in Galaxies — complete** (M31 kinematics, rotation curves)
+- **Topic 4: Signal Processing — complete** (custom pipeline ready)
+- **Topic 5: Doppler Corrections — complete** (pipeline validated)
+- Topic 7: Begin academic writing — thesis outline discussions start Year 4
+
+Reading to do **during Phase 5:**
+- Topic 7: Academic Writing — thesis structure, literature review
+- Topic 3: Deep dive into M31 velocity field literature
+- Topic 6: Advanced calibration — HI4PI comparison, flux scale validation
+
+---
+
+### Phase 6 — Interferometry (2029–2031)
+*Stretch goal. Requires additional reading beyond the current seven topics.*
+
+Additional reading needed (not yet in learning plan):
+- Thompson, Moran & Swenson — *Interferometry and Synthesis in Radio Astronomy*
+- CASA documentation
+- Phase calibration methodology
+
+*Add these to the learning plan when Phase 6 planning begins in earnest.*
+
+---
+
+## Summary — Reading Priority by Date
+
+| When | What | Topic | Why |
+|---|---|---|---|
+| **Now — May 2026** | Laufer — tricks, performance, antennas | 4 | Before V4c arrives |
+| **Now — May 2026** | Laufer — measuring filters | 4 | Before commissioning |
+| **May–Jul 2026** | Clark & Clark Section 1 | 4 | GNU Radio installation |
+| **May–Jul 2026** | NRAO ERA — receiver systems | 2 | Before RFI surveys |
+| **May–Jul 2026** | QPL9547 datasheet — study carefully | 2 | INV001 Friis calculation |
+| **Jun–Aug 2026** | Clark & Clark Section 2 | 4 | Signal chain architecture |
+| **Jun–Aug 2026** | Wilson et al. Ch. 1, 4 | 2 | Telescope fundamentals |
+| **Before first light** | Baars et al. 1977 | 6 | Flux calibration — essential |
+| **Before first light** | NRAO ERA — HI and ISM | 1 | HI physics foundations |
+| **Before first light** | Astropy Doppler docs | 5 | LSR corrections |
+| **Year 2** | Chemin et al. 2009 — M31 | 3 | Primary science context |
+| **Year 2** | Ben Bekhti et al. 2016 — HI4PI | 3 | Comparison dataset |
+| **Year 2** | Wakker et al. 2007, 2008 — Complex C | 3 | HVC science context |
+| **Year 3–4** | Clark & Clark Section 3 | 4 | Custom pipeline |
+| **Year 4** | University thesis guidelines | 7 | Thesis writing begins |
+| **Year 4** | Chemin et al. as model paper | 7 | How to present HI results |
+
+---
+
+## First Light Readiness — Minimum Reading List
+
+This is the subset of reading that must be completed before Phase 4 begins
+(estimated August 2026 — approximately 12 weeks away). It represents the
+minimum scientific literacy needed to conduct meaningful HI observations,
+recognise problems, and not make systematic errors that corrupt the dataset.
+
+This is not the complete learning plan. It is the floor, not the ceiling.
+
+**Estimated total reading time: 14–22 hours**
+
+---
+
+### FL-1 — Why hydrogen emits at 1420 MHz
+**Must complete before:** First observation session  
+**Time estimate:** 2–3 hours  
+**Resource:** NRAO Essential Radio Astronomy — HI and ISM chapters (free online)  
+**You need to be able to:**
+- Explain the hyperfine spin-flip transition from first principles
+- State why the line frequency is so stable
+- Explain why HI is the dominant tracer of neutral gas
+
+**Why this can't wait:** You are observing HI emission. If you can't explain
+what you're observing, you can't defend any result.
+
+---
+
+### FL-2 — How a radio telescope works
+**Must complete before:** First observation session  
+**Time estimate:** 4–6 hours  
+**Resource:** NRAO Essential Radio Astronomy — antennas and receivers chapters  
+**You need to be able to:**
+- Define system temperature and its components
+- Apply the Friis formula to the Blue Rock signal chain
+- Calculate SEFD from first principles
+- State what the radiometer equation predicts for M31 detection
+
+**Why this can't wait:** Every sensitivity claim in the thesis rests on these
+fundamentals. Getting Tsys wrong means getting all integration time estimates
+wrong.
+
+---
+
+### FL-3 — Cas A flux calibration
+**Must complete before:** First light  
+**Time estimate:** 1–2 hours  
+**Resource:** Baars et al. 1977 — *A&A* 61, 99 (free via NASA ADS)  
+**You need to be able to:**
+- State the Cas A flux density at 1420 MHz for the current epoch
+- Apply the secular decrease correction
+- Explain what the Y-factor method measures and how to apply it
+
+**Why this can't wait:** Cas A is the calibrator for every single observation.
+An error here propagates into every flux measurement in the programme.
+
+---
+
+### FL-4 — The LSR reference frame
+**Must complete before:** First observation session  
+**Time estimate:** 2–3 hours  
+**Resource:** Astropy `radial_velocity_correction()` documentation + NRAO ERA  
+**You need to be able to:**
+- Explain what LSR means and why it is used
+- Describe the components of the Doppler correction
+- Implement and validate the Astropy correction
+- State what velocity error results from omitting the correction
+
+**Why this can't wait:** M31 velocities not corrected to LSR cannot be
+compared with any published data. An uncorrected dataset is scientifically
+worthless for velocity work.
+
+---
+
+### FL-5 — What M31's HI profile should look like
+**Must complete before:** First M31 observation  
+**Time estimate:** 2–3 hours  
+**Resource:** Chemin, Carignan & Foster 2009 — *AJ* 137, 3452 (free via NASA ADS)  
+**You need to be able to:**
+- Describe the expected double-horn profile shape
+- State the systemic velocity of M31 (~-300 km/s LSR)
+- State the expected velocity width (~570 km/s)
+- Recognise immediately if your observed profile is plausible or corrupted
+
+**Why this can't wait:** If your first M31 spectrum looks wrong, you need to
+know immediately whether the problem is the pipeline or the expectation.
+Without knowing what the profile should look like you cannot diagnose problems.
+
+---
+
+### FL-6 — Direct conversion architecture and LO offset
+**Must complete before:** First RFI survey (Phase 3 — end May 2026)  
+**Time estimate:** 2–3 hours  
+**Resource:** Clark & Clark — *Practical SDR* Section 2  
+**You need to be able to:**
+- Explain DC offset and why LO is tuned to 1422 MHz not 1420.405 MHz
+- Identify IQ imbalance artefacts in a spectrum
+- Apply DC removal in GQRX/EZRa correctly
+
+**Why this can't wait:** Tuning to the wrong LO frequency puts the DC spike
+directly on the HI line. This is the single most common beginner error.
+
+---
+
+### FL-7 — RFI identification at 1420 MHz
+**Must complete before:** First RFI survey (Phase 3 — end May 2026)  
+**Time estimate:** 1–2 hours  
+**Resource:** Laufer — L-Band satellite chapters + rfi/RFI_OVERVIEW.md  
+**You need to be able to:**
+- Name the main RFI sources in the 1380–1460 MHz band
+- Distinguish RFI from genuine HI signal by spectral and temporal character
+- Apply the LO offset correctly so RFI sources are correctly identified
+
+**Why this can't wait:** An unidentified RFI source that mimics an HI signal
+would be embarrassing at best and a thesis problem at worst.
+
+---
+
+### First Light Readiness Checklist
+
+| # | Topic | Resource | Est. hours | Done |
+|---|---|---|---|---|
+| FL-1 | HI spin-flip physics | NRAO ERA — HI chapters | 2–3 | [ ] |
+| FL-2 | Radio telescope fundamentals | NRAO ERA — antennas/receivers | 4–6 | [ ] |
+| FL-3 | Cas A flux calibration | Baars et al. 1977 | 1–2 | [ ] |
+| FL-4 | LSR Doppler corrections | Astropy docs + NRAO ERA | 2–3 | [ ] |
+| FL-5 | M31 HI profile | Chemin et al. 2009 | 2–3 | [ ] |
+| FL-6 | Direct conversion / LO offset | Clark & Clark Section 2 | 2–3 | [ ] |
+| FL-7 | RFI identification | Laufer L-Band chapters | 1–2 | [ ] |
+| | **Total** | | **14–22 hrs** | |
+
+**FL-6 and FL-7 needed before end of May 2026 (Phase 3)**  
+**FL-1 through FL-5 needed before August 2026 (Phase 4)**  
+**Hard deadline: before first light**
+
+---
+
+## Reading Progress Log
 
 | Date | Resource | Key takeaways |
 |---|---|---|
@@ -436,6 +687,8 @@ and answered over time.*
 | 1.1 | 2026-04-30 | Topic 1 — corrected Carroll & Ostlie chapter number, added NRAO ERA and NASA ADS |
 | 1.2 | 2026-04-30 | Topic 4 — added Clark & Clark Practical SDR as primary reference |
 | 1.3 | 2026-04-30 | Topic 4 — added Laufer RTL-SDR guide, expanded reading guides, recommended sequence |
+| 1.4 | 2026-05-04 | Add phase cross-reference section — reading mapped to all 6 programme phases with priority summary table |
+| 1.5 | 2026-05-04 | Add First Light Readiness section — 7 minimum reading items, 14-22 hours, hard deadline before August 2026 |
 
 ---
 
