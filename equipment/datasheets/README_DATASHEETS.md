@@ -18,6 +18,8 @@ Radio Observatory hardware.
 | RTL-SDR_Blog_V3_Dongles_User_Guide.pdf | RTL-SDR Blog V3 user guide | Bias tee · direct sampling · clock sharing | 2026-05-04 |
 | RTL-SDR_Blog_V4_Users_Guide.pdf | RTL-SDR Blog V4 user guide | Driver install · MacOS GQRX · bias tee · EEPROM | 2026-05-04 |
 | Using_our_new_Dipole_Antenna_Kit.pdf | RTL-SDR dipole kit guide | Arm lengths · 2cm internal metal · M5 thread · mounting | 2026-05-04 |
+| Phihong_POE48-120BT-R.pdf | Phihong PoE splitter 48W | 12V@4A output · **MAX +40°C — disqualified for outdoor use** | 2026-05-04 |
+| Tycon_POE-SPLT-BT-UNI-P.pdf | Tycon PoE splitter 90W | 5V@14A + 12V@5.9A · -40°C to +75°C · DIN mount · **selected** | 2026-05-04 |
 
 ---
 
@@ -74,3 +76,4 @@ with the measured value from commissioning Cas A beam scan.
 - [ ] Complete INV001 with QPL9547 interpolated values at 1420 MHz
 - [ ] Note V4c triplexer improvement in SDR_SELECTION.md and RFI_OVERVIEW.md
 - [ ] Add GQRX MacOS bias tee device string to RASPBERRY_PI_SETUP.md: rtl=0,bias=1
+- [ ] Create design/POWER_ARCHITECTURE.md — TL-POE170S + Tycon POE-SPLT-BT-UNI-P + Pi 5 architecture (pending Murata DC-DC confirmation, now eliminated by Tycon unit)
