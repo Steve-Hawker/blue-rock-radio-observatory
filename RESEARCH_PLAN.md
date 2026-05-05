@@ -3,8 +3,8 @@
 **Observer:** Steve Hawker BEng MBA FRAS  
 **Observatory:** Blue Rock Radio Observatory, Blue Rock Court, San Jose, California, USA  
 **Repository:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
-**Plan version:** 1.3  
-**Date:** 2026-04-30  
+**Plan version:** 1.4  
+**Date:** 2026-05-04  
 **Academic context:** BSc Honours Astronomy (Distance Learning), University of Lancashire  
 **Anticipated supervisor:** Dr Megan Argo, University of Lancashire  
 
@@ -30,7 +30,36 @@ with professional survey data.
 
 ---
 
-## 2. Scientific Objectives
+## 2. Programme Phases
+
+The observing programme is structured into six phases. Each phase has
+distinct hardware requirements, scientific objectives, and deliverables.
+Phases 1–3 constitute the commissioning period; Phases 4–5 the science
+programme; Phase 6 the upgrade path.
+
+| Phase | Name | Activity | Timing |
+|---|---|---|---|
+| 1 | **Infrastructure and Planning** | Repository, documentation, hardware orders, learning plan | Apr 2026 ✓ |
+| 2 | **Site Survey** | Tripod setup, horizon profile, 3D model, site assessment methodology | May 2026 |
+| 3 | **RFI Commissioning** | V4c + dipole, RFI baseline surveys, CAL-000, ADF4351 characterisation | May–Aug 2026 |
+| 4 | **Basic HI Observations** | Dish assembly, first light Cas A, M31 integrated flux, EZRa pipeline | Aug 2026–2027 |
+| 5 | **Advanced HI Observations** | Custom pipeline, offset pointing, M31 velocity structure, co-addition programme | 2027–2030 |
+| 6 | **Interferometry** | KrakenSDR, 5-element array, spatial mapping of M31 | 2029–2031 |
+
+**Phase 1 is complete.** The repository, planning documentation, learning
+plan, hardware orders, and calibration framework are all in place.
+
+**Phase 2 begins May 7 2026** with tripod delivery and formal site assessment.
+
+**Phase 6 is contingent** on Phase 5 results, funding, and site access
+(Foothill College partnership under consideration for extended baselines).
+
+Full phase details are documented in the design/ directory. The equipment
+log (equipment/E00X) tracks hardware state transitions between phases.
+
+---
+
+## 3. Scientific Objectives
 
 ### Primary objectives
 
@@ -74,7 +103,7 @@ arm sightline components. Confirms velocity calibration pipeline and spectral re
 
 ---
 
-## 3. Instrument Description
+## 4. Instrument Description
 
 ### Antenna
 - 70cm parabolic dish
@@ -100,7 +129,7 @@ Full equipment details maintained in versioned equipment log files (equipment/E0
 
 ---
 
-## 4. Target List and Prioritisation
+## 5. Target List and Prioritisation
 
 | Priority | Target | Type | RA (J2000) | Dec (J2000) | Season | Rationale |
 |---|---|---|---|---|---|---|
@@ -114,7 +143,7 @@ Full equipment details maintained in versioned equipment log files (equipment/E0
 
 ---
 
-## 5. Observing Strategy
+## 6. Observing Strategy
 
 ### Scheduling philosophy
 
@@ -255,7 +284,7 @@ data is never altered and corrections can be reapplied if methodology improves.
 
 ---
 
-## 8. Calibration Policy
+## 9. Calibration Policy
 
 ### Flux calibration
 Cassiopeia A is the primary flux calibration standard.  
@@ -280,7 +309,7 @@ software version change) requires:
 
 ---
 
-## 9. Known Limitations
+## 10. Known Limitations
 
 The following limitations are recognised at the outset of this programme. They are
 documented here to demonstrate that results are interpreted within understood constraints,
@@ -311,7 +340,7 @@ flux measurements. Not corrected in Phase 1; may be addressed in Phase 2 pipelin
 
 ---
 
-## 10. Academic Schedule and Observing Timeline
+## 11. Academic Schedule and Observing Timeline
 
 ### Degree Credit Structure
 
@@ -388,7 +417,7 @@ Thesis submission anticipated: 2030/31.
 
 ---
 
-## 11. Success Criteria
+## 12. Success Criteria
 
 ### BSc thesis level
 - Detection of M31 HI emission with SNR > 5 in integrated spectrum
@@ -408,7 +437,7 @@ All BSc criteria plus:
 
 ---
 
-## 12. Acknowledgements
+## 13. Acknowledgements
 
 This observing programme was conceived with the assistance of discussions arising
 from BSc Introduction to Astronomy coursework at the University of Lancashire.
@@ -427,6 +456,7 @@ Blue Rock Court, San Jose, California.
 | 1.1 | 2026-04-30 | Section 5 — expanded observing strategy, daytime observing, flexible scheduling |
 | 1.2 | 2026-04-30 | Revised timeline to reflect actual degree structure 2025–2031, four years observations, thesis 2030/31 |
 | 1.3 | 2026-04-30 | Phased hardware approach — RTL-SDR V4 + dipole for pre-dish RFI characterisation from April 2026, dish arrival July 2026 |
+| 1.4 | 2026-05-04 | Add Section 2 — Programme Phases (6 phases, Phase 1 complete, Phase 2 begins May 7); renumber subsequent sections |
 
 ---
 
