@@ -109,7 +109,8 @@ blue-rock-radio-observatory/
 ├── design/                          ← engineering design decisions and rationale
 │   ├── diagrams/                    ← system architecture diagrams
 │   │   ├── BRRO_system_architecture_v5.svg
-│   │   └── BRRO_system_architecture_v5.mermaid
+│   │   ├── BRRO_system_architecture_v5.mermaid
+│   │   └── DDOEE_mounting_plate_v2.svg  ← two-Pi layout, Phase 2–3
 │   ├── ADC_BIT_RESOLUTION.md
 │   ├── ADF4351_CALIBRATION.md       ← signal source calibration procedures v1.1
 │   ├── BEAM_AND_RESOLUTION.md
