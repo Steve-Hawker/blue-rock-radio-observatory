@@ -98,8 +98,26 @@ resolved or new ones arise.
 |---|---|
 | Response from Dr Megan Argo | Email sent 2026-05-04 re: AI use policy — awaiting reply |
 | Response from Jason Kirk | Same email — awaiting reply |
+| KrakenRF LNA2 identification | Resend via eBay — see message below |
 | SARA publication | SITE_ASSESSMENT_METHODOLOGY.md — after Blue Rock worked example complete |
 | First Light Readiness reading | FL-6 and FL-7 before end May; FL-1 to FL-5 before August |
+
+### KrakenRF eBay message — LNA2 identification
+
+Send via eBay to RTL-SDR Blog / KrakenRF vendor:
+
+> I also recently purchased a Discovery Dish HI Line feed and I'm using 
+> it for a radio astronomy research project. I know LNA1 is the QPL9547 
+> and the TA1077A and TA2494A as the two SAW filters thanks to the Discovery 
+> Dish community. Could you confirm the identity of LNA2 please? This would 
+> help me complete my Friis noise budget calculation.
+
+**Background:** TA1077A and TA2494A already identified from PCB photo
+and Tai-Saw Technology datasheets — no need to ask about SAW filters.
+LNA2 (U2) is the only remaining unknown component in the HI feed signal
+chain. Its gain and noise figure are needed to complete INV001.
+
+---
 
 ---
 
