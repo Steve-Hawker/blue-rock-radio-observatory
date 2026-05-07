@@ -32,7 +32,7 @@ sweep procedure.
 The Discovery Dish HI feed contains two SAW filter stages:
 
 ```
-Antenna → LNA1 (QPL9547) → SAW1 (TA1077A) → LNA2 → SAW2 (TA2494A) → Output
+Antenna → LNA1 (QPL9547) → SAW1 (TA1077A) → LNA2 (QPL9547) → SAW2 (TA2494A) → Output
 ```
 
 Both filters are manufactured by Tai-Saw Technology Co., Ltd., Taiwan,
@@ -49,11 +49,11 @@ reflects this.
 | Overall feed passband | 1380–1460 MHz | KrakenRF wiki |
 | Target frequency | 1420.405 MHz | HI rest frequency |
 | Number of SAW stages | 2 | PCB inspection |
-| SAW filter 1 (F1) | **TA1077A** | Tai-Saw Technology |
-| SAW filter 2 (F2) | **TA2494A** | Tai-Saw Technology |
+| SAW filter 1 (F1) | **TA1077A** | Tai-Saw Technology — our identification, KrakenRF confirmation pending |
+| SAW filter 2 (F2) | **TA2494A** | Tai-Saw Technology — our identification, KrakenRF confirmation pending |
 | Manufacturer | Tai-Saw Technology Co., Ltd., Taiwan | Both filters |
-| LNA1 | QPL9547 (Qorvo) | KrakenRF documentation + PCB |
-| LNA2 | Unknown — not yet identified | PCB inspection |
+| LNA1 | QPL9547 (Qorvo) | **Confirmed by KrakenRF 2026-05-07** |
+| LNA2 | **QPL9547 (Qorvo)** | **Confirmed by KrakenRF 2026-05-07 — identical to LNA1** |
 
 ---
 
@@ -284,7 +284,8 @@ All science targets well within range.
 | Version | Date | Changes |
 |---|---|---|
 | 0.1 | 2026-04-30 | Initial framework — awaiting KrakenRF component data |
-| 1.0 | 2026-05-06 | Major update — SAW filters identified as TA1077A (F1) and TA2494A (F2) from PCB inspection; full component data tables; Friis contributions calculated; cascaded rejection analysis; KrakenRF response no longer required |
+| 1.0 | 2026-05-06 | Major update — SAW filters identified as TA1077A (F1) and TA2494A (F2) from PCB inspection; full component data tables; Friis contributions calculated; cascaded rejection analysis |
+| 1.1 | 2026-05-07 | LNA2 confirmed as QPL9547 by KrakenRF; signal chain confirmed except SAW part numbers pending KrakenRF follow-up |
 
 
 ---

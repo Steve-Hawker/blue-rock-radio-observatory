@@ -84,7 +84,8 @@ All components accounted for in Keynote layout v1:
 
 | Item | Context | Action needed |
 |---|---|---|
-| LNA2 identification | PCB photo shows U2 — different package from QPL9547 | Need higher resolution PCB image to identify |
+| ~~LNA2 identification~~ | **RESOLVED 2026-05-07** — QPL9547, same as LNA1 | ✓ Complete |
+| SAW filter confirmation | TA1077A + TA2494A identified from PCB — not yet confirmed by KrakenRF | Follow-up message sent |
 | Tycon DIN bracket screw hole spacing | Will use as drilling jig for angle bracket | Measure when unit arrives |
 | dkplnt DN510 operating temperature | Not stated in listing | Check if datasheet available from dkplnt; automotive grade likely -40 to +85°C |
 | Discovery Drive power consumption under slew | Estimated ~12W — may be higher under load | Measure when unit arrives; revisit power budget if >15W |
@@ -102,7 +103,7 @@ All components accounted for in Keynote layout v1:
 | POWER_ARCHITECTURE.md | Update power budget when Pi 5 decision confirmed | Before Phase 4 |
 | DDOEE_mounting_plate_v2.svg | Redraw for Phase 4 when Pi 5 confirmed | Before Phase 4 |
 | INV001_noise_budget | Complete Friis with QPL9547 real values + SAW insertion loss | Before first light |
-| SAW_FILTER_DESIGN.md | Identify LNA2 chip if possible | When higher res PCB image available |
+| SAW_FILTER_DESIGN.md | ~~Identify LNA2~~ RESOLVED — QPL9547; SAW confirmation from KrakenRF pending | Soon |
 | TOOLS_PLAN.md | Refresh for Stellarium, rotctl, dual-SDR, ADF4351 | Before Phase 3 |
 | QUICK_REFERENCE.md | Update LO offset to 1422 MHz | Soon |
 | SDR_SELECTION.md | Note V4c triplexer improvement | Soon |
@@ -141,24 +142,33 @@ All components accounted for in Keynote layout v1:
 |---|---|
 | Response from Dr Megan Argo | Email sent 2026-05-04 re: AI use policy — awaiting reply |
 | Response from Jason Kirk | Same email — awaiting reply |
-| KrakenRF LNA2 identification | Resend via eBay — see message below |
+| KrakenRF LNA2 | ~~RESOLVED 2026-05-07~~ — both LNAs are QPL9547 | ✓ |
+| KrakenRF SAW filters | Follow-up message needed — see below | Pending |
 | SARA publication | SITE_ASSESSMENT_METHODOLOGY.md — after Blue Rock worked example complete |
 | First Light Readiness reading | FL-6 and FL-7 before end May; FL-1 to FL-5 before August |
 
-### KrakenRF eBay message — LNA2 identification
+### KrakenRF — LNA2 resolved, SAW confirmation pending
 
-Send via eBay to RTL-SDR Blog / KrakenRF vendor:
+**LNA2 RESOLVED 2026-05-07:** Both LNAs confirmed as QPL9547 by
+KrakenRF via eBay. Signal chain now confirmed:
 
-> Hi — I purchased a Discovery Dish HI Line feed and I'm using it for
-> a radio astronomy research project. I've identified the QPL9547 as
-> LNA1 and the TA1077A and TA2494A as the two SAW filters from the PCB.
-> Could you confirm the identity of LNA2 (U2 on the PCB)? This would
-> help me complete my Friis noise budget calculation. Many thanks.
+```
+Antenna → QPL9547 (LNA1) → SAW1 → QPL9547 (LNA2) → SAW2 → Output
+```
 
-**Background:** TA1077A and TA2494A already identified from PCB photo
-and Tai-Saw Technology datasheets — no need to ask about SAW filters.
-LNA2 (U2) is the only remaining unknown component in the HI feed signal
-chain. Its gain and noise figure are needed to complete INV001.
+**SAW filters — follow-up message needed:**
+
+Our identification of TA1077A (F1) and TA2494A (F2) is based on PCB
+photo analysis and datasheet matching — not yet confirmed by KrakenRF.
+Send follow-up via eBay:
+
+> Thank you for confirming both LNAs are QPL9547 — very helpful.
+> Could you also confirm the SAW filter part numbers? From the PCB
+> we believe F1 is a TA1077A and F2 is a TA2494A, both from Tai-Saw
+> Technology. We want to make sure our Friis noise budget uses the
+> correct insertion loss figures.
+
+**Status:** Awaiting SAW confirmation.
 
 ---
 
