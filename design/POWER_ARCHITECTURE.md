@@ -3,7 +3,7 @@
 **Author:** Steve Hawker BEng MBA FRAS  
 **Observatory:** Blue Rock Radio Observatory  
 **Date:** 2026-05-04  
-**Version:** 1.4  
+**Version:** 1.5  
 
 ---
 
@@ -166,7 +166,32 @@ standard with comfortable headroom.
 
 ---
 
-## Architecture Diagram
+## 5V Power Distribution
+
+Power from the dkplnt DN510 5V output is distributed to components
+via a custom USB-C power distribution board.
+
+**Commercial USB-C hub rejected:** Desk-oriented hubs are designed
+for data not power distribution, have unpredictable current delivery,
+and introduce an unnecessary failure point.
+
+**Custom power distribution board:**
+- 3–4 USB-C panel mount sockets (~$2-3 each, Amazon)
+- Wired directly to 5V/GND rail from DN510 output
+- Simple stripboard or twisted pair construction
+- Mounts to galvanised plate via rivnuts
+- Full rail current available at each socket — no hub controller
+
+**Cable types by device:**
+- Pi 3: USB-C socket → USB-C to micro-USB cable
+- Pi 2: USB-C socket → USB-C to micro-USB cable
+- VCELINK M242: USB-C socket → USB-C cable (native)
+- Pi 5 (Phase 4): USB-C socket → USB-C cable (native)
+
+**Future proof:** Any future device with USB-C power works natively.
+Any device with micro-USB works via cheap adapter cable.
+
+---
 
 ```
 Cable head / router (indoors)
@@ -316,3 +341,4 @@ wiring entering the SDR signal chain.
 | 1.2 | 2026-05-07 | Correct Tycon output — single selectable voltage, set to 12V; add DC-DC converter requirement; Murata rejected; Meanwell candidate |
 | 1.3 | 2026-05-07 | Select dkplnt DN510 — aluminium case, 50W, 95% efficiency, $9.99; Tobsun rejected (plastic case); rivet nut mounting to galvanised plate |
 | 1.4 | 2026-05-07 | Remove DIN rail — not required; add full mounting strategy section; Tycon DIN bracket repurposed as drilling jig for angle aluminium bracket |
+| 1.5 | 2026-05-07 | Add custom USB-C power distribution board — 3-4 panel mount sockets wired to 5V rail; commercial hub rejected |

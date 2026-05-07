@@ -34,6 +34,7 @@ resolved or new ones arise.
 | Pi 5 vs Pi 3 + Pi 2 | Pi 5 preferred — single unit, USB 3.0 | Pi 3 adequate for Phase 2–3; Pi 5 needed before Phase 4 |
 | Internal DDOEE ethernet cables | Cat5e unshielded | Short runs — shielding not required |
 | Ferrite chokes on USB cables | Recommended | Cheap RFI mitigation — add to order list |
+| 5V power distribution | Custom USB-C hub — 3-4 panel mount sockets | See POWER_ARCHITECTURE.md — commercial hub rejected; custom build from USB-C panel mount sockets (~$2-3 each) wired to 5V rail via stripboard or twisted pair |
 
 ---
 
@@ -106,11 +107,11 @@ resolved or new ones arise.
 
 Send via eBay to RTL-SDR Blog / KrakenRF vendor:
 
-> I also recently purchased a Discovery Dish HI Line feed and I'm using 
-> it for a radio astronomy research project. I know LNA1 is the QPL9547 
-> and the TA1077A and TA2494A as the two SAW filters thanks to the Discovery 
-> Dish community. Could you confirm the identity of LNA2 please? This would 
-> help me complete my Friis noise budget calculation.
+> Hi — I purchased a Discovery Dish HI Line feed and I'm using it for
+> a radio astronomy research project. I've identified the QPL9547 as
+> LNA1 and the TA1077A and TA2494A as the two SAW filters from the PCB.
+> Could you confirm the identity of LNA2 (U2 on the PCB)? This would
+> help me complete my Friis noise budget calculation. Many thanks.
 
 **Background:** TA1077A and TA2494A already identified from PCB photo
 and Tai-Saw Technology datasheets — no need to ask about SAW filters.
