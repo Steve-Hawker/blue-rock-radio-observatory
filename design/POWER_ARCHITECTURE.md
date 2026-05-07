@@ -3,7 +3,7 @@
 **Author:** Steve Hawker BEng MBA FRAS  
 **Observatory:** Blue Rock Radio Observatory  
 **Date:** 2026-05-04  
-**Version:** 1.3  
+**Version:** 1.4  
 
 ---
 
@@ -95,10 +95,45 @@ this application.
 | Mounting | Surface mount — 4 corner holes |
 | Price | $9.99 |
 
-**Mounting:** Rivet nuts (rivnuts) inserted into the galvanised steel
-mounting plate. The dkplnt has four corner mounting holes — M3 or M4
-rivnuts in the plate, bolts through the converter feet. Clean, strong,
-serviceable. Do not drill into the QILIPSU stainless enclosure itself.
+## Mounting Strategy
+
+All components mount directly to the galvanised steel mounting plate
+(~315 × 200mm) via rivet nuts (rivnuts). No DIN rail required.
+
+**Rivet nuts:** M3 or M4 rivnuts inserted into the galvanised plate
+provide clean threaded fixings without welding. All components with
+mounting holes bolt directly to the plate via rivnuts.
+
+### Component mounting methods
+
+**Tycon POE-SPLT-BT-UNI-P:**
+The Tycon has a DIN mount bracket. Rather than using DIN rail, fabricate
+a right-angle aluminium bracket (25×25×2mm angle aluminium, hardware
+store, ~$2) and use the DIN mount as a drilling template/jig to mark
+the hole positions on the angle aluminium. Bolt the angle aluminium to
+the mounting plate via rivnuts, then attach the Tycon to the angle
+aluminium using the DIN mount screw holes. The DIN bracket earns its
+keep as a fabrication jig rather than for its intended purpose.
+
+**dkplnt DN510 DC-DC converter:**
+Four corner mounting holes — M3 or M4 rivnuts in plate, bolts through
+converter feet. Mount with aluminium case in thermal contact with plate
+for heat dissipation (trivial at ~1.3W dissipation).
+
+**Raspberry Pi 3 / Pi 2:**
+Standard Pi mounting holes — M2.5 standoffs into rivnuts, Pis sit
+on standoffs above the plate.
+
+**VCELINK M242 ethernet switch:**
+Small unit (53×57mm) — adhesive mount or small L-bracket. Minimal
+weight, not critical.
+
+**Airspy R2 / RTL-SDR V4c:**
+USB connected to Pi — secure with velcro or small cable bracket.
+Position to keep SMA connectors accessible and coax runs short.
+
+**ADF4351:**
+Has mounting holes — rivnuts and bolts, position close to Pi GPIO header.
 
 **Thermal:** At 95% efficiency with ~25W load, heat dissipation is
 approximately 1.3W — trivial. Aluminium case mounted to galvanised
@@ -280,3 +315,4 @@ wiring entering the SDR signal chain.
 | 1.1 | 2026-05-04 | Add QILIPSU enclosure section — replaces KrakenRF DDOEE, comparison table, WiFi note, stainless drilling note |
 | 1.2 | 2026-05-07 | Correct Tycon output — single selectable voltage, set to 12V; add DC-DC converter requirement; Murata rejected; Meanwell candidate |
 | 1.3 | 2026-05-07 | Select dkplnt DN510 — aluminium case, 50W, 95% efficiency, $9.99; Tobsun rejected (plastic case); rivet nut mounting to galvanised plate |
+| 1.4 | 2026-05-07 | Remove DIN rail — not required; add full mounting strategy section; Tycon DIN bracket repurposed as drilling jig for angle aluminium bracket |
