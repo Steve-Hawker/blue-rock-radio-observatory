@@ -3,7 +3,7 @@
 **Author:** Steve Hawker BEng MBA FRAS  
 **Observatory:** Blue Rock Radio Observatory  
 **Date:** 2026-05-04  
-**Version:** 1.5  
+**Version:** 1.6  
 
 ---
 
@@ -166,7 +166,22 @@ standard with comfortable headroom.
 
 ---
 
-## 5V Power Distribution
+## Cable Gland Plan
+
+**Bottom removable panel — 3 penetrations, drilled with step drill on bench:**
+
+| Penetration | Size | Contents |
+|---|---|---|
+| Gland 1 | 3/4" (19mm) | Cat6 PoE ethernet — separated from RF cables |
+| Gland 2 | 3/4" (19mm) | HI feed coax (LMR240 ~6mm OD) + dipole coax (RG174 ~2.8mm OD) + 12V DC to Discovery Drive |
+| Vent | TBD | IP65 membrane vent + anti-insect mesh — check if included with QILIPSU |
+
+**RJ45 clearance:** 11.5mm plug passes through 19mm gland comfortably.  
+**Gland 2 bundle:** ~12-15mm total diameter — 19mm gland adequate.  
+**Cat6 separation:** Ethernet kept separate from RF to minimise coupling.  
+**Sealing:** RTV neutral cure silicone around cables inside glands.
+
+---
 
 Power from the dkplnt DN510 5V output is distributed to components
 via a custom USB-C power distribution board.
@@ -342,3 +357,4 @@ wiring entering the SDR signal chain.
 | 1.3 | 2026-05-07 | Select dkplnt DN510 — aluminium case, 50W, 95% efficiency, $9.99; Tobsun rejected (plastic case); rivet nut mounting to galvanised plate |
 | 1.4 | 2026-05-07 | Remove DIN rail — not required; add full mounting strategy section; Tycon DIN bracket repurposed as drilling jig for angle aluminium bracket |
 | 1.5 | 2026-05-07 | Add custom USB-C power distribution board — 3-4 panel mount sockets wired to 5V rail; commercial hub rejected |
+| 1.6 | 2026-05-07 | Add cable gland plan — 2× 3/4" glands + membrane vent; Cat6 separated from RF; DDOEE inventory confirmed |

@@ -19,15 +19,57 @@ resolved or new ones arise.
 | TP-Link TL-POE170S | To order | 60W PoE injector — indoors |
 | Raspberry Pi 5 (4GB) | Pending decision | Replaces Pi 3 + Pi 2 — needed before Phase 4 |
 | M5 threaded rod (brass) | To purchase | Custom dipole elements — 3.3cm for 1420MHz, 2.76cm for 1575MHz |
-| Right-angle aluminium bracket | To purchase | For Tycon mounting — 25×25×2mm angle |
-| Rivet nut kit (M3/M4) | To purchase | For mounting plate component fixing |
+| Right-angle aluminium bracket | To purchase | For Tycon mounting — 25×25×2mm angle, 1/16" thick |
+| Rivet nut kit (M3/M4) | To purchase | For mounting plate component fixing — carbon steel zinc plated |
+| Rivnut setter tool | To purchase | ~$15-20 hand tool |
 | Outdoor CAT6 cable | To purchase | House to DDOEE run |
 | microSD card 32GB | To purchase | For Pi OS install |
 | Leuchtturm plain lab notebook | Ordered direct from Lighthouse | Awaiting delivery |
+| USB-C panel mount sockets (CY flat screw mount) | To order | 5-pack $9.99 — 4 for power distribution, 1 spare |
+| EPLZON stripboard 88.9×52.1mm | To order | USB-C sockets + voltmeters on one board |
+| Cable gland 3/4" (19mm) × 2 | To order | Gland 1: Cat6 PoE; Gland 2: multi-cable |
+| IP65 membrane vent | To check | QILIPSU may include one — verify on receipt |
+| Ferrite chokes for USB cables | To order | RFI mitigation — add to Amazon order |
+| Short SMA cables (internal) | To order | SDR to coax connections inside enclosure |
 
 ---
 
-## Hardware — Pending Decisions
+## DDOEE — Confirmed Component Inventory
+
+All components accounted for in Keynote layout v1:
+
+| Component | Location on plate | Notes |
+|---|---|---|
+| Tycon POE-SPLT-BT-UNI-P | Left, on side | Angle bracket mount |
+| VCELINK M242 | On top of Tycon | Velcro |
+| dkplnt DN510 | Under stripboard | Rivnuts |
+| EPLZON stripboard | Top, on 25mm standoffs over DN510 | USB-C sockets + voltmeters |
+| Raspberry Pi 3 | Right, lower | Standoffs + rivnuts |
+| Raspberry Pi 2 | Stacked on Pi 3 | Standoffs |
+| RTL-SDR V4c | Bottom centre | USB to Pi 2 |
+| Airspy R2 | Bottom centre | USB to Pi 3 |
+| ADF4351 + 30dB attenuator | Removable — stored together | Insert for calibration only |
+| Voltmeters × 2 | Lower half of stripboard | 12V and 5V monitoring |
+
+## DDOEE — Cable Gland Plan
+
+**Bottom removable panel — 3 penetrations:**
+
+| Gland | Size | Contents |
+|---|---|---|
+| Gland 1 | 3/4" (19mm) | Cat6 PoE ethernet only — separated from RF |
+| Gland 2 | 3/4" (19mm) | HI feed coax (LMR240, ~6mm OD) + dipole coax (RG174, ~2.8mm OD) + 12V DC to Discovery Drive |
+| Vent | TBD | IP65 membrane vent with anti-insect mesh — check if included with QILIPSU |
+
+**Notes:**
+- Gland 2 bundle ~12-15mm total — 19mm gland gives adequate clearance
+- RJ45 plug (~11.5mm wide) passes through 19mm gland comfortably
+- Cat6 separated from RF cables to minimise interference coupling
+- All internal RF connections via short SMA cables
+- ADF4351 + attenuator stored as one unit, inserted for calibration only
+- Ground wire (pre-connected in QILIPSU) to bond to tripod mast
+
+---
 
 | Decision | Options | Notes |
 |---|---|---|
