@@ -77,6 +77,7 @@ All components accounted for in Keynote layout v1:
 | Internal DDOEE ethernet cables | Cat5e unshielded | Short runs — shielding not required |
 | Ferrite chokes on USB cables | Recommended | Cheap RFI mitigation — add to order list |
 | 5V power distribution | Custom USB-C hub — 3-4 panel mount sockets | See POWER_ARCHITECTURE.md — commercial hub rejected; custom build from USB-C panel mount sockets (~$2-3 each) wired to 5V rail via stripboard or twisted pair |
+| Environmental monitoring sensor | **Option A:** Wavesense Sense HAT clone $25.99 — temp/humidity/pressure/magnetometer/LED/joystick, HAT form factor, Pi 5 compatibility TBC. **Option B:** BME280 breakout ~$8-10 — temp/humidity/pressure only, I2C, tiny, well supported. Recommendation: BME280 unless magnetometer or HAT form factor specifically wanted. Scientific value genuine — temperature covariate for signal chain systematics, humidity for condensation risk monitoring |
 
 ---
 
