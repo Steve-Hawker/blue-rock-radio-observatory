@@ -74,6 +74,7 @@ blue-rock-radio-observatory/
 ├── LEARNING_PLAN.md                 ← structured self-study programme
 ├── TOOLS_PLAN.md                    ← tools roles and workflow
 ├── QUICK_REFERENCE.md               ← pre/post session checklists
+├── OPEN_ITEMS.md                    ← unresolved questions and pending decisions
 ├── .gitignore                       ← excluded files
 │
 ├── equipment/                       ← versioned equipment state records
