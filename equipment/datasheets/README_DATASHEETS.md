@@ -24,6 +24,7 @@ Radio Observatory hardware.
 | QILIPSU_Enclosure_350x250x150.pdf | QILIPSU IP65 stainless enclosure | 304 SS · 350×250×150mm · IP65 · DIN plate · lockable · $89.99 · **selected over KrakenRF DDOEE** | 2026-05-04 |
 | TA2494A_SAW_Filter.pdf | Tai-Saw TA2494A SAW filter | 1420MHz · 80MHz BW · 3.5dB IL · 24dB OOB rejection · 50Ω · **SAW2 (F2) in HI feed** | 2026-05-06 |
 | TA1077A_SAW_Filter.pdf | Tai-Saw TA1077A SAW filter | 1420MHz · 72MHz BW · 3.5dB IL · 42dB OOB rejection · 200Ω bal in · **SAW1 (F1) in HI feed** | 2026-05-06 |
+| dkplnt_DN510_DC-DC_converter.pdf | dkplnt DN510 12V→5V DC-DC | 50W · 10A · 95% eff · aluminium case · $9.99 · **selected for 5V rail** | 2026-05-07 |
 
 ---
 

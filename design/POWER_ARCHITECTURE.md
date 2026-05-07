@@ -3,7 +3,7 @@
 **Author:** Steve Hawker BEng MBA FRAS  
 **Observatory:** Blue Rock Radio Observatory  
 **Date:** 2026-05-04  
-**Version:** 1.0  
+**Version:** 1.3  
 
 ---
 
@@ -50,7 +50,8 @@ stainless work hardens quickly — use sharp bits, low speed, steady pressure.
 | Component | Role | Location |
 |---|---|---|
 | TP-Link TL-POE170S | PoE injector — 60W 802.3bt | Indoors, cable head |
-| Tycon POE-SPLT-BT-UNI-P | PoE splitter — 5V + 12V + PoE passthrough | DDOEE (outdoors) |
+| Tycon POE-SPLT-BT-UNI-P | PoE splitter — 12V selected + PoE passthrough | DDOEE (outdoors) |
+| dkplnt DN510 | 12V→5V DC-DC converter — 50W 10A aluminium | DDOEE (outdoors) |
 | CAT6 ethernet cable | Data + power to DDOEE | House to tripod |
 
 ### Why these components
@@ -62,8 +63,50 @@ all loads with +20W headroom after cable losses. Indoor unit,
 **Tycon POE-SPLT-BT-UNI-P:** Industrial grade, -40°C to +75°C
 operating temperature — essential for outdoor DDOEE installation in
 San Jose summer conditions where internal enclosure temperature could
-exceed +40°C. Selectable 5V/9V/12V/24V DC output plus PoE passthrough.
-72W combined output from 90W input. DIN mount metal housing.
+exceed +40°C. VDC output is **selectable — one voltage at a time**.
+Set to **12V** for this installation. 72W combined output from 90W
+input. DIN mount metal housing.
+
+**Important correction from earlier versions:** The Tycon splitter
+does NOT simultaneously output 5V and 12V. The selector switch sets
+ONE output voltage. Therefore a separate DC-DC converter is required
+to generate the 5V rail from the 12V output.
+
+**Murata DC-DC modules considered and rejected:** Not available for
+this application.
+
+**12V→5V DC-DC converter — dkplnt DN510 selected:**
+
+| Parameter | Value |
+|---|---|
+| Part number | DN510 |
+| Brand | dkplnt |
+| Input voltage | 11–35V DC (12V/24V nominal) |
+| Output voltage | 5V ±1.5% |
+| Output current | 10A max |
+| Output power | 50W max |
+| Efficiency | 95% typical |
+| Ripple and noise | 50 mVp-p typical |
+| Load regulation | ±0.2% |
+| Protections | Over-voltage, over-current, over-temperature, short circuit |
+| Case material | **Aluminium** |
+| Dimensions | 74 × 40 × 17.5mm |
+| Weight | 40g |
+| Mounting | Surface mount — 4 corner holes |
+| Price | $9.99 |
+
+**Mounting:** Rivet nuts (rivnuts) inserted into the galvanised steel
+mounting plate. The dkplnt has four corner mounting holes — M3 or M4
+rivnuts in the plate, bolts through the converter feet. Clean, strong,
+serviceable. Do not drill into the QILIPSU stainless enclosure itself.
+
+**Thermal:** At 95% efficiency with ~25W load, heat dissipation is
+approximately 1.3W — trivial. Aluminium case mounted to galvanised
+plate provides adequate thermal path to enclosure exterior.
+
+**Tobsun EA50-5V considered and rejected:** Case appears to be composite/
+plastic rather than metal despite visual similarity. Rejected in favour
+of confirmed aluminium dkplnt DN510.
 
 **Phihong POE48-120BT-R considered and rejected:** Maximum operating
 temperature +40°C — insufficient for outdoor DDOEE installation.
@@ -100,16 +143,21 @@ TL-POE170S PoE injector (indoors)
         | CAT6 ethernet (data + 48V PoE, up to 60W)
         | [single cable to DDOEE]
         |
-Tycon POE-SPLT-BT-UNI-P (inside DDOEE)
-        |                    |                    |
-        | RJ45 data          | 5V DC rail         | 12V DC rail
-        |                    |                    |
-    Pi (ethernet)       5V consumers          Discovery Drive
-                        Pi (power)
-                        Airspy R2
-                        RTL-SDR V4c
-                        ADF4351
-                        HI Feed LNA (via bias tee)
+Tycon POE-SPLT-BT-UNI-P (inside DDOEE) — set to 12V
+        |                    |
+        | RJ45 data          | 12V DC
+        |                    |
+    VCELINK switch      Discovery Drive
+        |               12V→5V DC-DC converter (30-40W)
+    Pi 3 ethernet               |
+    Pi 2 ethernet           5V rail
+                            Pi 3 (power)
+                            Pi 2 (power)
+                            VCELINK (USB-C)
+                            Airspy R2
+                            RTL-SDR V4c
+                            ADF4351
+                            HI Feed LNA (via bias tee)
 ```
 
 ---
@@ -230,3 +278,5 @@ wiring entering the SDR signal chain.
 |---|---|---|
 | 1.0 | 2026-05-04 | Initial document — TL-POE170S + Tycon splitter selected, dual power budget (Pi 3+2 current, Pi 5 Phase 4), thermal analysis |
 | 1.1 | 2026-05-04 | Add QILIPSU enclosure section — replaces KrakenRF DDOEE, comparison table, WiFi note, stainless drilling note |
+| 1.2 | 2026-05-07 | Correct Tycon output — single selectable voltage, set to 12V; add DC-DC converter requirement; Murata rejected; Meanwell candidate |
+| 1.3 | 2026-05-07 | Select dkplnt DN510 — aluminium case, 50W, 95% efficiency, $9.99; Tobsun rejected (plastic case); rivet nut mounting to galvanised plate |
