@@ -2,8 +2,58 @@
 
 **Observer:** Steve Hawker BEng MBA FRAS  
 **Observatory:** Blue Rock Radio Observatory, San Jose CA  
-**Date of assessment:** YYYY-MM-DD  
-**Version:** 1.0  
+**Date of assessment:** 2026-05-07  
+**Version:** 1.1  
+
+---
+
+## Pre-Survey Observations — from Satellite and Street Imagery
+
+The following observations were made from Google Maps satellite imagery,
+Google Street View (Mabury Road, Oct 2024), and Apple Look Around
+(Cedarville Drive and Mabury Road, spring capture) prior to formal survey.
+All values are estimates to be verified by formal measurement.
+
+### Key findings from imagery
+
+**Patio location:** West corner of 2521, small, to the right of the small
+sloping roof section visible from Mabury Road. Contains a large Bougainvillea.
+
+**Large conifer (evergreen pine):** Dominant tall tree visible from all
+vantage points. Estimated height 18–22m. Located to the **northwest**
+(estimated bearing ~300–315°) of the patio, on the open land strip between
+the properties and I-680. Separated from patio by the 6ft concrete sound
+barrier. Year-round full obstruction — does not lose leaves. Estimated
+elevation angle from patio: ~50–55°. **Not on transit bearing — no impact
+on science targets.**
+
+**Deciduous trees:** Cluster of smaller broadleaf trees, lower than the
+pine, visible to the west-northwest. Bare in winter — largely transparent
+to radio at 1420 MHz when leafless. Seasonal obstruction only.
+
+**Southern sky:** Beautifully open in all street-level imagery. Rooflines
+well below transit elevation for all primary science targets. No significant
+obstructions on the transit bearing (180° S).
+
+**Neighbour's large tree (2515 boundary):** Large canopy visible in
+satellite imagery at approximately 200° SSW, 13.27m from patio corner
+(measured in Google Maps). This is the tree requiring formal elevation
+angle measurement — it is closest to the transit direction.
+
+**Sound barrier:** 6ft concrete wall along the shared northwest boundary
+(red boundary line in annotated satellite image). RF-opaque at 1420 MHz.
+Provides some shielding from I-680 RFI. The large pine is beyond this wall.
+
+**Image sources:**
+- Google Maps satellite — annotated 2026-05-02
+- Google Street View, Mabury Road — Oct 2024 capture
+- Apple Look Around, Cedarville Drive — autumn capture
+- Apple Look Around, Mabury Road — spring capture (bare deciduous)
+- All images committed to build/photos/ for record
+
+**Preliminary site verdict:** Excellent southern sky. Primary obstructions
+(pine, deciduous cluster) are to the northwest — not on transit bearing.
+All primary science targets expected to clear all obstructions at transit.
 
 ---
 
@@ -73,23 +123,59 @@ point for all measurements.
 
 ---
 
-## 4. Deciduous Tree (SSE obstruction)
+## 4. Trees — Primary Obstructions
+
+### 4a. Large Conifer (evergreen pine, NW)
+
+**Pre-survey estimate:** Bearing ~300–315°, distance ~15m, height ~18–22m,
+elevation angle ~50–55°. Year-round obstruction. Beyond sound barrier.
+Not on transit bearing — no science impact expected.
 
 | Measurement | Method | Recorded value | Notes |
 |---|---|---|---|
-| Distance: dish position to tree base | Tape measure | ~9m (30ft) estimated | Verify |
-| Bearing to tree trunk (magnetic) | Compass | ~175° estimated | Verify |
-| Bearing to tree trunk (true) | Calculate | | |
+| Distance: dish to tree base | Tape measure | | |
+| Bearing to tree trunk (magnetic) | Compass | ~287–302° est | Verify |
+| Bearing to tree trunk (true) | Calculate | ~300–315° est | |
 | Bearing to left canopy edge | Compass | | |
 | Bearing to right canopy edge | Compass | | |
-| Angular width of canopy | Calculate | | Right minus left bearing |
-| Elevation angle to top of canopy | Theodolite | ~59° calculated | Verify |
-| Elevation angle to lowest branches | Theodolite | | |
-| Tree height (estimated) | Observation | ~15m (50ft) estimated | Verify |
-| Trunk diameter | Visual estimate | | |
-| Species (if known) | Observation | | Confirms deciduous |
+| Angular width of canopy | Calculate | | |
+| Elevation angle to top | Theodolite | ~50–55° est | Priority measurement |
+| Tree height (estimated) | Observation | ~18–22m est | |
+| Species | Observation | Conifer (pine) | Confirm evergreen |
+| On which side of sound barrier | Observation | Beyond barrier | Confirm |
+
+### 4b. Large Deciduous Tree (2515 boundary, SSW)
+
+**Pre-survey estimate:** Bearing ~175–200°, distance 13.27m (measured),
+height unknown, elevation angle TBD. Closest obstruction to transit bearing.
+Bare in winter — priority for seasonal comparison.
+
+| Measurement | Method | Recorded value | Notes |
+|---|---|---|---|
+| Distance: dish to tree base | Tape measure | 13.27m (Google Maps) | Verify |
+| Bearing to tree trunk (magnetic) | Compass | | |
+| Bearing to tree trunk (true) | Calculate | ~175–200° est | |
+| Bearing to left canopy edge | Compass | | |
+| Bearing to right canopy edge | Compass | | |
+| Angular width of canopy | Calculate | | |
+| Elevation angle to top of canopy | Theodolite | | **Priority measurement** |
+| Tree height (estimated) | Observation | | |
+| Species | Observation | | Confirm deciduous |
 | Foliage state on assessment date | Observation | | Bare / partial / full leaf |
-| Estimated bare period | Observation | | Approximate months |
+
+### 4c. Deciduous Cluster (WNW)
+
+**Pre-survey estimate:** Bearing ~295–310°, distance TBD, height lower
+than pine. Seasonal obstruction only — bare in winter.
+
+| Measurement | Method | Recorded value | Notes |
+|---|---|---|---|
+| Distance: dish to nearest trunk | Tape measure | | |
+| Bearing to cluster centre (magnetic) | Compass | | |
+| Bearing to cluster centre (true) | Calculate | | |
+| Elevation angle to top | Theodolite | | |
+| Number of trees in cluster | Observation | ~4–5 est | |
+| Species | Observation | | Confirm deciduous |
 
 ---
 
@@ -135,11 +221,11 @@ Standing at dish position. Sweep 360° in 10° azimuth steps.
 | 150° (SE) | 137° | House roofline | ~40° est | ~5m est | Single storey — verify |
 | 160° | 147° | | | | |
 | 170° | 157° | | | | |
-| 175° (SSE) | 162° | Deciduous tree | ~59° calc | ~9m est | 15m tall — verify |
-| 180° (S) | 167° | | | | |
+| 175° (SSS) | 162° | Large tree (2515 boundary) | TBD | 13.27m measured | Closest to transit — priority measurement |
+| 180° (S) | 167° | Open sky | ~0° est | — | Primary transit direction — imagery confirms open |
 | 190° | 177° | | | | |
-| 200° | 187° | | | | |
-| 210° (SSW) | 197° | | | | |
+| 200° (SSW) | 187° | Large tree (2515 boundary) | TBD | 13.27m measured | |
+| 210° | 197° | | | | |
 | 220° | 207° | | | | |
 | 230° | 217° | | | | |
 | 240° | 227° | | | | |
@@ -148,8 +234,8 @@ Standing at dish position. Sweep 360° in 10° azimuth steps.
 | 270° (W) | 257° | | | | |
 | 280° | 267° | | | | |
 | 290° | 277° | | | | |
-| 300° | 287° | | | | |
-| 310° | 297° | | | | |
+| 300° (NW) | 287° | Large pine (evergreen) | ~50-55° est | ~15m est | Year-round obstruction — verify bearing and elevation |
+| 310° | 297° | Deciduous cluster | TBD | TBD | Bare in winter — verify |
 | 320° | 307° | | | | |
 | 330° | 317° | | | | |
 | 340° | 327° | | | | |
@@ -255,3 +341,4 @@ All photos → build/photos/ with naming convention:
 | Version | Date | Changes |
 |---|---|---|
 | 1.0 | 2026-04-30 | Initial checklist — all measurement categories, recorded value column |
+| 1.1 | 2026-05-07 | Add pre-survey observations from satellite and street imagery — pine identified NW, southern sky confirmed open, tree section expanded to three separate obstructions, horizon profile pre-filled with estimates |
