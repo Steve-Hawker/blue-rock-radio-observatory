@@ -3,7 +3,289 @@
 **Author:** Steve Hawker BEng MBA FRAS  
 **Observatory:** Blue Rock Radio Observatory  
 **Date:** 2026-04-30  
-**Version:** 0.1 — framework only, awaiting KrakenRF component data  
+**Version:** 1.0 — component identities confirmed from PCB inspection and datasheet matching  
+
+---
+
+## Status
+
+**RESOLVED — component identities confirmed 2026-05-06.**
+
+SAW filter part numbers identified by:
+1. Close-up photograph of the HI feed PCB (Kraken_L-band_ACARS_feed.jpeg)
+2. Cross-referencing with Tai-Saw Technology datasheets TA2494A and TA1077A
+3. Both filters confirmed as Tai-Saw Technology 1420 MHz 3.0×3.0mm SMD devices
+
+KrakenRF contact form response not required — component identification
+achieved directly from PCB inspection.
+
+**Note on feed access:** The HI feed PCB is a sealed assembly. Direct
+component measurement (S-parameter measurement of individual filters)
+is not possible without disassembly. All characterisation must be
+performed at the feed assembly level using the ADF4351 CAL-002 passband
+sweep procedure.
+
+---
+
+## Overview
+
+The Discovery Dish HI feed contains two SAW filter stages:
+
+```
+Antenna → LNA1 (QPL9547) → SAW1 (TA1077A) → LNA2 → SAW2 (TA2494A) → Output
+```
+
+Both filters are manufactured by Tai-Saw Technology Co., Ltd., Taiwan,
+and are centre-frequency matched to 1420 MHz. They differ significantly
+in impedance topology and out-of-band rejection — the placement order
+reflects this.
+
+---
+
+## Known Specifications (confirmed from datasheets)
+
+| Parameter | Value | Source |
+|---|---|---|
+| Overall feed passband | 1380–1460 MHz | KrakenRF wiki |
+| Target frequency | 1420.405 MHz | HI rest frequency |
+| Number of SAW stages | 2 | PCB inspection |
+| SAW filter 1 (F1) | **TA1077A** | Tai-Saw Technology |
+| SAW filter 2 (F2) | **TA2494A** | Tai-Saw Technology |
+| Manufacturer | Tai-Saw Technology Co., Ltd., Taiwan | Both filters |
+| LNA1 | QPL9547 (Qorvo) | KrakenRF documentation + PCB |
+| LNA2 | Unknown — not yet identified | PCB inspection |
+
+---
+
+## Component Data — SAW Filter 1 (TA1077A)
+
+**Position:** After LNA1 (QPL9547), before LNA2
+
+| Parameter | Min | Typ | Max | Units | Notes |
+|---|---|---|---|---|---|
+| Part number | — | TA1077A | — | — | Tai-Saw Technology |
+| Centre frequency | — | 1420 | — | MHz | |
+| Bandwidth at -2 dB | 60 | 72 | — | MHz | 1390–1450 MHz |
+| Insertion loss (1390–1450 MHz) | — | 3.5 | 5.0 | dB | |
+| Amplitude ripple (1390–1450 MHz) | — | 1.5 | 2.0 | dB | |
+| I/O VSWR (1390–1450 MHz) | — | 2.0 | 2.5 | — | |
+| Attenuation 50–1320 MHz | 42 | 62 | — | dB | Excellent OOB rejection |
+| Attenuation 1530–3000 MHz | 42 | 52 | — | dB | |
+| Attenuation 3000–4000 MHz | 30 | 38 | — | dB | |
+| Attenuation 4000–6000 MHz | 15 | 27 | — | dB | |
+| Input impedance | — | 200Ω balanced | — | — | With 22nH inductor |
+| Output impedance | — | 50Ω | — | — | Single-ended |
+| Package | — | 3.0×3.0mm SMD | — | — | |
+| Operating temperature | -40 | — | +85 | °C | |
+
+**Key characteristic:** The TA1077A has a **balanced 200Ω input** interface.
+This is a balun-SAW topology — it accepts a balanced (differential) signal
+from the QPL9547 output and converts to single-ended 50Ω output. This
+provides inherent common-mode rejection in addition to frequency filtering.
+
+The dramatically higher out-of-band rejection (42 dB minimum vs 24 dB
+for the TA2494A) makes this the primary RFI rejection filter, correctly
+placed first in the cascade where RFI amplitudes are highest.
+
+---
+
+## Component Data — SAW Filter 2 (TA2494A)
+
+**Position:** After LNA2, before SMA output connector
+
+| Parameter | Min | Typ | Max | Units | Notes |
+|---|---|---|---|---|---|
+| Part number | — | TA2494A | — | — | Tai-Saw Technology |
+| Centre frequency | — | 1420 | — | MHz | |
+| Passband | — | 1380–1460 | — | MHz | 80 MHz bandwidth |
+| Insertion loss (1380–1460 MHz) | — | 3.5 | 4.2 | dB | |
+| Amplitude ripple (1380–1460 MHz) | — | 1.0 | 1.8 | dB | |
+| VSWR (1380–1460 MHz) | — | 1.9 | 2.5 | — | |
+| Attenuation 10–1300 MHz | 24 | 28 | — | dB | |
+| Attenuation 1550–3000 MHz | 24 | 30 | — | dB | |
+| Input impedance | — | 50Ω | — | — | Single-ended |
+| Output impedance | — | 50Ω | — | — | Single-ended |
+| Package | — | 3.0×3.0mm SMD | — | — | |
+| Operating temperature | -40 | — | +85 | °C | |
+
+**Key characteristic:** The TA2494A is a conventional 50Ω single-ended
+SAW filter. Wider passband (80 MHz) than the TA1077A, lower stopband
+rejection, but adequate for final clean-up after the cascade. Correctly
+placed second, after the heavy lifting has been done by the TA1077A.
+
+---
+
+## Cascaded Filter Performance
+
+With both filters in series (TA1077A → LNA2 → TA2494A):
+
+| Frequency region | TA1077A rejection | TA2494A rejection | Combined (min) |
+|---|---|---|---|
+| 50–1300 MHz | 42 dB | 24 dB | **66 dB** |
+| 1530–3000 MHz | 42 dB | 24 dB | **66 dB** |
+
+**66 dB minimum combined out-of-band rejection** below 1300 MHz and above
+1530 MHz. In practice the typical values suggest ~90 dB combined rejection.
+
+This is excellent performance for an urban RFI environment. The I-680
+corridor RFI, cellular infrastructure, and other L-band signals are
+attenuated by at minimum 66 dB before reaching the SDR ADC.
+
+**GPS L1 at 1575 MHz:** Falls in the 1530–3000 MHz rejection band.
+Combined rejection of 66 dB minimum — GPS signals (already ~-130 dBm
+at ground level) are entirely below the noise floor. No GPS interference
+concern confirmed.
+
+---
+
+## Friis Noise Budget Impact
+
+With confirmed insertion loss values, the Friis contribution of both
+SAW filters can now be calculated.
+
+**SAW1 (TA1077A) — after LNA1:**
+
+At 3.5 dB typical insertion loss:
+$$F_{SAW1} = 10^{3.5/10} = 2.239$$
+$$T_{SAW1} = 290 \times (2.239 - 1) = 359 \text{ K}$$
+
+But SAW1 is after LNA1 (gain ~21.5 dB = factor 141):
+$$T_{SAW1,contribution} = \frac{359}{141} = \mathbf{2.5 \text{ K}}$$
+
+**SAW2 (TA2494A) — after LNA2:**
+
+At 3.5 dB typical insertion loss, after LNA1 × SAW1 × LNA2 cascade
+(total gain approximately 40 dB = factor 10,000):
+$$T_{SAW2,contribution} = \frac{359}{10000} \approx \mathbf{0.04 \text{ K}}$$
+
+SAW2 contribution is negligible. SAW1 adds ~2.5 K — small compared
+with LNA1 noise temperature (~50 K equivalent at 0.17 dB NFmin).
+
+These values feed directly into INV001 — update that document next.
+
+---
+
+## Analytical Framework
+
+### Alias Vulnerability Frequencies
+
+With SDR sample rate f_s, signals at f_LO ± f_s/2 alias directly into
+the centre of the baseband. For LO = 1422 MHz at f_s = 2.4 Msps:
+
+- Lower alias vulnerability: 1422 - 1.2 = **1420.8 MHz**
+- Upper alias vulnerability: 1422 + 1.2 = **1423.2 MHz**
+
+Both within the SAW passband — the filters cannot protect against
+aliasing at these frequencies, which is correct behaviour. What matters
+is that out-of-band signals do not alias.
+
+At f_s = 10 Msps (Airspy R2 maximum):
+- Lower: 1422 - 5 = **1417 MHz** — within passband ✓
+- Upper: 1422 + 5 = **1427 MHz** — within passband ✓
+
+**Required bandwidth for M31 full velocity range:**
+M31 HI spans approximately -570 to -30 km/s LSR. At 1420 MHz:
+
+$$\Delta f = \frac{f_{HI} \times \Delta v}{c} = \frac{1420.405 \times 540}{299792} \approx 2.56 \text{ MHz}$$
+
+Minimum sample rate: ~3 Msps. Recommended: **4–5 Msps**.
+
+### Passband Edge Effects on HI Observations
+
+The SAW passband rolls off toward the band edges. M31 at -300 km/s
+systemic velocity blueshifts the HI line to ~1422 MHz — well within
+the flat passband. No concern for M31 observations.
+
+Passband ripple (TA2494A: 1.0 dB typ, 1.8 dB max) introduces a
+frequency-dependent gain variation requiring baseline subtraction.
+See INV002 for polynomial baseline subtraction approach.
+
+---
+
+## Empirical Characterisation Plan
+
+The sealed feed PCB means all characterisation must be done at the
+assembly level via ADF4351 CAL-002 passband sweep.
+
+### CAL-002 — Passband Shape (ADF4351 method)
+
+**Method:** ADF4351 signal source sweep  
+**Procedure:**
+1. Connect ADF4351 → 30 dB attenuator → feed SMA input
+2. Step ADF4351 from 1360 to 1480 MHz in 1 MHz steps
+3. Record Airspy R2 power at each step
+4. Normalise — reveals empirical combined passband of LNA1+SAW1+LNA2+SAW2
+5. Compare with datasheet predicted cascade
+
+**Expected result:** Flat from ~1390–1450 MHz, roll-off outside.
+Ripple amplitude should be ≤ 2 dB (worst case TA2494A spec).
+
+### Sky passband measurement
+
+Point dish at cold sky (high elevation, away from Galactic plane),
+record wideband power spectrum at maximum SDR bandwidth. Normalise
+to flat response. Reveals installed passband shape including all
+thermal and impedance mismatch effects.
+
+### Stopband rejection (empirical)
+
+GPS L1 at 1575 MHz: known spread-spectrum signal at approximately
+-130 dBm at ground. Measure apparent level in SDR output vs expected
+level without filtering. Gives lower bound on stopband rejection at
+1575 MHz. Expected: > 66 dB — signal should be undetectable.
+
+---
+
+## Implications for Pipeline Design
+
+**Baseline subtraction polynomial order (INV002):**
+TA2494A passband ripple of 1.0–1.8 dB requires baseline subtraction.
+Polynomial order 3–5 should be sufficient. Must not absorb the broad
+HI line — use line-free channels for polynomial fitting.
+
+**Usable velocity range:**
+TA1077A passband -2dB bandwidth: 60–72 MHz (1384–1456 MHz).
+TA2494A passband: 1380–1460 MHz.
+Combined effective flat passband: approximately **1390–1450 MHz**.
+Velocity range at 1390 MHz: +2100 km/s; at 1450 MHz: -6200 km/s.
+All science targets well within range.
+
+---
+
+## Action Items
+
+- [x] Identify SAW filter part numbers — TA1077A and TA2494A confirmed
+- [x] Obtain datasheets — filed in equipment/datasheets/
+- [x] Calculate Friis contributions — SAW1: 2.5K, SAW2: ~0K
+- [ ] Complete INV001 with confirmed SAW insertion loss values
+- [ ] Run CAL-002 passband sweep when ADF4351 arrives (~May 22)
+- [ ] Compare empirical passband with datasheet cascade prediction
+- [ ] Update DOWNCONVERSION_ARCHITECTURE.md with confirmed rejection data
+- [ ] Update E002 equipment log when feed arrives (Aug 2026)
+- [ ] Identify LNA2 chip from PCB — pending higher resolution image
+
+---
+
+## References
+
+- Tai-Saw Technology TA1077A datasheet — equipment/datasheets/ (this repository)
+- Tai-Saw Technology TA2494A datasheet — equipment/datasheets/ (this repository)
+- QPL9547 datasheet — equipment/datasheets/ (this repository)
+- Kraken_L-band_ACARS_feed.jpeg — PCB photo used for identification
+- Morgan & Morgan — *Surface Acoustic Wave Filters* (2nd ed.)
+- INV001_noise_budget — Friis noise analysis (this repository)
+- DOWNCONVERSION_ARCHITECTURE.md — downconversion design (this repository)
+- ADF4351_CALIBRATION.md — CAL-002 passband measurement procedure
+
+---
+
+## Version History
+
+| Version | Date | Changes |
+|---|---|---|
+| 0.1 | 2026-04-30 | Initial framework — awaiting KrakenRF component data |
+| 1.0 | 2026-05-06 | Major update — SAW filters identified as TA1077A (F1) and TA2494A (F2) from PCB inspection; full component data tables; Friis contributions calculated; cascaded rejection analysis; KrakenRF response no longer required |
+
 
 ---
 

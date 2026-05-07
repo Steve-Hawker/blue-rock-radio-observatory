@@ -122,7 +122,7 @@ blue-rock-radio-observatory/
 │   ├── INTERFEROMETER_UPGRADE.md   ← v0.2 KrakenSDR 5-element array
 │   ├── OBSERVING_STRATEGY.md
 │   ├── POWER_ARCHITECTURE.md       ← PoE power distribution, dual budget (Pi3+2 / Pi5)
-│   ├── SAW_FILTER_DESIGN.md        ← v0.1 pending KrakenRF response
+│   ├── SAW_FILTER_DESIGN.md        ← v1.0 TA1077A + TA2494A identified from PCB
 │   └── SDR_SELECTION.md
 │
 ├── investigations/                  ← system performance investigations

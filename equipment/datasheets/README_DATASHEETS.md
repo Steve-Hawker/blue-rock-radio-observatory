@@ -22,6 +22,8 @@ Radio Observatory hardware.
 | Tycon_POE-SPLT-BT-UNI-P.pdf | Tycon PoE splitter 90W | 5V@14A + 12V@5.9A · -40°C to +75°C · DIN mount · **selected** | 2026-05-04 |
 | TP-Link_TL-POE170S.pdf | TP-Link PoE injector 60W | 802.3bt · 60W max · 0°C to 45°C · indoor use · **selected** | 2026-05-04 |
 | QILIPSU_Enclosure_350x250x150.pdf | QILIPSU IP65 stainless enclosure | 304 SS · 350×250×150mm · IP65 · DIN plate · lockable · $89.99 · **selected over KrakenRF DDOEE** | 2026-05-04 |
+| TA2494A_SAW_Filter.pdf | Tai-Saw TA2494A SAW filter | 1420MHz · 80MHz BW · 3.5dB IL · 24dB OOB rejection · 50Ω · **SAW2 (F2) in HI feed** | 2026-05-06 |
+| TA1077A_SAW_Filter.pdf | Tai-Saw TA1077A SAW filter | 1420MHz · 72MHz BW · 3.5dB IL · 42dB OOB rejection · 200Ω bal in · **SAW1 (F1) in HI feed** | 2026-05-06 |
 
 ---
 
