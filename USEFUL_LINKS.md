@@ -10,6 +10,14 @@ notes see reading_notes/.*
 
 ---
 
+## Academic Papers — Key References
+
+| Link | Description |
+|---|---|
+| https://arxiv.org/abs/2411.00057 | Phelps 2024 — *Galactic Neutral Hydrogen Structures Spectroscopy and Kinematics: Designing a Home Radio Telescope for 21 cm Emission* — methodology for cost-efficient amateur HI telescope in urban environment (Los Angeles); 1m dish, H1-LNA, SDR, Raspberry Pi; RFI mitigation; galactic arm velocity profiles. Directly comparable to Blue Rock programme. |
+
+---
+
 ## RTL-SDR
 
 | Link | Description |
@@ -144,3 +152,4 @@ notes see reading_notes/.*
 | Version | Date | Changes |
 |---|---|---|
 | 1.0 | 2026-04-30 | Initial document |
+| 1.1 | 2026-05-08 | Add Academic Papers section — Phelps 2024 arXiv:2411.00057 |
