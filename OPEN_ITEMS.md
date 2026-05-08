@@ -31,8 +31,10 @@ resolved or new ones arise.
 | IP65 membrane vent | To check | QILIPSU may include one — verify on receipt |
 | Ferrite chokes for USB cables | To order | RFI mitigation — add to Amazon order |
 | Short SMA cables (internal) | To order | SDR to coax connections inside enclosure |
-| BME280 breakout × 2 | To order | ~$8-10 each — one internal (Pi 3), one external (Pi 2 weather station) |
-| Weatherproof housing for external BME280 | To purchase | Small junction box with IP65 vent — mounts on mast |
+| BME280 breakout × 2 | To order | ~$8-10 each — one internal (Pi 3), one external on Drive tray (Pi 2) |
+| LSM6DSOX IMU breakout | To order | ~$5-10 — dish position verification on Drive tray |
+| Small ABS project box | To purchase | Weather protection for Drive tray sensor package |
+| Weatherproof housing for external BME280 | Replaced by ABS box solution | See DISH_POSITION_CALIBRATION.md |
 
 ---
 
