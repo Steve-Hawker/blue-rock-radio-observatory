@@ -2,8 +2,8 @@
 
 **Observer:** Steve Hawker BEng MBA FRAS  
 **Repository:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
-**Plan version:** 1.5  
-**Date:** 2026-05-04  
+**Plan version:** 1.6  
+**Date:** 2026-05-08  
 
 *This is a living document. Update it as reading is completed, understanding develops,
 and new topics are identified. Commit each update with a version note.*
@@ -658,7 +658,34 @@ would be embarrassing at best and a thesis problem at worst.
 
 ---
 
-## Reading Progress Log
+### FL-8 — Amateur HI methodology reference
+
+**Must complete before:** First observation session  
+**Time estimate:** 2–3 hours  
+**Resource:** Phelps 2024 (submitted) — arXiv:2411.00057  
+**You need to be able to:**
+- Describe their signal chain and compare with Blue Rock
+- Note their RFI mitigation techniques
+- Understand their velocity profile methodology
+- Identify what they did well and what Blue Rock does differently
+
+**Why this matters:** The closest published analogue to Blue Rock.
+High school paper, 28 pages, 22 figures — rooftop site at elevation,
+similar hardware. Methodology directly applicable. Note: not peer
+reviewed — cite carefully as "Phelps (2024, submitted)". Monitor
+NASA ADS for journal acceptance.
+
+| # | Topic | Resource | Est. hours | Done |
+|---|---|---|---|---|
+| FL-1 | HI spin-flip physics | NRAO ERA — HI chapters | 2–3 | [ ] |
+| FL-2 | Radio telescope fundamentals | NRAO ERA — antennas/receivers | 4–6 | [ ] |
+| FL-3 | Cas A flux calibration | Baars et al. 1977 | 1–2 | [ ] |
+| FL-4 | LSR Doppler corrections | Astropy docs + NRAO ERA | 2–3 | [ ] |
+| FL-5 | M31 HI profile | Chemin et al. 2009 | 2–3 | [ ] |
+| FL-6 | Direct conversion / LO offset | Clark & Clark Section 2 | 2–3 | [ ] |
+| FL-7 | RFI identification | Laufer L-Band chapters | 1–2 | [ ] |
+| FL-8 | Amateur HI methodology | Phelps 2024 arXiv:2411.00057 | 2–3 | [ ] |
+| | **Total** | | **16–25 hrs** | |
 
 | Date | Resource | Key takeaways |
 |---|---|---|
@@ -666,7 +693,7 @@ would be embarrassing at best and a thesis problem at worst.
 
 ---
 
-## Questions and Topics to Investigate
+## Reading Progress Log
 
 *Running list of questions arising from reading and observations — to be researched
 and answered over time.*
@@ -689,6 +716,7 @@ and answered over time.*
 | 1.3 | 2026-04-30 | Topic 4 — added Laufer RTL-SDR guide, expanded reading guides, recommended sequence |
 | 1.4 | 2026-05-04 | Add phase cross-reference section — reading mapped to all 6 programme phases with priority summary table |
 | 1.5 | 2026-05-04 | Add First Light Readiness section — 7 minimum reading items, 14-22 hours, hard deadline before August 2026 |
+| 1.6 | 2026-05-08 | Add FL-8 — Phelps 2024 arXiv:2411.00057; noted not peer reviewed; updated checklist to 8 items, 16-25 hours |
 
 ---
 
