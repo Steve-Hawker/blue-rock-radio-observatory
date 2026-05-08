@@ -31,6 +31,8 @@ resolved or new ones arise.
 | IP65 membrane vent | To check | QILIPSU may include one — verify on receipt |
 | Ferrite chokes for USB cables | To order | RFI mitigation — add to Amazon order |
 | Short SMA cables (internal) | To order | SDR to coax connections inside enclosure |
+| BME280 breakout × 2 | To order | ~$8-10 each — one internal (Pi 3), one external (Pi 2 weather station) |
+| Weatherproof housing for external BME280 | To purchase | Small junction box with IP65 vent — mounts on mast |
 
 ---
 
@@ -44,10 +46,12 @@ All components accounted for in Keynote layout v1:
 | VCELINK M242 | On top of Tycon | Velcro |
 | dkplnt DN510 | Under stripboard | Rivnuts |
 | EPLZON stripboard | Top, on 25mm standoffs over DN510 | USB-C sockets + voltmeters |
-| Raspberry Pi 3 | Right, lower | Standoffs + rivnuts |
-| Raspberry Pi 2 | Stacked on Pi 3 | Standoffs |
-| RTL-SDR V4c | Bottom centre | USB to Pi 2 |
-| Airspy R2 | Bottom centre | USB to Pi 3 |
+| Raspberry Pi 3 | Right, lower | V4c · RFI monitoring · BME280 internal sensor |
+| Raspberry Pi 2 | Stacked on Pi 3 | External weather station · BME280 sensor outside enclosure via I2C cable |
+| RTL-SDR V4c | Bottom centre | USB to Pi 3 |
+| Airspy R2 | Bottom centre | USB to Pi 5 (Phase 4) |
+| BME280 (internal) | On Pi 3 GPIO | Enclosure temp/humidity/pressure |
+| BME280 (external) | On Pi 2 GPIO — sensor outside enclosure | True observing conditions — sensor in weatherproof housing on mast |
 | ADF4351 + 30dB attenuator | Removable — stored together | Insert for calibration only |
 | Voltmeters × 2 | Lower half of stripboard | 12V and 5V monitoring |
 
@@ -76,8 +80,27 @@ All components accounted for in Keynote layout v1:
 | Pi 5 vs Pi 3 + Pi 2 | Pi 5 preferred — single unit, USB 3.0 | Pi 3 adequate for Phase 2–3; Pi 5 needed before Phase 4 |
 | Internal DDOEE ethernet cables | Cat5e unshielded | Short runs — shielding not required |
 | Ferrite chokes on USB cables | Recommended | Cheap RFI mitigation — add to order list |
-| 5V power distribution | Custom USB-C hub — 3-4 panel mount sockets | See POWER_ARCHITECTURE.md — commercial hub rejected; custom build from USB-C panel mount sockets (~$2-3 each) wired to 5V rail via stripboard or twisted pair |
-| Environmental monitoring sensor | **Option A:** Wavesense Sense HAT clone $25.99 — temp/humidity/pressure/magnetometer/LED/joystick, HAT form factor, Pi 5 compatibility TBC. **Option B:** BME280 breakout ~$8-10 — temp/humidity/pressure only, I2C, tiny, well supported. Recommendation: BME280 unless magnetometer or HAT form factor specifically wanted. Scientific value genuine — temperature covariate for signal chain systematics, humidity for condensation risk monitoring |
+| 5V power distribution | Custom USB-C hub — 3-4 panel mount sockets | See POWER_ARCHITECTURE.md |
+| Environmental monitoring sensor | 2× BME280 (~$8-10 each) — see revised Pi architecture below | Wavesense Sense HAT rejected — unnecessary extras |
+
+### Revised Pi Architecture (Phase 4)
+
+| Device | Role | Sensor |
+|---|---|---|
+| Pi 5 | Airspy R2 · science chain · rotctl · EZRa | — |
+| Pi 3 | V4c · RFI monitoring (rtl_power) | BME280 internal — enclosure environment, electronics health, condensation risk |
+| Pi 2 | External weather station — dedicated, always running | BME280 external — true observing conditions (temp/humidity/pressure outside) |
+
+**Pi 2 weather station notes:**
+- BME280 sensor mounted outside DDOEE in small weatherproof housing on mast
+- I2C cable from Pi 2 GPIO through gland or small hole to external sensor (~1m safe for I2C)
+- Python script logging to CSV with timestamp
+- Data accessible over ethernet via VCELINK switch
+- Power from 5V rail distribution board inside DDOEE
+- Runs independently — crash does not affect science chain
+- Pi 2 board remains inside DDOEE, only sensor is external
+
+**Cable gland update:** I2C sensor cable needs to exit enclosure — add to Gland 2 bundle or use a small additional penetration.
 
 ---
 
