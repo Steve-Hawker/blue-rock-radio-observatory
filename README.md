@@ -34,6 +34,15 @@ and validate techniques for low-cost, small-aperture HI spectroscopy from an
 urban site, producing scientifically meaningful results comparable with
 professional survey data.
 
+**Programme philosophy:** SKA functionality at lowest cost with best performance.
+
+The Square Kilometre Array costs €2 billion. Blue Rock Radio Observatory
+costs roughly the price of a decent bicycle. The difference is aperture
+and sensitivity — not rigour. The same principles apply: calibrated and
+characterised signal chain, environmental monitoring during observations,
+position verification, systematic error quantification, documented
+methodology, reproducible results.
+
 ---
 
 ## Equipment Summary
