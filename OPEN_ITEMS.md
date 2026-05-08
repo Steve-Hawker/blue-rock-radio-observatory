@@ -33,6 +33,8 @@ resolved or new ones arise.
 | Short SMA cables (internal) | To order | SDR to coax connections inside enclosure |
 | BME280 breakout × 2 | To order | ~$8-10 each — one internal (Pi 3), one external on Drive tray (Pi 2) |
 | LSM6DSOX IMU breakout | To order | ~$5-10 — dish position verification on Drive tray |
+| Combined anemometer + wind vane unit | To order | ~$25-35 — single mount, pulse + analog output |
+| MCP3008 ADC | To order | ~$4 — analog to digital for wind vane voltage on Pi 2 SPI bus |
 | Small ABS project box | To purchase | Weather protection for Drive tray sensor package |
 | Weatherproof housing for external BME280 | Replaced by ABS box solution | See DISH_POSITION_CALIBRATION.md |
 
@@ -200,7 +202,183 @@ Send follow-up via eBay:
 
 ---
 
-## New Session Handoff Notes
+## Dish Sensor Python Development — Requirements and Design
+
+*Full implementation deferred — capture all objectives here first
+before writing any code. See design/DISH_POSITION_CALIBRATION.md
+for hardware design.*
+
+### Objectives
+
+1. Continuous logging of BME280 environmental data and LSM6DSOX
+   position/motion data from Pi 2
+2. Data accessible on MacBook via SSH session
+3. Scripts run interactively over SSH — no daemon or autostart required
+   initially
+4. All data timestamped in UTC
+5. CSV output — compatible with Python/pandas on MacBook for analysis
+
+### Scripts planned
+
+| Script | Purpose |
+|---|---|
+| `dish_sensors.py` | Core continuous logging — BME280 + LSM6DSOX to CSV |
+| `sensor_calibration.py` | One-time orientation calibration at known dish position |
+| `weather_summary.py` | Session summary — mean/min/max over time window |
+| `position_monitor.py` | Real-time position verification vs rotctl commanded position |
+
+### Library decision — BME280
+
+Two candidate libraries. Decision factors to evaluate:
+
+| Factor | Adafruit CircuitPython | bme280 (pip) |
+|---|---|---|
+| Installation complexity | Requires blinka + adafruit stack | Single pip install |
+| Pi 2 compatibility | Blinka supports Pi 2 — verify | Pure Python — works everywhere |
+| Active maintenance | Actively maintained by Adafruit | Less actively maintained |
+| LSM6DSOX compatibility | Same ecosystem as LSM6DS library | Different ecosystem |
+| Documentation quality | Excellent | Adequate |
+| Dependency footprint | Large (blinka stack) | Minimal |
+| Community support | Large | Smaller |
+
+**Recommendation to evaluate:** If LSM6DSOX Adafruit library works
+cleanly on Pi 2, use full Adafruit CircuitPython stack for both sensors
+— consistent ecosystem, one import style, better documentation.
+If Pi 2 compatibility is problematic, use `bme280` pip package for
+BME280 and `smbus2` for LSM6DSOX direct register access.
+
+**Decision point:** Confirm Adafruit blinka compatibility with Pi 2
+(ARMv7, 32-bit) before committing to library choice.
+
+### Data flow
+
+```
+Pi 2 (I2C sensors)
+    → dish_sensors.py writes CSV to ~/data/sensors/YYYY-MM-DD.csv
+    → MacBook SSH session reads/copies files as needed
+    → pandas analysis on MacBook
+```
+
+No NFS mount required — SSH file transfer (scp or rsync) sufficient
+for post-session analysis. Real-time monitoring via SSH and tail -f.
+
+### CSV format
+
+```
+timestamp_utc, temp_c, humidity_pct, pressure_hpa,
+accel_x_g, accel_y_g, accel_z_g,
+gyro_x_dps, gyro_y_dps, gyro_z_dps,
+elevation_deg_imu, elevation_deg_rotctl, position_flag
+```
+
+`position_flag` = 1 if |IMU elevation − rotctl elevation| > 0.5°
+
+### Calibration design — critical
+
+The IMU measures acceleration in its own sensor frame. To convert to
+meaningful dish elevation angles, we must relate the sensor frame to
+the dish frame and the dish frame to the sky frame.
+
+**Step 1 — Sensor mounting calibration (one time):**
+Mount sensor rigidly to Drive tray. Record accelerometer vector when
+dish is at known elevation (e.g. horizontal park position = 0°).
+This defines the sensor-to-dish rotation matrix R_sd.
+
+**Step 2 — Tripod levelling verification:**
+Use spirit level on tripod head. Record accelerometer vector when
+tripod is level. Any deviation from vertical gives the tripod tilt
+correction T.
+
+**Step 3 — Elevation angle derivation:**
+For any dish position, apply R_sd and T to measured acceleration vector,
+then compute elevation from gravity component:
+
+```
+elevation = arctan2(g_z_corrected,
+            sqrt(g_x_corrected² + g_y_corrected²))
+```
+
+**Step 4 — Validation against Cas A transit:**
+During commissioning, track Cas A across a range of elevations.
+Compare IMU-derived elevation with rotctl commanded elevation and
+with theoretical Cas A elevation from ephemeris. Three-way comparison
+validates the calibration.
+
+**Step 5 — Seasonal re-calibration:**
+Repeat Steps 1-4 at start of each observing season. Log calibration
+parameters in calibration/IMU_calibration.csv.
+
+**Calibration uncertainty budget:**
+
+| Source | Contribution |
+|---|---|
+| Accelerometer noise | ~0.06° (16-bit, ±2g, 100 sample average) |
+| Sensor mounting alignment | ~0.1-0.5° (depends on mounting quality) |
+| Tripod levelling | ~0.1° (good spirit level) |
+| **Total estimated** | **~0.2-0.6°** |
+
+Target: verify dish position to better than 0.5° — achievable with
+careful mounting and calibration.
+
+### Additional ideas — capture here before implementation
+
+- [ ] Wind speed proxy — RMS accelerometer noise during integration
+      as a measure of dish vibration / wind loading
+- [ ] **Anemometer** — direct wind speed measurement preferred over
+      IMU proxy. Options:
+      - Simple pulse-counting cup anemometer (~$15-20) on Pi 2 GPIO
+        pin — each rotation = pulse, count pulses/sec, convert to m/s.
+        Simple, cheap, reliable. One additional GPIO wire.
+      - Ultrasonic anemometer — no moving parts, more reliable,
+        but ~$50-200. Likely overkill for this application.
+      - **Preferred:** Low cost cup anemometer on GPIO pulse counter.
+        Set observation quality thresholds (e.g. don't observe if
+        wind > X m/s). Five years of wind data correlated with
+        observation quality is genuinely useful.
+- [ ] **Wind direction** — requires wind vane in addition to anemometer.
+      Options:
+      - Separate resistive wind vane (~$10-15) — outputs voltage
+        proportional to direction, needs MCP3008 ADC on SPI bus (~$4).
+        8 or 16 positions (45° or 22.5° resolution).
+      - **Combined anemometer + wind vane unit (~$25-35)** — single
+        mount, one cable run, both measurements. Ecowitt or generic
+        Amazon units in this price range. Recommended.
+      - Skip wind direction — wind speed is the critical parameter
+        for observation quality; direction is useful metadata but
+        not essential. Could defer.
+      - **Preferred:** Combined unit ~$30. Minimal extra cost for
+        both measurements from one mount.
+      - **Interface:** Anemometer pulse on GPIO, wind vane voltage
+        via MCP3008 ADC on SPI bus. Pi 2 handles both alongside
+        I2C sensors.
+- [ ] Slew settling detection — monitor IMU until position stable
+      before beginning integration
+- [ ] Session start/end weather report — auto-generated from CSV,
+      appended to session log
+- [ ] Alert if humidity > 85% inside DDOEE (condensation risk)
+- [ ] Temperature compensation for ADF4351 LO frequency drift
+      (use internal BME280 on Pi 3)
+- [ ] Cross-reference internal vs external temperature to monitor
+      DDOEE thermal performance
+
+### Open questions before implementation
+
+- [ ] Confirm Adafruit blinka works on Pi 2 (ARMv7 32-bit)
+- [ ] Confirm LSM6DSOX I2C address does not conflict with BME280
+      on same bus (LSM6DSOX: 0x6A, BME280: 0x76 — no conflict ✓)
+- [ ] Determine sample rate — 1 Hz adequate for weather, 10-100 Hz
+      for wind/vibration monitoring
+- [ ] Decide whether position_monitor.py queries rotctl via network
+      or reads a shared file written by the science Pi
+- [ ] Select specific combined anemometer + wind vane unit — confirm
+      pulse output for anemometer and resistive/voltage output for
+      wind vane before ordering
+- [ ] Determine wind speed threshold for observation quality flag —
+      requires empirical testing once installed
+- [ ] Confirm MCP3008 SPI bus does not conflict with other SPI devices
+      on Pi 2
+
+---
 
 *When starting a new Claude session, paste this section as context:*
 
