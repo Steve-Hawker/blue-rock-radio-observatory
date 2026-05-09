@@ -14,10 +14,11 @@ resolved or new ones arise.
 |---|---|---|
 | Tycon POE-SPLT-BT-UNI-P | To order | PoE splitter — set to 12V |
 | dkplnt DN510 DC-DC converter | To order | 12V→5V 50W for 5V rail |
-| VCELINK M242 ethernet switch | To order | 1→2 gigabit switch for Pi 3 + Pi 2 |
+| ~~VCELINK M242 ethernet switch~~ | **SUPERSEDED 2026-05-08** | Replaced by DUOPURUI 1→3 switch — see below |
+| DUOPURUI ethernet switch 1→3 | To order | 3-port gigabit switch — Pi 2 + Pi 3 + Pi 5; replaces VCELINK M242; needs 5V USB-C power from DN510 rail; 2.8"×2.8" fits on top of Tycon; ASIN B0FCLKWGZ1 ~$18.99 |
 | QILIPSU 304 SS enclosure | To order | 350×250×150mm IP65 |
 | TP-Link TL-POE170S | To order | 60W PoE injector — indoors |
-| Raspberry Pi 5 (4GB) | Pending decision | Replaces Pi 3 + Pi 2 — needed before Phase 4 |
+| Raspberry Pi 5 (4GB) | Pending decision | Needed before Phase 4 |
 | M5 threaded rod (brass) | To purchase | Custom dipole elements — 3.3cm for 1420MHz, 2.76cm for 1575MHz |
 | Right-angle aluminium bracket | To purchase | For Tycon mounting — 25×25×2mm angle, 1/16" thick |
 | Rivet nut kit (M3/M4) | To purchase | For mounting plate component fixing — carbon steel zinc plated |
@@ -31,12 +32,15 @@ resolved or new ones arise.
 | IP65 membrane vent | To check | QILIPSU may include one — verify on receipt |
 | Ferrite chokes for USB cables | To order | RFI mitigation — add to Amazon order |
 | Short SMA cables (internal) | To order | SDR to coax connections inside enclosure |
-| BME280 breakout × 2 | To order | ~$8-10 each — one internal (Pi 3), one external on Drive tray (Pi 2) |
-| LSM6DSOX IMU breakout | To order | ~$5-10 — dish position verification on Drive tray |
+| BME280 breakout × 2 | To order | ~$8-10 each — one internal (Pi 3 GPIO), one in dish sensor ABS box (Pi 2) |
+| LSM6DSOX IMU breakout | To order | ~$5-10 — dish position verification in ABS box on dish mounting plate |
 | Combined anemometer + wind vane unit | To order | ~$25-35 — single mount, pulse + analog output |
 | MCP3008 ADC | To order | ~$4 — analog to digital for wind vane voltage on Pi 2 SPI bus |
-| Small ABS project box | To purchase | Weather protection for Drive tray sensor package |
-| Weatherproof housing for external BME280 | Replaced by ABS box solution | See DISH_POSITION_CALIBRATION.md |
+| ABS project box | To purchase | Dish sensor enclosure — mounts on underside of Discovery Dish mounting plate; houses BME280 + LSM6DSOX on lid; see design notes below |
+| M3 brass standoffs | To purchase | Equal height both sides — BME280 and LSM6DSOX boards on lid |
+| M4 bolts | To purchase | ABS box mounting to dish plate |
+| Sticky-backed foam sheet | To purchase | Lid seal — weather zone / IMU zone separation at open face |
+| ~~Weatherproof housing for external BME280~~ | **SUPERSEDED 2026-05-08** | Replaced by ABS box solution — see Dish Sensor Box Design below |
 
 ---
 
@@ -47,15 +51,16 @@ All components accounted for in Keynote layout v1:
 | Component | Location on plate | Notes |
 |---|---|---|
 | Tycon POE-SPLT-BT-UNI-P | Left, on side | Angle bracket mount |
-| VCELINK M242 | On top of Tycon | Velcro |
+| DUOPURUI ethernet switch 1→3 | On top of Tycon | Velcro; replaces VCELINK M242 |
 | dkplnt DN510 | Under stripboard | Rivnuts |
 | EPLZON stripboard | Top, on 25mm standoffs over DN510 | USB-C sockets + voltmeters |
 | Raspberry Pi 3 | Right, lower | V4c · RFI monitoring · BME280 internal sensor |
-| Raspberry Pi 2 | Stacked on Pi 3 | External weather station · BME280 sensor outside enclosure via I2C cable |
+| Raspberry Pi 2 | Stacked on Pi 3 | External weather station · dish sensor ABS box via I2C cable |
 | RTL-SDR V4c | Bottom centre | USB to Pi 3 |
 | Airspy R2 | Bottom centre | USB to Pi 5 (Phase 4) |
-| BME280 (internal) | On Pi 3 GPIO | Enclosure temp/humidity/pressure |
-| BME280 (external) | On Pi 2 GPIO — sensor outside enclosure | True observing conditions — sensor in weatherproof housing on mast |
+| BME280 (internal) | On Pi 3 GPIO | Enclosure temp/humidity/pressure — electronics health, condensation risk |
+| BME280 (external) | In dish sensor ABS box on dish mounting plate | True observing conditions — Pi 2 I2C |
+| LSM6DSOX | In dish sensor ABS box on dish mounting plate | Dish elevation verification — Pi 2 I2C |
 | ADF4351 + 30dB attenuator | Removable — stored together | Insert for calibration only |
 | Voltmeters × 2 | Lower half of stripboard | 12V and 5V monitoring |
 
@@ -76,16 +81,22 @@ All components accounted for in Keynote layout v1:
 - All internal RF connections via short SMA cables
 - ADF4351 + attenuator stored as one unit, inserted for calibration only
 - Ground wire (pre-connected in QILIPSU) to bond to tripod mast
+- I2C cable to dish sensor ABS box exits via Gland 2 bundle or small additional penetration
 
 ---
 
-| Decision | Options | Notes |
+## Decisions — Resolved
+
+| Decision | Resolution | Notes |
 |---|---|---|
 | Pi 5 vs Pi 3 + Pi 2 | Pi 5 preferred — single unit, USB 3.0 | Pi 3 adequate for Phase 2–3; Pi 5 needed before Phase 4 |
 | Internal DDOEE ethernet cables | Cat5e unshielded | Short runs — shielding not required |
 | Ferrite chokes on USB cables | Recommended | Cheap RFI mitigation — add to order list |
 | 5V power distribution | Custom USB-C hub — 3-4 panel mount sockets | See POWER_ARCHITECTURE.md |
-| Environmental monitoring sensor | 2× BME280 (~$8-10 each) — see revised Pi architecture below | Wavesense Sense HAT rejected — unnecessary extras |
+| Environmental monitoring sensor | BME280 × 2 + LSM6DSOX × 1 | Waveshare Sense HAT (C) rejected — wrong form factor, wrong sensors, wrong library ecosystem |
+| Ethernet switch | DUOPURUI 1→3 gigabit switch | VCELINK M242 (1→2) superseded — three Pis require three ports; DUOPURUI needs 5V USB-C power |
+| Dish sensor enclosure | ABS project box on dish mounting plate underside | See Dish Sensor Box Design below |
+| Sensor board selection | Adafruit BME280 + Adafruit LSM6DSOX breakouts | Confirmed over Waveshare Sense HAT (C) — 2026-05-08 |
 
 ### Revised Pi Architecture (Phase 4)
 
@@ -93,18 +104,44 @@ All components accounted for in Keynote layout v1:
 |---|---|---|
 | Pi 5 | Airspy R2 · science chain · rotctl · EZRa | — |
 | Pi 3 | V4c · RFI monitoring (rtl_power) | BME280 internal — enclosure environment, electronics health, condensation risk |
-| Pi 2 | External weather station — dedicated, always running | BME280 external — true observing conditions (temp/humidity/pressure outside) |
+| Pi 2 | Dish sensor station — dedicated, always running | BME280 + LSM6DSOX in ABS box on dish plate; anemometer + wind vane |
 
-**Pi 2 weather station notes:**
-- BME280 sensor mounted outside DDOEE in small weatherproof housing on mast
-- I2C cable from Pi 2 GPIO through gland or small hole to external sensor (~1m safe for I2C)
+**Pi 2 notes:**
+- ABS sensor box mounted on underside of Discovery Dish mounting plate — moves with dish in both azimuth and elevation
+- I2C cable from Pi 2 GPIO through DDOEE gland to ABS box on dish plate
 - Python script logging to CSV with timestamp
-- Data accessible over ethernet via VCELINK switch
+- Data accessible over ethernet via DUOPURUI switch
 - Power from 5V rail distribution board inside DDOEE
 - Runs independently — crash does not affect science chain
-- Pi 2 board remains inside DDOEE, only sensor is external
 
-**Cable gland update:** I2C sensor cable needs to exit enclosure — add to Gland 2 bundle or use a small additional penetration.
+---
+
+## Dish Sensor Box Design — RESOLVED 2026-05-08
+
+Design finalised in session. See also design/DISH_POSITION_CALIBRATION.md.
+
+### Physical arrangement
+
+- **Box:** ABS project box, open-bottomed shell
+- **Mounting:** Underside of Discovery Dish mounting plate via M4 bolts — moves with dish in elevation and azimuth
+- **Lid:** Closes open face; carries both sensor boards on equal-height M3 brass standoffs; carries cable gland
+- **Separation plate:** Fixed to box walls, hangs from top wall (dish-plate side), stops short of open face leaving wiring gap. Divides interior into two zones:
+  - **Weather zone:** Vented — BME280 directly below quarter-ball vent in top wall
+  - **IMU zone:** Sealed — LSM6DSOX, no vent
+- **Vent:** Semicircular hole in top wall of box, entirely within weather zone. Quarter-ball cap (hollow ball cap or ornament, cut and glued) provides rain protection with omnidirectional airflow
+- **Lid seal:** Sticky-backed foam on lid; separation plate edge provides compression with small cutout for wiring — blocks convective mixing between zones without crushing cables
+- **Gland:** In lid, weather zone side — I2C cable enters weather zone, routes under separation plate gap to reach LSM6DSOX in IMU zone
+
+### BME280 notes
+- Board on standoffs, sensor element faces upward toward vent hole
+- Direct line to ambient air through quarter-ball cap
+- First read after long idle periods returns stale cached value — read twice, discard first (Adafruit datasheet)
+
+### LSM6DSOX notes
+- Board on standoffs, fully enclosed in sealed IMU zone
+- Z-axis perpendicular to lid surface = perpendicular to dish mounting plate
+- Elevation angle: arctan2(gz, √(gx²+gy²)) after sensor mounting calibration
+- See DISH_POSITION_CALIBRATION.md for full calibration procedure (Steps 1–5)
 
 ---
 
@@ -128,22 +165,23 @@ All components accounted for in Keynote layout v1:
 |---|---|---|
 | DIPOLE_ANTENNA_DESIGN.md | Confirm M5 thread when dipole kit arrives | When V4c arrives |
 | E001 → E002 | Create E002 when Phase 3 begins (V4c + dipole assembled) | When V4c arrives |
-| POWER_ARCHITECTURE.md | Update power budget when Pi 5 decision confirmed | Before Phase 4 |
-| DDOEE_mounting_plate_v2.svg | Redraw for Phase 4 when Pi 5 confirmed | Before Phase 4 |
+| POWER_ARCHITECTURE.md | Update power budget — DUOPURUI switch adds 5V USB-C load; Pi 5 decision pending | Before Phase 4 |
+| DDOEE_mounting_plate_v2.svg | Redraw — DUOPURUI replaces VCELINK M242; update for Phase 4 when Pi 5 confirmed | Before Phase 4 |
 | INV001_noise_budget | Complete Friis with QPL9547 real values + SAW insertion loss | Before first light |
 | SAW_FILTER_DESIGN.md | ~~Identify LNA2~~ RESOLVED — QPL9547; SAW confirmation from KrakenRF pending | Soon |
 | TOOLS_PLAN.md | Refresh for Stellarium, rotctl, dual-SDR, ADF4351 | Before Phase 3 |
 | QUICK_REFERENCE.md | Update LO offset to 1422 MHz | Soon |
 | SDR_SELECTION.md | Note V4c triplexer improvement | Soon |
-| RFI_OVERVIEW.md | Note V4c triplexer improvement | Soon |
+| RFI_OVERVIEW.md | Note V4c triplexer improvement; skin depth calculation for QILIPSU 304SS confirmed adequate | Soon |
+| DISH_POSITION_CALIBRATION.md | Update mounting location — underside of dish mounting plate confirmed; ABS box design finalised | Soon |
 
 ---
 
-## Site Assessment — Pending (Today, 2026-05-07)
+## Site Assessment — Pending
 
 | Item | Notes |
 |---|---|
-| Formal site survey with tripod | Tripod ready — no assembly required |
+| Formal site survey with tripod | Tripod arrived 2026-05-07 — not yet out of box as of 2026-05-08 |
 | Elevation angle to 2515 boundary tree | Priority measurement — closest to transit bearing |
 | Bearing and elevation to pine top | Confirm NW bearing, not on transit bearing |
 | Confirm southern horizon open at 180° | Imagery suggests open — verify with theodolite |
@@ -174,6 +212,7 @@ All components accounted for in Keynote layout v1:
 | KrakenRF SAW filters | Follow-up message needed — see below | Pending |
 | SARA publication | SITE_ASSESSMENT_METHODOLOGY.md — after Blue Rock worked example complete |
 | First Light Readiness reading | FL-6 and FL-7 before end May; FL-1 to FL-5 before August |
+| Phelps 2024 paper | **REVIEWED 2026-05-08** — filed in reading_notes/; useful baseline comparison for thesis; setup inferior to BRRO but demonstrates 1m dish urban HI detection is achievable |
 
 ### KrakenRF — LNA2 resolved, SAW confirmation pending
 
@@ -197,8 +236,6 @@ Send follow-up via eBay:
 > correct insertion loss figures.
 
 **Status:** Awaiting SAW confirmation.
-
----
 
 ---
 
@@ -280,9 +317,10 @@ meaningful dish elevation angles, we must relate the sensor frame to
 the dish frame and the dish frame to the sky frame.
 
 **Step 1 — Sensor mounting calibration (one time):**
-Mount sensor rigidly to Drive tray. Record accelerometer vector when
-dish is at known elevation (e.g. horizontal park position = 0°).
-This defines the sensor-to-dish rotation matrix R_sd.
+Mount sensor rigidly on lid of ABS box on dish mounting plate underside.
+Record accelerometer vector when dish is at known elevation (e.g.
+horizontal park position = 0°). This defines the sensor-to-dish
+rotation matrix R_sd.
 
 **Step 2 — Tripod levelling verification:**
 Use spirit level on tripod head. Record accelerometer vector when
@@ -385,8 +423,8 @@ careful mounting and calibration.
 **Project:** Blue Rock Radio Observatory — BSc Honours Astronomy (UCLan)  
 **Observer:** Steve Hawker BEng MBA FRAS, San Jose CA  
 **GitHub:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
-**Current phase:** Phase 2 — Site Survey (tripod arrived 2026-05-07)  
-**Next milestone:** V4c + ADF4351 arrive ~May 22 → CAL-000  
+**Current phase:** Phase 2 — Site Survey (tripod arrived 2026-05-07, not yet deployed as of 2026-05-08)  
+**Next milestone:** Site survey on patio → V4c + ADF4351 arrive ~May 22 → CAL-000  
 **Key documents:** See README.md for full repository structure  
 **This file:** OPEN_ITEMS.md — start here for current state  
 
@@ -397,3 +435,4 @@ careful mounting and calibration.
 | Version | Date | Changes |
 |---|---|---|
 | 1.0 | 2026-05-07 | Initial document — hardware pending, technical questions, documentation updates, site survey items, calibration schedule, academic items, session handoff notes |
+| 2.0 | 2026-05-08 | VCELINK M242 superseded by DUOPURUI 1→3 switch (3 Pis require 3 ports); ABS dish sensor box design finalised (separation plate, quarter-ball vent, lid arrangement, foam seal); BME280 + LSM6DSOX confirmed over Waveshare Sense HAT (C); sensor box mounting location confirmed (dish mounting plate underside); Pi architecture re-confirmed with enclosure BME280 on Pi 3; Phelps 2024 paper reviewed; DDOEE component inventory updated throughout |
