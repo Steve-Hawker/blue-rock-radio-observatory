@@ -20,11 +20,12 @@ Radio Observatory hardware.
 | Using_our_new_Dipole_Antenna_Kit.pdf | RTL-SDR dipole kit guide | Arm lengths · 2cm internal metal · M5 thread · mounting | 2026-05-04 |
 | Phihong_POE48-120BT-R.pdf | Phihong PoE splitter 48W | 12V@4A output · **MAX +40°C — disqualified for outdoor use** | 2026-05-04 |
 | Tycon_POE-SPLT-BT-UNI-P.pdf | Tycon PoE splitter 90W | 5V@14A + 12V@5.9A · -40°C to +75°C · DIN mount · **selected** | 2026-05-04 |
-| TP-Link_TL-POE170S.pdf | TP-Link PoE injector 60W | 802.3bt · 60W max · 0°C to 45°C · indoor use · **selected** | 2026-05-04 |
+| ~~TP-Link_TL-POE170S.pdf~~ | ~~TP-Link PoE injector 60W~~ | ~~802.3bt · 60W max · 0°C to 45°C · indoor use~~ · **DEPRECATED 2026-05-08 — replaced by TP-Link Omada PoE++** | 2026-05-04 |
+| TP-Link_Omada_PoE_Plus_Plus.pdf | TP-Link Omada PoE++ injector | 802.3bt · indoor use · **selected — replaces TL-POE170S** · ASIN B09SXSN3XT | 2026-05-08 |
 | QILIPSU_Enclosure_350x250x150.pdf | QILIPSU IP65 stainless enclosure | 304 SS · 350×250×150mm · IP65 · DIN plate · lockable · $89.99 · **selected over KrakenRF DDOEE** | 2026-05-04 |
 | TA2494A_SAW_Filter.pdf | Tai-Saw TA2494A SAW filter | 1420MHz · 80MHz BW · 3.5dB IL · 24dB OOB rejection · 50Ω · **SAW2 (F2) in HI feed** | 2026-05-06 |
 | TA1077A_SAW_Filter.pdf | Tai-Saw TA1077A SAW filter | 1420MHz · 72MHz BW · 3.5dB IL · 42dB OOB rejection · 200Ω bal in · **SAW1 (F1) in HI feed** | 2026-05-06 |
-| dkplnt_DN510_DC-DC_converter.pdf | dkplnt DN510 12V→5V DC-DC | 50W · 10A · 95% eff · aluminium case · $9.99 · **selected for 5V rail** | 2026-05-07 |
+| dkplnt_DN510_DC-DC_converter.pdf | dkplnt DN510 12V→5V DC-DC | 50W · 10A · 95% eff · aluminium case · $9.99 · **selected for 5V rail** · ASIN B0DYK93WX8 | 2026-05-07 |
 
 ---
 
@@ -78,18 +79,23 @@ with the measured value from commissioning Cas A beam scan.
 | Component | Voltage | Est. current | Est. power |
 |---|---|---|---|
 | Raspberry Pi 5 | 5V | ~2.5A | ~12.5W |
+| Raspberry Pi 3 | 5V | ~0.8A | ~4W |
+| Raspberry Pi 2 | 5V | ~0.4A | ~2W |
 | Airspy R2 | 5V | ~0.5A | ~2.5W |
 | RTL-SDR V4c | 5V | ~0.27A | ~1.4W |
 | ADF4351 board | 5V | ~0.5A | ~2.5W |
+| DUOPURUI ethernet switch | 5V | ~0.2A | ~1W |
 | Discovery Drive | 12V | ~1A typical | ~12W |
-| **Total load** | | | **~31W** |
-| TL-POE170S output | — | — | 60W max |
+| **Total load** | | | **~37.9W** |
+| TP-Link Omada PoE++ output | — | — | TBC — confirm from datasheet |
 | Tycon splitter efficiency | — | — | 80% min |
-| **Available at load** | | | **~48W** |
-| **Headroom** | | | **~17W** |
+| **Available at load** | | | **TBC — update when Omada datasheet confirmed** |
 
-Comfortable margin. Discovery Drive current draw under slewing load to be
-confirmed — if significantly above 1A, revisit budget.
+Note: Power budget updated 2026-05-08 to reflect 3-Pi architecture
+(Pi 2 + Pi 3 + Pi 5) and DUOPURUI switch. Discovery Drive current
+draw under slewing load to be confirmed when unit arrives.
+TL-POE170S (60W) deprecated — TP-Link Omada PoE++ selected;
+confirm output wattage from datasheet and update headroom calculation.
 
 ---
 
@@ -99,4 +105,5 @@ confirmed — if significantly above 1A, revisit budget.
 - [ ] Complete INV001 with QPL9547 interpolated values at 1420 MHz
 - [ ] Note V4c triplexer improvement in SDR_SELECTION.md and RFI_OVERVIEW.md
 - [ ] Add GQRX MacOS bias tee device string to RASPBERRY_PI_SETUP.md: rtl=0,bias=1
-- [ ] Create design/POWER_ARCHITECTURE.md — TL-POE170S + Tycon POE-SPLT-BT-UNI-P + Pi 5 architecture (pending Murata DC-DC confirmation, now eliminated by Tycon unit)
+- [ ] Create design/POWER_ARCHITECTURE.md — update for 3-Pi architecture + DUOPURUI switch + TP-Link Omada PoE++ (replaces TL-POE170S)
+- [ ] Confirm TP-Link Omada PoE++ output wattage and update power budget headroom
