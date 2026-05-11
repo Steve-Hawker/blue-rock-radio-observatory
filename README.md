@@ -49,12 +49,13 @@ methodology, reproducible results.
 
 - **Antenna:** 70cm Discovery Dish parabolic dish, AZ/EL tracking mount
 - **Mount:** Discovery Drive — WiFi controlled, 0–90° elevation, rotctl compatible
-- **Signal chain:** Feed (LNA1 QPL9547 → SAW Filter → LNA2 → SAW Filter) → SDR
+- **Signal chain:** Feed (LNA1 QPL9547 → TA1077A SAW → LNA2 QPL9547 → TA2494A SAW) → SDR
 - **Chain A (RFI monitoring):** RTL-SDR Blog V4c + dipole antenna
 - **Chain B (Science):** Airspy R2 + Discovery Dish HI Feed
 - **Enclosure:** QILIPSU 304 stainless steel IP65 350×250×150mm — replaces KrakenRF DDOEE
+- **Computing:** Raspberry Pi 2 (dish sensors) + Pi 3 (RFI monitoring) + Pi 5 (science chain, Phase 4)
 - **Target frequency:** 1420.405 MHz (hydrogen line)
-- **Software:** EZRa (Phase 1) / GNU Radio (Phase 2)
+- **Software:** EZRa (Phase 3–4) / GNU Radio (Phase 5)
 
 Full equipment details in `equipment/` directory.
 
@@ -87,7 +88,7 @@ blue-rock-radio-observatory/
 ├── .gitignore                       ← excluded files
 │
 ├── equipment/                       ← versioned equipment state records
-│   ├── E001_2026-04-30.md          ← initial system — hardware on order
+│   ├── E001_2026-04-30.md          ← initial system — hardware on order / arriving
 │   └── datasheets/                  ← component datasheets and product docs
 │       ├── README_DATASHEETS.md     ← index with key extracted values
 │       ├── QPL9547_Data_Sheet.pdf
@@ -95,7 +96,14 @@ blue-rock-radio-observatory/
 │       ├── Discovery_Dish_CrowdSupply.pdf
 │       ├── RTL-SDR_Dipole_Set_eBay.pdf
 │       ├── ADF4351_board_eBay.pdf
-│       └── SMA_attenuator_30dB_eBay.pdf
+│       ├── SMA_attenuator_30dB_eBay.pdf
+│       ├── TA1077A_SAW_Filter.pdf   ← SAW1 (F1) — 1420MHz, 72MHz BW, 42dB OOB rejection
+│       ├── TA2494A_SAW_Filter.pdf   ← SAW2 (F2) — 1420MHz, 80MHz BW, 24dB OOB rejection
+│       ├── dkplnt_DN510_DC-DC_converter.pdf
+│       ├── Tycon_POE-SPLT-BT-UNI-P.pdf
+│       ├── TP-Link_Omada_PoE_Plus_Plus.pdf ← replaces TL-POE170S
+│       ├── TP-Link_TL-POE170S.pdf   ← deprecated 2026-05-08
+│       └── QILIPSU_Enclosure_350x250x150.pdf
 │
 ├── sessions/                        ← per-observation session logs
 │   └── SESSION_TEMPLATE.md
@@ -120,19 +128,19 @@ blue-rock-radio-observatory/
 │   ├── diagrams/                    ← system architecture diagrams
 │   │   ├── BRRO_system_architecture_v5.svg
 │   │   ├── BRRO_system_architecture_v5.mermaid
-│   │   └── DDOEE_mounting_plate_v2.svg  ← two-Pi layout, Phase 2–3
+│   │   └── DDOEE_mounting_plate_v2.svg  ← three-Pi layout, Phase 2–3 (update pending)
 │   ├── ADC_BIT_RESOLUTION.md
 │   ├── ADF4351_CALIBRATION.md       ← signal source calibration procedures v1.1
 │   ├── BEAM_AND_RESOLUTION.md
 │   ├── DAILY_OBSERVING_WINDOWS.md
 │   ├── DIPOLE_ANTENNA_DESIGN.md
-│   ├── DISH_POSITION_CALIBRATION.md ← LSM6DSOX IMU + BME280 on Drive tray
+│   ├── DISH_POSITION_CALIBRATION.md ← LSM6DSOX IMU + BME280 on Drive bracket (outside face)
 │   ├── DOWNCONVERSION_ARCHITECTURE.md
 │   ├── DUAL_SDR_ARCHITECTURE.md
 │   ├── GALACTIC_PLANE_TRACKING.md
 │   ├── INTERFEROMETER_UPGRADE.md   ← v0.2 KrakenSDR 5-element array
 │   ├── OBSERVING_STRATEGY.md
-│   ├── POWER_ARCHITECTURE.md       ← PoE power distribution, dual budget (Pi3+2 / Pi5)
+│   ├── POWER_ARCHITECTURE.md       ← PoE power distribution, three-Pi budget (Pi2+Pi3 / +Pi5 Phase 4) v2.0
 │   ├── SAW_FILTER_DESIGN.md        ← v1.0 TA1077A + TA2494A identified from PCB
 │   └── SDR_SELECTION.md
 │
@@ -194,3 +202,7 @@ Cassiopeia A — primary flux calibration standard.
 Reference flux: 2723 Jy at 1420 MHz (J2000, Baars et al. 1977).
 Secular decrease: 0.77% per year.
 Expected 2026: ~2567 Jy.
+
+---
+
+*Last updated: 2026-05-10*
