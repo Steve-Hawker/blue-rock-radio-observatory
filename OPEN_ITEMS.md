@@ -12,36 +12,39 @@ resolved or new ones arise.
 
 | Item | Status | Notes |
 |---|---|---|
-| Tycon POE-SPLT-BT-UNI-P | To order | PoE splitter — set to 12V |
+| Tycon POE-SPLT-BT-UNI-P | **To order — critical path** | PoE splitter — set to 12V; nothing works without this |
 | ~~VCELINK M242 ethernet switch~~ | **SUPERSEDED 2026-05-08** | Replaced by DUOPURUI 1→3 switch |
 | ~~TP-Link TL-POE170S~~ | **SUPERSEDED 2026-05-08** | Replaced by TP-Link Omada PoE++ |
-| TP-Link Omada PoE++ injector | Ordered 2026-05-08 | ASIN B09SXSN3XT — replaces TL-POE170S; confirm output wattage from datasheet |
-| dkplnt DN510 DC-DC 12V→5V 50W | Ordered 2026-05-08 | ASIN B0DYK93WX8 |
-| DUOPURUI ethernet switch 1→3 | Ordered 2026-05-08 | ASIN B0FCLKWGZ1; 3-port gigabit; Pi 2 + Pi 3 + Pi 5; needs 5V USB-C from DN510 rail |
-| EPLZON breadboard kit | Ordered 2026-05-08 | ASIN B0DCRKNW5H; 2× 6.8"×2.05" + 2× 3.5"×2.05" |
-| Adafruit BME280 breakout | Ordered 2026-05-08 | External dish sensor — Pi 2 Qwiic chain |
-| Adafruit LSM6DSOX breakout | Ordered 2026-05-08 | Dish elevation IMU — Pi 2 Qwiic chain |
+| TP-Link Omada PoE++ injector | **Arrived 2026-05-10** ✓ | ASIN B09SXSN3XT — confirm output wattage from datasheet |
+| dkplnt DN510 DC-DC 12V→5V 50W | Ordered 2026-05-08 | ASIN B0DYK93WX8 — awaiting delivery |
+| DUOPURUI ethernet switch 1→3 | **Arrived 2026-05-10** ✓ | ASIN B0FCLKWGZ1 |
+| EPLZON breadboard kit | **Arrived 2026-05-10** ✓ | ASIN B0DCRKNW5H |
+| ADF4351 RF signal source board | **Arrived 2026-05-10** ✓ | Early — window was May 12–22 |
+| Rivet nut kit (M3/M4) + setter tool | **Arrived 2026-05-09** ✓ | Same-day delivery |
+| Adafruit BME280 breakout | Ordered 2026-05-08 | Awaiting delivery |
+| Adafruit LSM6DSOX breakout | Ordered 2026-05-08 | Awaiting delivery |
 | Qwiic flat 4-pole cables × 3 | Ordered 2026-05-08 | Two in box, one spare |
-| Hammond 1591DBU enclosure | Ordered 2026-05-08 | Blue ABS; card guides; ~111×61×27mm; ships ~May 11 |
+| Hammond 1591DBU enclosure | Ordered 2026-05-08 | Ships ~May 11 |
 | QILIPSU 304 SS enclosure | To order | 350×250×150mm IP65 |
+| Outdoor Cat6 cable 30ft × 2 | To order | Outdoor rated; house to DDOEE run |
 | Raspberry Pi 5 (4GB) | Pending decision | Needed before Phase 4 |
-| Cermant USB-C breakout boards (20-pack) | To order | 12×15mm, 2.54mm pitch; 6 on EPLZON stripboard; $8.99/20 |
+| Cermant USB-C breakout boards (20-pack) | To order | 6 on EPLZON stripboard; $8.99/20 |
 | Cable gland 3/4" (19mm) × 2 | To order | Gland 1: Cat6 PoE; Gland 2: multi-cable |
 | IP65 membrane vent | To check | QILIPSU may include one — verify on receipt |
 | Ferrite chokes for USB cables | To order | RFI mitigation |
 | Short SMA cables (internal) | To order | SDR to coax connections inside enclosure |
-| Combined anemometer + wind vane unit | To order | ~$25-35 — single mount, pulse + analog output |
+| Combined anemometer + wind vane unit | To order | ~$25-35 — single mount |
 | MCP3008 ADC | To order | ~$4 — wind vane voltage on Pi 2 SPI bus |
 | M5 threaded rod (brass) | To purchase | Custom dipole elements |
 | Right-angle aluminium bracket | To purchase | For Tycon mounting — 25×25×2mm |
-| Rivet nut kit (M3/M4) + setter tool | To purchase | For mounting plate component fixing |
-| Outdoor CAT6 cable | To purchase | House to DDOEE run |
 | microSD card 32GB | To purchase | For Pi OS install |
 | M3 brass standoffs | To purchase | Equal height both sides in Hammond box |
 | Mounting bolts | To purchase | Hammond box to Drive bracket |
 | Sticky-backed foam sheet | To purchase | Lid seal on Hammond box |
 | Squash balls (40mm standard, 4-pack) | To purchase | Vent cap — ~$7 eBay; diagonal cut |
-| Credit card (expired) | On hand | Separation plate — fits card guides in Hammond 1591DBU |
+| Star point lug (brass or copper) | To purchase | Internal DDOEE grounding star point |
+| AWG 12 ground wire | To purchase | Internal DDOEE ground bonds — 2.5mm² minimum |
+| Credit card (expired) | On hand ✓ | Separation plate — fits card guides in Hammond 1591DBU |
 | Leuchtturm plain lab notebook | Ordered — Lighthouse | Awaiting delivery |
 
 ---
@@ -326,4 +329,5 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 1.0 | 2026-05-07 | Initial document |
 | 2.0 | 2026-05-08 | DUOPURUI switch; ABS sensor box design; BME280 + LSM6DSOX confirmed; Pi architecture; Phelps reviewed |
 | 3.0 | 2026-05-08 | Drive bracket mounting confirmed; Cermant USB-C boards; Qwiic chain; squash ball vent; ADS-B/dump1090; ADF4351 delivery window |
-| 4.0 | 2026-05-08 | TL-POE170S → Omada PoE++; Hammond 1591DBU ordered; credit card separation plate; sensors + Qwiic cables ordered; internal DDOEE BME280 decision pending; EPLZON breadboard ordered; DN510 + DUOPURUI + Omada ordered |
+| 4.0 | 2026-05-08 | TL-POE170S → Omada PoE++; Hammond 1591DBU ordered; credit card separation plate; sensors + Qwiic cables ordered; internal DDOEE BME280 decision pending; EPLZON breadboard ordered |
+| 5.0 | 2026-05-10 | Arrivals: ADF4351, Omada PoE++, DUOPURUI switch, EPLZON breadboard, rivet nut kit; added outdoor Cat6 30ft × 2 to order list; added star point lug + AWG 12 ground wire; Tycon flagged as critical path |
