@@ -33,12 +33,10 @@ resolved or new ones arise.
 | Anker USB-C to USB-C cables (2× 2-pack = 4 total) | Ordered 2026-05-10 | Power distribution from stripboard; Pi 2, Pi 3, Pi 5 (Phase 4), 1 spare; DUOPURUI has own cable |
 | Outdoor Cat6 cable 30ft × 2 | To order | Outdoor rated; house to DDOEE run |
 | Raspberry Pi 5 (4GB) | Pending decision | Needed before Phase 4 |
-| Cable gland 3/4" (19mm) × 2 | To order | Gland 1: Cat6 PoE; Gland 2: multi-cable |
-| IP65 membrane vent | To check | QILIPSU may include one — verify on receipt |
+| Cable gland 3/4" (19mm) × 3 | To order | Gland 1: Cat6 PoE; Gland 2: 12V DC + Cat6 sensor cable; Gland 3: RF coax |
+| IP65 membrane vent | To check | QILIPSU may include one — verify on receipt; positioned between Gland 2 and Gland 3 |
 | Ferrite chokes for USB cables | To order | RFI mitigation |
 | Short SMA cables (internal) | To order | SDR to coax connections inside enclosure |
-| Combined anemometer + wind vane unit | To order | ~$25-35 — single mount |
-| MCP3008 ADC | To order | ~$4 — wind vane voltage on Pi 2 SPI bus |
 | M5 threaded rod (brass) | To purchase | Custom dipole elements |
 | Right-angle aluminium bracket | To purchase | For Tycon mounting — 25×25×2mm |
 | microSD card 32GB | To purchase | For Pi OS install |
@@ -63,11 +61,11 @@ resolved or new ones arise.
 | dkplnt DN510 | Under stripboard | Rivnuts |
 | EPLZON stripboard | Top, on 25mm standoffs over DN510 | 6× USB-C breakout sockets + voltmeters |
 | Raspberry Pi 3 | Right, lower | V4c · RFI monitoring · dump1090 ADS-B |
-| Raspberry Pi 2 | Stacked on Pi 3 | Dish sensor station · Hammond box via I2C/Qwiic cable |
+| Raspberry Pi 2 | Stacked on Pi 3 | Dish sensor station · Hammond box via Cat6 sensor cable |
 | RTL-SDR V4c | Bottom centre | USB to Pi 3 |
 | Airspy R2 | Bottom centre | USB to Pi 5 (Phase 4) |
-| BME280 (external) | In Hammond 1591DBU on Drive bracket | True observing conditions — Pi 2 Qwiic/I2C |
-| LSM6DSOX | In Hammond 1591DBU on Drive bracket | Dish elevation verification — Pi 2 Qwiic/I2C |
+| BME280 (external) | In Hammond 1591DBU on Drive bracket | True observing conditions — Pi 2 I2C via Cat6 sensor cable |
+| LSM6DSOX | In Hammond 1591DBU on Drive bracket | Dish elevation verification — Pi 2 I2C via Cat6 sensor cable |
 | ADF4351 + 30dB attenuator | Removable — stored together | Insert for calibration only |
 | Voltmeters × 2 | Lower half of stripboard | 12V and 5V monitoring |
 
@@ -88,13 +86,20 @@ Not a science instrument. Can be added later if warranted.
 
 ## DDOEE — Cable Gland Plan
 
-**Bottom removable panel — 3 penetrations:**
+**Bottom removable panel — 4 penetrations:**
 
-| Gland | Size | Contents |
-|---|---|---|
-| Gland 1 | 3/4" (19mm) | Cat6 PoE ethernet only — separated from RF |
-| Gland 2 | 3/4" (19mm) | HI feed coax (LMR240) + dipole coax (RG174) + 12V DC to Discovery Drive + I2C/Qwiic cable to Hammond box |
-| Vent | TBD | IP65 membrane vent with anti-insect mesh — check if included with QILIPSU |
+| Position | Type | Size | Contents |
+|---|---|---|---|
+| 1 | Gland | 3/4" (19mm) | Cat6 PoE ethernet only — separated from all other cables |
+| 2 | Gland | 3/4" (19mm) | 12V DC to Discovery Drive + Cat6 sensor cable (RJ45s cut, pairs used for I2C to Hammond box) |
+| 3 | Vent | TBD | IP65 membrane vent + anti-insect mesh — check if included with QILIPSU |
+| 4 | Gland | 3/4" (19mm) | RF: HI feed coax (LMR240 ~6mm OD) + dipole coax (RG174 ~2.8mm OD) |
+
+**Notes:**
+- RF cables isolated in their own gland — maximum separation from power and data
+- Cat6 sensor cable: outdoor-rated Cat6, RJ45s removed, individual pairs used for I2C (SDA, SCL, VCC, GND) with spare pairs for future use; twisted pairs provide noise rejection
+- ~~Combined anemometer + wind vane~~ — **REMOVED 2026-05-10**; wind data obtainable from external source
+- ~~MCP3008 ADC~~ — **REMOVED 2026-05-10**; no longer required
 
 ---
 
@@ -102,27 +107,30 @@ Not a science instrument. Can be added later if warranted.
 
 | Decision | Resolution | Notes |
 |---|---|---|
-| Internal DDOEE ethernet cables | Cat5e unshielded | Short runs |
+| Internal DDOEE ethernet cables | Cat6A shielded 1ft jumpers | Ordered 2026-05-10 |
 | Ferrite chokes on USB cables | Recommended | Cheap RFI mitigation |
 | 5V power distribution | 6× Cermant USB-C breakout boards on EPLZON stripboard | 3 Pis + switch + 2 spare |
-| Environmental monitoring sensor | BME280 + LSM6DSOX | Waveshare Sense HAT (C) rejected |
+| Environmental monitoring sensor | BME280 + LSM6DSOX only | Waveshare Sense HAT (C) rejected; anemometer/wind vane removed |
 | Ethernet switch | DUOPURUI 1→3 gigabit | Replaces VCELINK M242 — 3 Pis need 3 ports |
 | PoE injector | TP-Link Omada PoE++ | Replaces TL-POE170S — ordered 2026-05-08 |
 | Dish sensor enclosure | Hammond 1591DBU blue ABS | Card guides; credit card as separation plate; outside face of Drive bracket |
 | Dish sensor mounting | Outside face of Discovery Drive bracket | Plate underside ruled out — fouling confirmed from photos |
-| Sensor board interconnect | Qwiic flat 4-pole cable chain | BME280 → LSM6DSOX → pigtail to Pi 2; both boards have dual Qwiic ports |
-| Separation plate material | Expired credit card | Fits card guides in Hammond 1591DBU exactly; rigid, waterproof, no fabrication |
+| Sensor board interconnect | Qwiic flat 4-pole cable chain | BME280 → LSM6DSOX → pigtail to Pi 2 I2C |
+| Sensor cable to DDOEE | Outdoor Cat6, RJ45s cut, pairs used for I2C | Twisted pairs, noise rejection, spare pairs for future |
+| Separation plate material | Expired credit card | Fits card guides in Hammond 1591DBU exactly |
 | Vent cap material | Standard 40mm squash ball, diagonal cut | Omnidirectional rain protection; ~$7/4-pack eBay |
 | ADS-B monitoring | dump1090 on Pi 3 via V4c — Phase 3 | No extra hardware; validates V4c + SAW rejection at 1090 MHz |
-| Internal DDOEE BME280 | **PENDING** — leaning against | Advantage modest; not a science instrument; can be added later |
+| Cable gland arrangement | 4 penetrations: PoE / DC+sensor / vent / RF | RF isolated in own gland |
+| Wind data | External source — no hardware required | Anemometer + MCP3008 removed from BOM |
+| Internal DDOEE BME280 | **PENDING** — leaning against | Advantage modest; can be added later |
 
 ### Pi Architecture (Phase 4)
 
 | Device | Role | Sensors / Software |
 |---|---|---|
-| Pi 5 | Airspy R2 · science chain · rotctl · EZRa | — |
-| Pi 3 | V4c · RFI monitoring · dump1090 ADS-B | (internal BME280 — pending decision) |
-| Pi 2 | Dish sensor station — always running | BME280 + LSM6DSOX via Qwiic; anemometer + wind vane |
+| Pi 5 | Airspy R2 · science chain · rotctl · EZRa | Phase 4 addition |
+| Pi 3 | V4c · RFI monitoring · dump1090 ADS-B | Always present; (internal BME280 — pending) |
+| Pi 2 | Dish sensor station — always running | BME280 + LSM6DSOX via I2C/Cat6 cable |
 
 ---
 
@@ -131,13 +139,13 @@ Not a science instrument. Can be added later if warranted.
 ### Physical arrangement
 
 - **Box:** Hammond 1591DBU — blue ABS, ~111×61×27mm, card guide channels
-- **Separation plate:** Expired credit card — slots into card guides; divides interior into weather zone (BME280) and IMU zone (LSM6DSOX); small notch at bottom edge for Qwiic cable routing
+- **Separation plate:** Expired credit card — slots into card guides; divides interior into weather zone (BME280) and IMU zone (LSM6DSOX); small notch at bottom edge for cable routing
 - **Lid:** Closes open face; carries both sensor boards on equal-height M3 brass standoffs; carries cable gland
 - **Lid seal:** Sticky-backed foam; separation plate edge provides compression; cutout over wiring to avoid crushing
 - **Mounting:** Outside face of Discovery Drive bracket via bolts — moves with dish in azimuth; elevation tracked by LSM6DSOX
 - **Vent:** Squash ball (40mm standard, diagonal cut) glued over ~15-20mm hole in box wall, entirely within weather zone
-- **Gland:** In lid, weather zone side — Qwiic/I2C cable enters, routes under credit card gap to LSM6DSOX in IMU zone
-- **Qwiic chain:** Pi 2 I2C GPIO → pigtail → LSM6DSOX → flat Qwiic cable → BME280
+- **Gland:** In lid, weather zone side — Cat6 sensor cable pairs enter, route under credit card gap to LSM6DSOX in IMU zone
+- **Qwiic chain inside box:** LSM6DSOX → flat Qwiic cable → BME280
 
 ### BME280 notes
 - Sensor element faces toward vent hole
@@ -185,7 +193,7 @@ Document results in rfi/RFI_OVERVIEW.md.
 |---|---|---|
 | DIPOLE_ANTENNA_DESIGN.md | Confirm M5 thread when dipole kit arrives | When V4c arrives |
 | E001 → E002 | Create E002 when Phase 3 begins | When V4c arrives |
-| POWER_ARCHITECTURE.md | 6× USB-C sockets; DUOPURUI + Omada PoE++; Pi 5 pending | Before Phase 4 |
+| POWER_ARCHITECTURE.md | **Updated this session — v2.0** | Done |
 | DDOEE_mounting_plate_v2.svg | Redraw — DUOPURUI replaces VCELINK M242; 6-socket power strip | Before Phase 4 |
 | INV001_noise_budget | Complete Friis with QPL9547 interpolated values + SAW IL | Before first light |
 | SAW_FILTER_DESIGN.md | SAW confirmation from KrakenRF pending | Soon |
@@ -193,7 +201,7 @@ Document results in rfi/RFI_OVERVIEW.md.
 | QUICK_REFERENCE.md | Update LO offset to 1422 MHz | Soon |
 | SDR_SELECTION.md | Note V4c triplexer improvement | Soon |
 | RFI_OVERVIEW.md | V4c triplexer; QILIPSU skin depth; ADS-B field validation plan | Soon |
-| DISH_POSITION_CALIBRATION.md | Outside face of Drive bracket; Hammond 1591DBU + Qwiic chain | Soon |
+| DISH_POSITION_CALIBRATION.md | Outside face of Drive bracket; Hammond 1591DBU + Cat6 sensor cable | Soon |
 
 ---
 
@@ -215,7 +223,7 @@ Document results in rfi/RFI_OVERVIEW.md.
 
 | Procedure | When | Notes |
 |---|---|---|
-| CAL-000-V4c | ADF4351 due May 12–22; V4c due May 21–Jun 12 | Both must be in hand |
+| CAL-000-V4c | ADF4351 arrived; V4c due May 21–Jun 12 | Both must be in hand |
 | CAL-001 LO verification | Commissioning | Requires ADF4351 |
 | CAL-002 passband sweep | Commissioning | Requires ADF4351 + dish |
 | First RFI survey | When V4c arrives | Chain A baseline |
@@ -297,8 +305,7 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 
 ### Ideas to capture
 
-- [ ] Wind speed proxy via RMS accelerometer noise
-- [ ] Combined anemometer + wind vane — pulse GPIO + MCP3008 SPI
+- [ ] Wind speed proxy via RMS accelerometer noise (no hardware required)
 - [ ] Slew settling detection before integration begins
 - [ ] Session start/end weather report auto-appended to session log
 - [ ] Humidity alert if internal DDOEE >85% (if internal BME280 fitted)
@@ -310,8 +317,6 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 - [ ] Confirm Adafruit blinka on Pi 2 (ARMv7 32-bit)
 - [ ] Sample rate — 1 Hz weather, 10–100 Hz vibration monitoring
 - [ ] position_monitor.py — query rotctl via network or shared file?
-- [ ] Wind speed observation quality threshold — empirical
-- [ ] MCP3008 SPI conflict check on Pi 2
 
 ---
 
@@ -321,7 +326,7 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 **Observer:** Steve Hawker BEng MBA FRAS, San Jose CA  
 **GitHub:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
 **Current phase:** Phase 2 — Site Survey (tripod arrived 2026-05-07, not yet deployed)  
-**Next milestone:** Site survey on patio → ADF4351 May 12–22 → V4c May 21–Jun 12 → CAL-000  
+**Next milestone:** Site survey on patio → V4c May 21–Jun 12 → CAL-000  
 **Key documents:** README.md for repo structure; this file for current state  
 **This file:** OPEN_ITEMS.md  
 
@@ -336,4 +341,5 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 3.0 | 2026-05-08 | Drive bracket mounting confirmed; Cermant USB-C boards; Qwiic chain; squash ball vent; ADS-B/dump1090; ADF4351 delivery window |
 | 4.0 | 2026-05-08 | TL-POE170S → Omada PoE++; Hammond 1591DBU ordered; credit card separation plate; sensors + Qwiic cables ordered; internal DDOEE BME280 decision pending; EPLZON breadboard ordered |
 | 5.0 | 2026-05-10 | Arrivals: ADF4351, Omada PoE++, DUOPURUI switch, EPLZON breadboard, rivet nut kit; added outdoor Cat6 + grounding items; Tycon flagged critical path |
-| 6.0 | 2026-05-10 | Ordered: QILIPSU enclosure, Cat6A shielded jumpers, step drill, cold galv spray, Cermant USB-C boards, Anker USB-C cables; noted galvanised vs stainless distinction; ferrule kit added; DUOPURUI power cable confirmed included |
+| 6.0 | 2026-05-10 | Ordered: QILIPSU enclosure, Cat6A shielded jumpers, step drill, cold galv spray, Cermant USB-C boards, Anker USB-C cables; ferrule kit added |
+| 7.0 | 2026-05-10 | Anemometer + MCP3008 removed — wind data from external source; cable glands revised to 4 penetrations (PoE / DC+sensor / vent / RF); sensor cable changed to Cat6 pairs; RF isolated in own gland; POWER_ARCHITECTURE.md updated; Phase 4 power budget corrected to include all 3 Pis |
