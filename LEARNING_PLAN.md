@@ -2,8 +2,8 @@
 
 **Observer:** Steve Hawker BEng MBA FRAS  
 **Repository:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
-**Plan version:** 1.6  
-**Date:** 2026-05-08  
+**Plan version:** 1.7  
+**Date:** 2026-05-10  
 
 *This is a living document. Update it as reading is completed, understanding develops,
 and new topics are identified. Commit each update with a version note.*
@@ -42,6 +42,8 @@ at 1420.405 MHz. This underpins every scientific claim made in the thesis.
 
 | Resource | Type | Priority | Status |
 |---|---|---|---|
+| Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 1 (Observational Methods) | Textbook | **Essential — primary undergraduate reference** | Not started |
+| Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 2 (Astrophysics) | Textbook | **Essential — covers HI physics with full derivations** | Not started |
 | Carroll & Ostlie — *Introduction to Modern Astrophysics* Ch. 31 (ISM) | Textbook | Essential | Not started |
 | NRAO Essential Radio Astronomy — HI and ISM chapters | Online, free | Essential | Not started |
 | Kalberla & Kerp 2009 — *ARA&A* 47, 27 "The HI Distribution of the Milky Way" | Review paper, free via NASA ADS | Essential | Not started |
@@ -90,6 +92,7 @@ times — derives from these fundamentals.
 
 | Resource | Type | Priority | Status |
 |---|---|---|---|
+| Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 1 (Observational Methods) | Textbook | **Essential — instrumentation, telescopes, observation methods; lab exercises included** | Not started |
 | Wilson, Rohlfs & Hüttemeister — *Tools of Radio Astronomy* Ch. 1, 4, 7 | Textbook | Essential | Not started |
 | Kraus — *Radio Astronomy* Ch. 3, 7 | Textbook | Essential | Not started |
 | Pozar — *Microwave Engineering* Ch. 10 (noise) | Textbook | Friis section only | Not started |
@@ -97,6 +100,36 @@ times — derives from these fundamentals.
 | SARA Journal — amateur receiver noise articles | Journal | Recommended | Not started |
 | QPL9547 datasheet | Datasheet | Essential | Not started |
 | SAW Filter datasheets (when obtained) | Datasheet | Essential | Not started |
+
+### Marr, Snell & Kurtz — Reading Guide
+
+**Vol. 1 (Observational Methods)** is the primary entry point. It is the
+first undergraduate textbook exclusively devoted to radio astronomy telescopes
+and observation methods, requires no prior astronomy knowledge, and begins
+with a review of the pertinent basics. Directly relevant to Blue Rock:
+
+- Instrumentation chapters — read alongside BEAM_AND_RESOLUTION.md and
+  DUAL_SDR_ARCHITECTURE.md
+- Telescopes and observation methods — read before Phase 4 first light
+- Aperture synthesis and interferometry overview — read before Phase 6
+  planning begins; provides conceptual foundation before tackling Thompson,
+  Moran & Swenson
+- Lab exercises using Small Radio Telescope / Very Small Radio Telescope
+  (MIT Haystack Observatory) — these are downloadable and directly applicable
+  to the Blue Rock observing programme methodology
+
+**Vol. 2 (Astrophysics)** addresses the physical phenomena that give rise to
+radio emissions, with derivations available for most equations. This directly
+addresses the frustration with Condon & Ransom — use Vol. 2 as the primary
+astrophysics reference where derivations are needed, with Condon & Ransom as
+supplementary depth for specific topics.
+
+**Recommended reading sequence for Blue Rock:**
+1. Vol. 1 — astronomy basics review (before Phase 4)
+2. Vol. 1 — instrumentation and telescopes (before Phase 4)
+3. Vol. 2 — HI and ISM chapters (before first light, alongside NRAO ERA)
+4. Vol. 1 — observation methods in detail (during Phase 4)
+5. Vol. 1 — aperture synthesis overview (Phase 6 planning)
 
 ### Notes
 *(Add notes here as reading progresses)*
@@ -134,6 +167,7 @@ galactic structure, rotation, and evolution.
 
 | Resource | Type | Priority | Status |
 |---|---|---|---|
+| Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 2 (Astrophysics) | Textbook | **Essential — HI and galactic structure with full derivations** | Not started |
 | Binney & Merrifield — *Galactic Astronomy* Ch. 8 (HI and spiral structure) | Textbook | Essential | Not started |
 | Chemin, Carignan & Foster 2009 — *AJ* 137, 3452 (M31 HI rotation curve) | Key paper | Essential | Not started |
 | Wakker et al. 2007 — *ApJ* 670, L113 (Complex C distance) | Key paper | Essential | Not started |
@@ -461,6 +495,8 @@ Reading to complete **before Phase 4:**
 - **Topic 5: Doppler Corrections — core concepts** (LSR frame, Astropy)
 - Topic 4: Clark & Clark Section 2 — direct conversion architecture
 - Topic 4: EZRa documentation — read before first use
+- **Marr, Snell & Kurtz Vol. 1 — astronomy basics + instrumentation chapters**
+- **Marr, Snell & Kurtz Vol. 2 — HI and ISM chapters**
 
 Reading to do **during Phase 4:**
 - Topic 3: HI in Galaxies — M31 rotation curve, double-horn profile
@@ -510,6 +546,8 @@ Additional reading needed (not yet in learning plan):
 | **May–Jul 2026** | QPL9547 datasheet — study carefully | 2 | INV001 Friis calculation |
 | **Jun–Aug 2026** | Clark & Clark Section 2 | 4 | Signal chain architecture |
 | **Jun–Aug 2026** | Wilson et al. Ch. 1, 4 | 2 | Telescope fundamentals |
+| **Jun–Aug 2026** | **Marr, Snell & Kurtz Vol. 1 — basics + instrumentation** | 1, 2 | **Primary undergraduate reference; no prior knowledge needed** |
+| **Before first light** | **Marr, Snell & Kurtz Vol. 2 — HI and ISM** | 1, 3 | **Full derivations; addresses Condon & Ransom frustration** |
 | **Before first light** | Baars et al. 1977 | 6 | Flux calibration — essential |
 | **Before first light** | NRAO ERA — HI and ISM | 1 | HI physics foundations |
 | **Before first light** | Astropy Doppler docs | 5 | LSR corrections |
@@ -717,6 +755,7 @@ and answered over time.*
 | 1.4 | 2026-05-04 | Add phase cross-reference section — reading mapped to all 6 programme phases with priority summary table |
 | 1.5 | 2026-05-04 | Add First Light Readiness section — 7 minimum reading items, 14-22 hours, hard deadline before August 2026 |
 | 1.6 | 2026-05-08 | Add FL-8 — Phelps 2024 arXiv:2411.00057; noted not peer reviewed; updated checklist to 8 items, 16-25 hours |
+| 1.7 | 2026-05-10 | Add Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 1 + Vol. 2; added to Topics 1, 2, 3 resource tables; added reading guide; added to Phase 4 prerequisites and summary priority table |
 
 ---
 
