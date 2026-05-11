@@ -16,8 +16,8 @@ resolved or new ones arise.
 | ~~VCELINK M242 ethernet switch~~ | **SUPERSEDED 2026-05-08** | Replaced by DUOPURUI 1→3 switch |
 | ~~TP-Link TL-POE170S~~ | **SUPERSEDED 2026-05-08** | Replaced by TP-Link Omada PoE++ |
 | TP-Link Omada PoE++ injector | **Arrived 2026-05-10** ✓ | ASIN B09SXSN3XT — confirm output wattage from datasheet |
-| dkplnt DN510 DC-DC 12V→5V 50W | Ordered 2026-05-08 | ASIN B0DYK93WX8 — awaiting delivery |
-| DUOPURUI ethernet switch 1→3 | **Arrived 2026-05-10** ✓ | ASIN B0FCLKWGZ1 |
+| dkplnt DN510 DC-DC 12V→5V 50W | Ordered 2026-05-08 | ASIN B0DYK93WX8 — awaiting delivery; screw terminal input from 12V rail; crimped ferrules required |
+| DUOPURUI ethernet switch 1→3 | **Arrived 2026-05-10** ✓ | ASIN B0FCLKWGZ1; USB-C power cable included |
 | EPLZON breadboard kit | **Arrived 2026-05-10** ✓ | ASIN B0DCRKNW5H |
 | ADF4351 RF signal source board | **Arrived 2026-05-10** ✓ | Early — window was May 12–22 |
 | Rivet nut kit (M3/M4) + setter tool | **Arrived 2026-05-09** ✓ | Same-day delivery |
@@ -25,10 +25,14 @@ resolved or new ones arise.
 | Adafruit LSM6DSOX breakout | Ordered 2026-05-08 | Awaiting delivery |
 | Qwiic flat 4-pole cables × 3 | Ordered 2026-05-08 | Two in box, one spare |
 | Hammond 1591DBU enclosure | Ordered 2026-05-08 | Ships ~May 11 |
-| QILIPSU 304 SS enclosure | To order | 350×250×150mm IP65 |
+| QILIPSU 304 SS enclosure | Ordered 2026-05-10 | 350×250×150mm IP65; shell is 304 SS; internal DIN plate + base plate are galvanised steel |
+| Cat6A shielded ethernet jumpers 1ft (5-pack) | Ordered 2026-05-10 | Internal DDOEE jumpers to Raspberry Pis; shielded |
+| KSEIBI #5 HSS step drill | Ordered 2026-05-10 | For cable gland holes in galvanised steel base plate |
+| Rust-Oleum cold galvanising compound spray | Ordered 2026-05-10 | Protect cut edges on galvanised DIN plate + base plate after drilling |
+| Cermant USB-C breakout boards (20-pack) | Ordered 2026-05-10 | 6 on EPLZON stripboard |
+| Anker USB-C to USB-C cables (2× 2-pack = 4 total) | Ordered 2026-05-10 | Power distribution from stripboard; Pi 2, Pi 3, Pi 5 (Phase 4), 1 spare; DUOPURUI has own cable |
 | Outdoor Cat6 cable 30ft × 2 | To order | Outdoor rated; house to DDOEE run |
 | Raspberry Pi 5 (4GB) | Pending decision | Needed before Phase 4 |
-| Cermant USB-C breakout boards (20-pack) | To order | 6 on EPLZON stripboard; $8.99/20 |
 | Cable gland 3/4" (19mm) × 2 | To order | Gland 1: Cat6 PoE; Gland 2: multi-cable |
 | IP65 membrane vent | To check | QILIPSU may include one — verify on receipt |
 | Ferrite chokes for USB cables | To order | RFI mitigation |
@@ -44,6 +48,7 @@ resolved or new ones arise.
 | Squash balls (40mm standard, 4-pack) | To purchase | Vent cap — ~$7 eBay; diagonal cut |
 | Star point lug (brass or copper) | To purchase | Internal DDOEE grounding star point |
 | AWG 12 ground wire | To purchase | Internal DDOEE ground bonds — 2.5mm² minimum |
+| Ferrule kit (1.5mm² + 2.5mm²) | To check/purchase | Crimped terminals for DN510 screw terminals; check existing stock first |
 | Credit card (expired) | On hand ✓ | Separation plate — fits card guides in Hammond 1591DBU |
 | Leuchtturm plain lab notebook | Ordered — Lighthouse | Awaiting delivery |
 
@@ -330,4 +335,5 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 2.0 | 2026-05-08 | DUOPURUI switch; ABS sensor box design; BME280 + LSM6DSOX confirmed; Pi architecture; Phelps reviewed |
 | 3.0 | 2026-05-08 | Drive bracket mounting confirmed; Cermant USB-C boards; Qwiic chain; squash ball vent; ADS-B/dump1090; ADF4351 delivery window |
 | 4.0 | 2026-05-08 | TL-POE170S → Omada PoE++; Hammond 1591DBU ordered; credit card separation plate; sensors + Qwiic cables ordered; internal DDOEE BME280 decision pending; EPLZON breadboard ordered |
-| 5.0 | 2026-05-10 | Arrivals: ADF4351, Omada PoE++, DUOPURUI switch, EPLZON breadboard, rivet nut kit; added outdoor Cat6 30ft × 2 to order list; added star point lug + AWG 12 ground wire; Tycon flagged as critical path |
+| 5.0 | 2026-05-10 | Arrivals: ADF4351, Omada PoE++, DUOPURUI switch, EPLZON breadboard, rivet nut kit; added outdoor Cat6 + grounding items; Tycon flagged critical path |
+| 6.0 | 2026-05-10 | Ordered: QILIPSU enclosure, Cat6A shielded jumpers, step drill, cold galv spray, Cermant USB-C boards, Anker USB-C cables; noted galvanised vs stainless distinction; ferrule kit added; DUOPURUI power cable confirmed included |
