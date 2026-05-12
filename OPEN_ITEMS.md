@@ -20,6 +20,8 @@ resolved or new ones arise.
 | DUOPURUI ethernet switch 1→3 | **Arrived 2026-05-10** ✓ | ASIN B0FCLKWGZ1; USB-C power cable included |
 | EPLZON breadboard kit | **Arrived 2026-05-10** ✓ | ASIN B0DCRKNW5H |
 | ADF4351 RF signal source board | **Arrived 2026-05-10** ✓ | Early — window was May 12–22 |
+| RTL-SDR Blog V4c | **Arrived 2026-05-11** ✓ | Early — window was May 21–Jun 12 |
+| RTL-SDR Dipole Set | **Arrived 2026-05-11** ✓ | Early — window was May 21–Jun 12 |
 | Rivet nut kit (M3/M4) + setter tool | **Arrived 2026-05-09** ✓ | Same-day delivery |
 | Adafruit BME280 breakout | Ordered 2026-05-08 | Awaiting delivery |
 | Adafruit LSM6DSOX breakout | Ordered 2026-05-08 | Awaiting delivery |
@@ -223,7 +225,7 @@ Document results in rfi/RFI_OVERVIEW.md.
 
 | Procedure | When | Notes |
 |---|---|---|
-| CAL-000-V4c | ADF4351 arrived; V4c due May 21–Jun 12 | Both must be in hand |
+| **CAL-000-V4c** | **READY TO PROCEED** | ADF4351 arrived 2026-05-10; V4c arrived 2026-05-11; both in hand |
 | CAL-001 LO verification | Commissioning | Requires ADF4351 |
 | CAL-002 passband sweep | Commissioning | Requires ADF4351 + dish |
 | First RFI survey | When V4c arrives | Chain A baseline |
@@ -326,7 +328,7 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 **Observer:** Steve Hawker BEng MBA FRAS, San Jose CA  
 **GitHub:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
 **Current phase:** Phase 2 — Site Survey (tripod arrived 2026-05-07, not yet deployed)  
-**Next milestone:** Site survey on patio → V4c May 21–Jun 12 → CAL-000  
+**Next milestone:** Site survey on patio → **CAL-000 READY NOW** → dump1090 ADS-B → first RFI survey  
 **Key documents:** README.md for repo structure; this file for current state  
 **This file:** OPEN_ITEMS.md  
 
@@ -342,4 +344,5 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 4.0 | 2026-05-08 | TL-POE170S → Omada PoE++; Hammond 1591DBU ordered; credit card separation plate; sensors + Qwiic cables ordered; internal DDOEE BME280 decision pending; EPLZON breadboard ordered |
 | 5.0 | 2026-05-10 | Arrivals: ADF4351, Omada PoE++, DUOPURUI switch, EPLZON breadboard, rivet nut kit; added outdoor Cat6 + grounding items; Tycon flagged critical path |
 | 6.0 | 2026-05-10 | Ordered: QILIPSU enclosure, Cat6A shielded jumpers, step drill, cold galv spray, Cermant USB-C boards, Anker USB-C cables; ferrule kit added |
-| 7.0 | 2026-05-10 | Anemometer + MCP3008 removed — wind data from external source; cable glands revised to 4 penetrations (PoE / DC+sensor / vent / RF); sensor cable changed to Cat6 pairs; RF isolated in own gland; POWER_ARCHITECTURE.md updated; Phase 4 power budget corrected to include all 3 Pis |
+| 7.0 | 2026-05-10 | Anemometer + MCP3008 removed; cable glands revised to 4 penetrations; sensor cable = Cat6 pairs; RF isolated; POWER_ARCHITECTURE v2.0; Phase 4 power budget corrected |
+| 8.0 | 2026-05-11 | V4c + dipole arrived early; CAL-000 unblocked and ready to proceed |
