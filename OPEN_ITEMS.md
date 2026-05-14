@@ -16,7 +16,7 @@ resolved or new ones arise.
 | ~~VCELINK M242 ethernet switch~~ | **SUPERSEDED 2026-05-08** | Replaced by DUOPURUI 1→3 switch |
 | ~~TP-Link TL-POE170S~~ | **SUPERSEDED 2026-05-08** | Replaced by TP-Link Omada PoE++ |
 | TP-Link Omada PoE++ injector | **Arrived 2026-05-10** ✓ | ASIN B09SXSN3XT — confirm output wattage from datasheet |
-| dkplnt DN510 DC-DC 12V→5V 50W | Ordered 2026-05-08 | ASIN B0DYK93WX8 — awaiting delivery; screw terminal input; crimped ferrules required |
+| dkplnt DN510 DC-DC 12V→5V 50W | **Arrived 2026-05-13** ✓ | ASIN B0DYK93WX8; screw terminal input; crimped ferrules required |
 | DUOPURUI ethernet switch 1→3 | **Arrived 2026-05-10** ✓ | ASIN B0FCLKWGZ1; USB-C power cable included |
 | EPLZON breadboard kit | **Arrived 2026-05-10** ✓ | ASIN B0DCRKNW5H |
 | ADF4351 RF signal source board | **Arrived 2026-05-10** ✓ | Early — window was May 12–22 |
@@ -348,4 +348,4 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 6.0 | 2026-05-10 | Ordered: QILIPSU enclosure, Cat6A shielded jumpers, step drill, cold galv spray, Cermant USB-C boards, Anker USB-C cables; ferrule kit added |
 | 7.0 | 2026-05-10 | Anemometer + MCP3008 removed; cable glands revised to 4 penetrations; sensor cable = Cat6 pairs; RF isolated; POWER_ARCHITECTURE v2.0; Phase 4 power budget corrected |
 | 8.0 | 2026-05-11 | V4c + dipole arrived early; CAL-000 unblocked and ready to proceed |
-| 9.0 | 2026-05-13 | Arrivals: Anker cables, Cermant USB-C boards, Leuchtturm logbook (2026-05-12); Cat6A jumpers, step drill, LED modules, Cat6 patch cables (2026-05-13); QILIPSU ASIN corrected to B0F12TVFC6; ADF4351 SPI library research now active |
+| 9.0 | 2026-05-13 | Arrivals: Anker cables, Cermant USB-C boards, Leuchtturm logbook (2026-05-12); Cat6A jumpers, step drill, LED modules, Cat6 patch cables, dkplnt DN510 (2026-05-13); QILIPSU ASIN noted as not on Amazon — right part on its way; ADF4351 SPI library research now active |
