@@ -3,7 +3,20 @@
 **Author:** Steve Hawker BEng MBA FRAS  
 **Observatory:** Blue Rock Radio Observatory  
 **Date:** 2026-05-02  
-**Version:** 1.0  
+**Version:** 1.2  
+
+---
+
+## Hardware Status — 2026-05-13
+
+| Item | Status |
+|---|---|
+| ADF4351 board | Arrived 2026-05-10 ✓ |
+| RTL-SDR V4c | Arrived 2026-05-11 ✓ |
+| 30 dB SMA attenuator | Arrived 2026-05-06 ✓ |
+| **CAL-000 (V4c baseline)** | **READY TO PROCEED** |
+| Airspy R2 | Deferred — Phase 4 |
+| CAL-001 through CAL-004 | Pending — requires HI feed (due Aug 2026) |
 
 ---
 
@@ -337,3 +350,4 @@ pipeline development (INV002).
 |---|---|---|
 | 1.0 | 2026-05-02 | Initial document — four calibration procedures, hardware specification, LNA protection requirements, annual programme |
 | 1.1 | 2026-05-02 | Add CAL-000 SDR baseline — pre-feed V4c characterisation, direct V4c vs Airspy R2 comparison |
+| 1.2 | 2026-05-13 | Add hardware status table — ADF4351 + V4c + attenuator all in hand; CAL-000 ready to proceed |

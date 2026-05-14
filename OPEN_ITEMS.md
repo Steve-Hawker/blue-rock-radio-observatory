@@ -16,23 +16,26 @@ resolved or new ones arise.
 | ~~VCELINK M242 ethernet switch~~ | **SUPERSEDED 2026-05-08** | Replaced by DUOPURUI 1→3 switch |
 | ~~TP-Link TL-POE170S~~ | **SUPERSEDED 2026-05-08** | Replaced by TP-Link Omada PoE++ |
 | TP-Link Omada PoE++ injector | **Arrived 2026-05-10** ✓ | ASIN B09SXSN3XT — confirm output wattage from datasheet |
-| dkplnt DN510 DC-DC 12V→5V 50W | Ordered 2026-05-08 | ASIN B0DYK93WX8 — awaiting delivery; screw terminal input from 12V rail; crimped ferrules required |
+| dkplnt DN510 DC-DC 12V→5V 50W | Ordered 2026-05-08 | ASIN B0DYK93WX8 — awaiting delivery; screw terminal input; crimped ferrules required |
 | DUOPURUI ethernet switch 1→3 | **Arrived 2026-05-10** ✓ | ASIN B0FCLKWGZ1; USB-C power cable included |
 | EPLZON breadboard kit | **Arrived 2026-05-10** ✓ | ASIN B0DCRKNW5H |
 | ADF4351 RF signal source board | **Arrived 2026-05-10** ✓ | Early — window was May 12–22 |
 | RTL-SDR Blog V4c | **Arrived 2026-05-11** ✓ | Early — window was May 21–Jun 12 |
 | RTL-SDR Dipole Set | **Arrived 2026-05-11** ✓ | Early — window was May 21–Jun 12 |
 | Rivet nut kit (M3/M4) + setter tool | **Arrived 2026-05-09** ✓ | Same-day delivery |
+| Anker USB-C to USB-C cables (2× 2-pack = 4) | **Arrived 2026-05-12** ✓ | Pi 2, Pi 3, Pi 5 (Phase 4), 1 spare |
+| Cermant USB-C breakout boards (20-pack) | **Arrived 2026-05-12** ✓ | 6 on EPLZON stripboard |
+| Leuchtturm plain lab notebook | **Arrived 2026-05-12** ✓ | |
+| Cat6A shielded ethernet jumpers 1ft (5-pack) | **Arrived 2026-05-13** ✓ | Internal DDOEE jumpers |
+| KSEIBI #5 HSS step drill | **Arrived 2026-05-13** ✓ | For cable gland holes in galvanised base plate |
+| LED modules (stripboard voltage indicators) | **Arrived 2026-05-13** ✓ | Ordered 2026-05-11 |
+| Cat6 patch cables (internal DDOEE) | **Arrived 2026-05-13** ✓ | Ordered 2026-05-11 |
+| Rust-Oleum cold galvanising compound spray | Ordered 2026-05-11 | Due 2026-05-13 |
 | Adafruit BME280 breakout | Ordered 2026-05-08 | Awaiting delivery |
 | Adafruit LSM6DSOX breakout | Ordered 2026-05-08 | Awaiting delivery |
 | Qwiic flat 4-pole cables × 3 | Ordered 2026-05-08 | Two in box, one spare |
-| Hammond 1591DBU enclosure | Ordered 2026-05-08 | Ships ~May 11 |
-| QILIPSU 304 SS enclosure | Ordered 2026-05-10 | 350×250×150mm IP65; shell is 304 SS; internal DIN plate + base plate are galvanised steel |
-| Cat6A shielded ethernet jumpers 1ft (5-pack) | Ordered 2026-05-10 | Internal DDOEE jumpers to Raspberry Pis; shielded |
-| KSEIBI #5 HSS step drill | Ordered 2026-05-10 | For cable gland holes in galvanised steel base plate |
-| Rust-Oleum cold galvanising compound spray | Ordered 2026-05-10 | Protect cut edges on galvanised DIN plate + base plate after drilling |
-| Cermant USB-C breakout boards (20-pack) | Ordered 2026-05-10 | 6 on EPLZON stripboard |
-| Anker USB-C to USB-C cables (2× 2-pack = 4 total) | Ordered 2026-05-10 | Power distribution from stripboard; Pi 2, Pi 3, Pi 5 (Phase 4), 1 spare; DUOPURUI has own cable |
+| Hammond 1591DBU enclosure | Ordered 2026-05-08 | Awaiting delivery |
+| QILIPSU 304 SS enclosure | Ordered 2026-05-11 | ASIN B0F12TVFC6; due 2026-05-21; shell 304 SS; DIN plate + base plate galvanised steel |
 | Outdoor Cat6 cable 30ft × 2 | To order | Outdoor rated; house to DDOEE run |
 | Raspberry Pi 5 (4GB) | Pending decision | Needed before Phase 4 |
 | Cable gland 3/4" (19mm) × 3 | To order | Gland 1: Cat6 PoE; Gland 2: 12V DC + Cat6 sensor cable; Gland 3: RF coax |
@@ -48,9 +51,8 @@ resolved or new ones arise.
 | Squash balls (40mm standard, 4-pack) | To purchase | Vent cap — ~$7 eBay; diagonal cut |
 | Star point lug (brass or copper) | To purchase | Internal DDOEE grounding star point |
 | AWG 12 ground wire | To purchase | Internal DDOEE ground bonds — 2.5mm² minimum |
-| Ferrule kit (1.5mm² + 2.5mm²) | To check/purchase | Crimped terminals for DN510 screw terminals; check existing stock first |
+| Ferrule kit (1.5mm² + 2.5mm²) | To check/purchase | Crimped terminals for DN510 screw terminals |
 | Credit card (expired) | On hand ✓ | Separation plate — fits card guides in Hammond 1591DBU |
-| Leuchtturm plain lab notebook | Ordered — Lighthouse | Awaiting delivery |
 
 ---
 
@@ -109,7 +111,7 @@ Not a science instrument. Can be added later if warranted.
 
 | Decision | Resolution | Notes |
 |---|---|---|
-| Internal DDOEE ethernet cables | Cat6A shielded 1ft jumpers | Ordered 2026-05-10 |
+| Internal DDOEE ethernet cables | Cat6A shielded 1ft jumpers | Arrived 2026-05-13 ✓ |
 | Ferrite chokes on USB cables | Recommended | Cheap RFI mitigation |
 | 5V power distribution | 6× Cermant USB-C breakout boards on EPLZON stripboard | 3 Pis + switch + 2 spare |
 | Environmental monitoring sensor | BME280 + LSM6DSOX only | Waveshare Sense HAT (C) rejected; anemometer/wind vane removed |
@@ -183,7 +185,7 @@ Document results in rfi/RFI_OVERVIEW.md.
 | Tycon DIN bracket screw hole spacing | Drilling jig for angle bracket | Measure when arrives |
 | dkplnt DN510 operating temperature | Not stated in listing | Check datasheet |
 | Discovery Drive power consumption under slew | Estimated ~12W | Measure when arrives |
-| ADF4351 SPI library for Pi | Python library needed | Research before V4c arrives |
+| ADF4351 SPI library for Pi | Python library needed | **V4c arrived — research now** |
 | GPSDO reference for ADF4351 | Deferred | If LO error >1 kHz after CAL-001, upgrade to GPSDO (~$75) |
 | TP-Link Omada PoE++ output wattage | Not yet confirmed | Pull datasheet when arrives; update power budget |
 
@@ -217,7 +219,7 @@ Document results in rfi/RFI_OVERVIEW.md.
 | Confirm southern horizon open at 180° | Verify with theodolite |
 | Mark dish position on patio | Tape / chalk / adhesive dots |
 | Photo panorama 360° | Every 45°, upload to build/photos/ |
-| Physical log book | Leuchtturm not yet arrived |
+| Physical log book | Leuchtturm arrived 2026-05-12 ✓ — ready to use |
 
 ---
 
@@ -346,3 +348,4 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 6.0 | 2026-05-10 | Ordered: QILIPSU enclosure, Cat6A shielded jumpers, step drill, cold galv spray, Cermant USB-C boards, Anker USB-C cables; ferrule kit added |
 | 7.0 | 2026-05-10 | Anemometer + MCP3008 removed; cable glands revised to 4 penetrations; sensor cable = Cat6 pairs; RF isolated; POWER_ARCHITECTURE v2.0; Phase 4 power budget corrected |
 | 8.0 | 2026-05-11 | V4c + dipole arrived early; CAL-000 unblocked and ready to proceed |
+| 9.0 | 2026-05-13 | Arrivals: Anker cables, Cermant USB-C boards, Leuchtturm logbook (2026-05-12); Cat6A jumpers, step drill, LED modules, Cat6 patch cables (2026-05-13); QILIPSU ASIN corrected to B0F12TVFC6; ADF4351 SPI library research now active |
