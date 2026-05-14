@@ -125,22 +125,28 @@ blue-rock-radio-observatory/
 │   └── SURVEY_TEMPLATE.md
 │
 ├── design/                          ← engineering design decisions and rationale
+│   ├── DESIGN_README.md             ← index for design/ directory
 │   ├── diagrams/                    ← system architecture diagrams
 │   │   ├── BRRO_system_architecture_v5.svg
 │   │   ├── BRRO_system_architecture_v5.mermaid
 │   │   └── DDOEE_mounting_plate_v2.svg  ← three-Pi layout, Phase 2–3 (update pending)
 │   ├── ADC_BIT_RESOLUTION.md
-│   ├── ADF4351_CALIBRATION.md       ← signal source calibration procedures v1.1
+│   ├── ADF4351_CALIBRATION.md       ← signal source calibration procedures v1.2
 │   ├── BEAM_AND_RESOLUTION.md
+│   ├── CABLE_DESIGN.md              ← Cat6, conduit, USB, ferrite BOM v1.0
 │   ├── DAILY_OBSERVING_WINDOWS.md
 │   ├── DIPOLE_ANTENNA_DESIGN.md
 │   ├── DISH_POSITION_CALIBRATION.md ← LSM6DSOX IMU + BME280 on Drive bracket (outside face)
 │   ├── DOWNCONVERSION_ARCHITECTURE.md
 │   ├── DUAL_SDR_ARCHITECTURE.md
+│   ├── ENCLOSURE_DESIGN.md          ← QILIPSU, junction box, build sequence v1.0
 │   ├── GALACTIC_PLANE_TRACKING.md
+│   ├── HEAT_DESIGN.md               ← thermal chain, interface materials, monitoring v1.0
+│   ├── I2C_DESIGN.md                ← I2C bus, sensor addresses, cable spec v1.0
 │   ├── INTERFEROMETER_UPGRADE.md   ← v0.2 KrakenSDR 5-element array
 │   ├── OBSERVING_STRATEGY.md
-│   ├── POWER_ARCHITECTURE.md       ← PoE power distribution, three-Pi budget (Pi2+Pi3 / +Pi5 Phase 4) v2.0
+│   ├── POWER_ARCHITECTURE.md       ← PoE power distribution, three-Pi budget v3.0
+│   ├── RF_DESIGN.md                 ← RF shielding, ferrite spec, junction box v1.0
 │   ├── SAW_FILTER_DESIGN.md        ← v1.0 TA1077A + TA2494A identified from PCB
 │   └── SDR_SELECTION.md
 │
@@ -205,4 +211,4 @@ Expected 2026: ~2567 Jy.
 
 ---
 
-*Last updated: 2026-05-10*
+*Last updated: 2026-05-13*

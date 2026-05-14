@@ -68,7 +68,8 @@ resolved or new ones arise.
 | Raspberry Pi 2 | Stacked on Pi 3 | Dish sensor station · Hammond box via Cat6 sensor cable |
 | RTL-SDR V4c | Bottom centre | USB to Pi 3 |
 | Airspy R2 | Bottom centre | USB to Pi 5 (Phase 4) |
-| BME280 (external) | In Hammond 1591DBU on Drive bracket | True observing conditions — Pi 2 I2C via Cat6 sensor cable |
+| Southwire steel handy box (SDR junction box) | On plate, bottom | Faraday shield for Airspy R2 + V4c; lid faces Pi cluster; copper tape sealed |
+| BME280 (internal — junction box) | Inside SDR junction box | SDR thermal + condensation monitoring; address 0x76; I2C to Pi 2 |
 | LSM6DSOX | In Hammond 1591DBU on Drive bracket | Dish elevation verification — Pi 2 I2C via Cat6 sensor cable |
 | ADF4351 + 30dB attenuator | Removable — stored together | Insert for calibration only |
 | Voltmeters × 2 | Lower half of stripboard | 12V and 5V monitoring |
@@ -126,7 +127,9 @@ Not a science instrument. Can be added later if warranted.
 | ADS-B monitoring | dump1090 on Pi 3 via V4c — Phase 3 | No extra hardware; validates V4c + SAW rejection at 1090 MHz |
 | Cable gland arrangement | 4 penetrations: PoE / DC+sensor / vent / RF | RF isolated in own gland |
 | Wind data | External source — no hardware required | Anemometer + MCP3008 removed from BOM |
-| Internal DDOEE BME280 | **PENDING** — leaning against | Advantage modest; can be added later |
+| SDR junction box (Faraday shield) | Southwire 4"×2"×1-7/8" steel handy box | ~$2 Home Depot; shields SDRs from Pi 5 noise; lid faces Pi cluster; copper tape seal; verify SDR fit before closing |
+| Internal DDOEE BME280 | **CONFIRMED 2026-05-13** — inside SDR junction box | Address 0x76 (SDO to GND); SDR thermal + condensation monitoring; exits via copper foil wrapped egress |
+| Power architecture | 12V Tycon + DN510 12V→5V + Drive direct from 12V | 24V architecture considered and rejected — single DC-DC simpler; confirmed 2026-05-13 |
 
 ### Pi Architecture (Phase 4)
 
@@ -197,7 +200,13 @@ Document results in rfi/RFI_OVERVIEW.md.
 |---|---|---|
 | DIPOLE_ANTENNA_DESIGN.md | Confirm M5 thread when dipole kit arrives | When V4c arrives |
 | E001 → E002 | Create E002 when Phase 3 begins | When V4c arrives |
-| POWER_ARCHITECTURE.md | **Updated this session — v2.0** | Done |
+| POWER_ARCHITECTURE.md | **Updated v3.0 — absorbs POWER_DESIGN.md** | Done |
+| ENCLOSURE_DESIGN.md | **New v1.0 — QILIPSU, junction box, build sequence** | Done |
+| RF_DESIGN.md | **New v1.0 — RF shielding, ferrite spec, junction box** | Done |
+| HEAT_DESIGN.md | **New v1.0 — thermal chain, interface materials, BME280** | Done |
+| I2C_DESIGN.md | **New v1.0 — I2C bus, sensor addresses, cable spec** | Done |
+| CABLE_DESIGN.md | **New v1.0 — Cat6, conduit, USB, ferrite BOM** | Done |
+| DESIGN_README.md | **New v1.0 — design/ directory index** | Done |
 | DDOEE_mounting_plate_v2.svg | Redraw — DUOPURUI replaces VCELINK M242; 6-socket power strip | Before Phase 4 |
 | INV001_noise_budget | Complete Friis with QPL9547 interpolated values + SAW IL | Before first light |
 | SAW_FILTER_DESIGN.md | SAW confirmation from KrakenRF pending | Soon |
@@ -348,4 +357,4 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 6.0 | 2026-05-10 | Ordered: QILIPSU enclosure, Cat6A shielded jumpers, step drill, cold galv spray, Cermant USB-C boards, Anker USB-C cables; ferrule kit added |
 | 7.0 | 2026-05-10 | Anemometer + MCP3008 removed; cable glands revised to 4 penetrations; sensor cable = Cat6 pairs; RF isolated; POWER_ARCHITECTURE v2.0; Phase 4 power budget corrected |
 | 8.0 | 2026-05-11 | V4c + dipole arrived early; CAL-000 unblocked and ready to proceed |
-| 9.0 | 2026-05-13 | Arrivals: Anker cables, Cermant USB-C boards, Leuchtturm logbook (2026-05-12); Cat6A jumpers, step drill, LED modules, Cat6 patch cables, dkplnt DN510 (2026-05-13); QILIPSU ASIN noted as not on Amazon — right part on its way; ADF4351 SPI library research now active |
+| 10.0 | 2026-05-13 | dkplnt DN510 arrived; Southwire junction box confirmed; internal BME280 confirmed (inside junction box, 0x76); 12V power architecture confirmed; 7 new design documents added to design/ |
