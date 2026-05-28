@@ -12,7 +12,7 @@ resolved or new ones arise.
 
 | Item | Status | Notes |
 |---|---|---|
-| Tycon POE-SPLT-BT-UNI-P | **To order — critical path** | PoE splitter — set to 12V; nothing works without this |
+| Tycon POE-SPLT-BT-UNI-P | Ordered 2026-05-27 | ~2026-06-10; set to 12V |
 | ~~VCELINK M242 ethernet switch~~ | **SUPERSEDED 2026-05-08** | Replaced by DUOPURUI 1→3 switch |
 | ~~TP-Link TL-POE170S~~ | **SUPERSEDED 2026-05-08** | Replaced by TP-Link Omada PoE++ |
 | TP-Link Omada PoE++ injector | **Arrived 2026-05-10** ✓ | ASIN B09SXSN3XT — confirm output wattage from datasheet |
@@ -30,12 +30,12 @@ resolved or new ones arise.
 | KSEIBI #5 HSS step drill | **Arrived 2026-05-13** ✓ | For cable gland holes in galvanised base plate |
 | LED modules (stripboard voltage indicators) | **Arrived 2026-05-13** ✓ | Ordered 2026-05-11 |
 | Cat6 patch cables (internal DDOEE) | **Arrived 2026-05-13** ✓ | Ordered 2026-05-11 |
-| Rust-Oleum cold galvanising compound spray | Ordered 2026-05-11 | Due 2026-05-13 |
-| Adafruit BME280 breakout | Ordered 2026-05-08 | Awaiting delivery |
-| Adafruit LSM6DSOX breakout | Ordered 2026-05-08 | Awaiting delivery |
-| Qwiic flat 4-pole cables × 3 | Ordered 2026-05-08 | Two in box, one spare |
-| Hammond 1591DBU enclosure | Ordered 2026-05-08 | Awaiting delivery |
-| QILIPSU 304 SS enclosure | Ordered 2026-05-11 | ASIN B0F12TVFC6; due 2026-05-21; shell 304 SS; DIN plate + base plate galvanised steel |
+| Rust-Oleum cold galvanising compound spray | **Arrived 2026-05-13** ✓ | |
+| Adafruit BME280 breakout | **Arrived 2026-05-20** ✓ | |
+| Adafruit LSM6DSOX breakout | **Arrived 2026-05-20** ✓ | |
+| Qwiic flat 4-pole cables × 3 | **Arrived 2026-05-20** ✓ | Two in box, one spare |
+| Hammond 1591DBU enclosure | **Arrived 2026-05-20** ✓ | |
+| QILIPSU 304 SS enclosure | **Arrived 2026-05-24** ✓ | Shell 304 SS; DIN plate + base plate galvanised steel; check for included membrane vent |
 | Outdoor Cat6 cable 30ft × 2 | To order | Outdoor rated; house to DDOEE run |
 | Raspberry Pi 5 (4GB) | Pending decision | Needed before Phase 4 |
 | Cable gland 3/4" (19mm) × 3 | To order | Gland 1: Cat6 PoE; Gland 2: 12V DC + Cat6 sensor cable; Gland 3: RF coax |
@@ -48,7 +48,7 @@ resolved or new ones arise.
 | M3 brass standoffs | To purchase | Equal height both sides in Hammond box |
 | Mounting bolts | To purchase | Hammond box to Drive bracket |
 | Sticky-backed foam sheet | To purchase | Lid seal on Hammond box |
-| Squash balls (40mm standard, 4-pack) | To purchase | Vent cap — ~$7 eBay; diagonal cut |
+| Squash balls (40mm standard, 4-pack) | Ordered 2026-05-23 | ~2026-06-07; diagonal cut vent cap |
 | Star point lug (brass or copper) | To purchase | Internal DDOEE grounding star point |
 | AWG 12 ground wire | To purchase | Internal DDOEE ground bonds — 2.5mm² minimum |
 | Ferrule kit (1.5mm² + 2.5mm²) | To check/purchase | Crimped terminals for DN510 screw terminals |
@@ -358,3 +358,4 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 7.0 | 2026-05-10 | Anemometer + MCP3008 removed; cable glands revised to 4 penetrations; sensor cable = Cat6 pairs; RF isolated; POWER_ARCHITECTURE v2.0; Phase 4 power budget corrected |
 | 8.0 | 2026-05-11 | V4c + dipole arrived early; CAL-000 unblocked and ready to proceed |
 | 10.0 | 2026-05-13 | dkplnt DN510 arrived; Southwire junction box confirmed; internal BME280 confirmed (inside junction box, 0x76); 12V power architecture confirmed; 7 new design documents added to design/ |
+| 11.0 | 2026-05-27 | Tycon ordered (~Jun 10); squash balls ordered (May 23, ~Jun 7); QILIPSU arrived May 24; Rust-Oleum arrived May 13; BME280, LSM6DSOX, Qwiic cables, Hammond 1591DBU all arrived May 20 |
