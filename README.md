@@ -153,11 +153,16 @@ blue-rock-radio-observatory/
 ├── investigations/                  ← system performance investigations
 │   ├── INVESTIGATIONS.md
 │   ├── INV001_noise_budget/
-│   │   └── INV001_noise_budget.md
+│   │   └── INV001_noise_budget.md   ← active — CAL-000 ready; Cas A baseline pending
 │   ├── INV002_digital_filters/
 │   │   └── INV002_digital_filters.md
-│   └── INV003_rfi_flagging/
-│       └── INV003_rfi_flagging.md
+│   ├── INV003_rfi_flagging/
+│   │   └── INV003_rfi_flagging.md
+│   └── INV004_ml_rfi/
+│       └── INV004_ml_rfi.md         ← ML RFI mitigation — concept; data collection Phase 3+
+│
+├── references/                      ← bibliography and citation management
+│   └── BRRO_references.bib          ← BibTeX reference library for Zotero / thesis
 │
 ├── writing/                         ← thesis drafts and chapter outlines
 │   ├── M1_VECTOR_ANALYSIS.md
@@ -178,7 +183,13 @@ blue-rock-radio-observatory/
 ├── scripts/                         ← Python utility scripts
 │   ├── target_visibility.py         ← transit elevations and availability
 │   ├── generate_calendar.py         ← generate .ics observing windows
-│   └── galactic_plane_track.py      ← Galactic plane coordinate transforms
+│   ├── galactic_plane_track.py      ← Galactic plane coordinate transforms
+│   ├── dish_sensors.py              ← BME280 + LSM6DSOX continuous logging (Pi 2)
+│   ├── sensor_calibration.py        ← IMU orientation calibration at known dish position
+│   ├── weather_summary.py           ← session weather summary from sensor CSV
+│   ├── position_monitor.py          ← real-time IMU vs rotctl position verification
+│   ├── hi4pi_lookup.py              ← HI4PI expected spectrum per pointing (INV004)
+│   └── session_init.py              ← session directory init + HI4PI lookup (INV004)
 │
 ├── branding/                        ← visual identity
 │   ├── BRRO_target_map.svg          ← full annotated target map
@@ -211,4 +222,4 @@ Expected 2026: ~2567 Jy.
 
 ---
 
-*Last updated: 2026-05-13*
+*Last updated: 2026-05-13 — INV004 added; references/ directory added; scripts expanded*
