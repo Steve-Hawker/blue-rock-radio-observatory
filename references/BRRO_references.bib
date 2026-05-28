@@ -1,0 +1,470 @@
+% Blue Rock Radio Observatory — Zotero Reference Library
+% BibTeX format — import via Zotero > File > Import
+% Generated 2026-05-13 — updated 2026-05-13
+% 
+% USAGE: Import this file into Zotero. Check each entry against the
+% actual source and correct any fields as needed. DOIs and URLs
+% provided where known — verify before citing in thesis.
+%
+% SECTIONS:
+%   1. Foundational HI Physics
+%   2. Galactic HI Structure and Kinematics
+%   3. Target-Specific Papers (M31, Complex C, HI4PI)
+%   4. Calibration and Methodology
+%   5. RFI Mitigation — Classical and Machine Learning Methods
+%       5a. Classical (wavelet, morphology)
+%       5b. Deep learning (CNN, autoencoder, sparse RFI)
+%       5c. Reviews
+%       5d. Institutional (MIT LL — pointer only)
+%   6. Amateur and Low-Cost Radio Astronomy
+%   7. Textbooks
+%   8. Technical Documentation and Datasheets
+
+% ============================================================
+% 1. FOUNDATIONAL HI PHYSICS
+% ============================================================
+
+@article{purcell1956,
+  author    = {Purcell, Edward M. and Field, George B.},
+  title     = {Influence of Collisions upon Population of Hyperfine States in Hydrogen},
+  journal   = {The Astrophysical Journal},
+  year      = {1956},
+  volume    = {124},
+  pages     = {542},
+  doi       = {10.1086/146245},
+  url       = {https://ui.adsabs.harvard.edu/abs/1956ApJ...124..542P}
+}
+
+@article{oort1954,
+  author    = {Oort, J. H. and van de Hulst, H. C. and Muller, C. A.},
+  title     = {The spiral structure of the outer part of the Galactic System derived from the hydrogen emission at 21 cm wavelength},
+  journal   = {Bulletin of the Astronomical Institutes of the Netherlands},
+  year      = {1954},
+  volume    = {12},
+  pages     = {117},
+  url       = {https://ui.adsabs.harvard.edu/abs/1954BAN....12..117V}
+}
+
+% ============================================================
+% 2. GALACTIC HI STRUCTURE AND KINEMATICS
+% ============================================================
+
+@article{kalberla2009,
+  author    = {Kalberla, Peter M. W. and Kerp, J{\"u}rgen},
+  title     = {The {HI} Distribution of the {Milky Way}},
+  journal   = {Annual Review of Astronomy and Astrophysics},
+  year      = {2009},
+  volume    = {47},
+  pages     = {27--61},
+  doi       = {10.1146/annurev-astro-082708-101823},
+  url       = {https://ui.adsabs.harvard.edu/abs/2009ARA%26A..47...27K}
+}
+
+@article{dickey1990,
+  author    = {Dickey, John M. and Lockman, Felix J.},
+  title     = {{HI} in the Galaxy},
+  journal   = {Annual Review of Astronomy and Astrophysics},
+  year      = {1990},
+  volume    = {28},
+  pages     = {215--261},
+  doi       = {10.1146/annurev.aa.28.090190.001243},
+  url       = {https://ui.adsabs.harvard.edu/abs/1990ARA%26A..28..215D}
+}
+
+@article{mcclure-griffiths2023,
+  author    = {McClure-Griffiths, Naomi M. and Stanimirovi{\'c}, Sne{\v{z}}ana and Rybarczyk, Daniel R.},
+  title     = {Atomic Hydrogen in the {Milky Way}: A Stepping Stone in the Evolution of Galaxies},
+  journal   = {Annual Review of Astronomy and Astrophysics},
+  year      = {2023},
+  volume    = {61},
+  pages     = {19--63},
+  doi       = {10.1146/annurev-astro-052920-104428},
+  url       = {https://ui.adsabs.harvard.edu/abs/2023ARA%26A..61...19M}
+}
+
+% ============================================================
+% 3. TARGET-SPECIFIC PAPERS
+% ============================================================
+
+% --- M31 ---
+
+@article{chemin2009,
+  author    = {Chemin, Laurent and Carignan, Claude and Foster, Tyler},
+  title     = {{HI} Kinematics and Dynamics of {Messier 31}},
+  journal   = {The Astronomical Journal},
+  year      = {2009},
+  volume    = {137},
+  pages     = {3452--3481},
+  doi       = {10.1088/0004-6256/137/2/3452},
+  url       = {https://ui.adsabs.harvard.edu/abs/2009AJ....137.3452C}
+}
+
+@article{roberts1975,
+  author    = {Roberts, Morton S.},
+  title     = {Radio Observations of Neutral Hydrogen in Galaxies},
+  journal   = {Stars and Stellar Systems},
+  year      = {1975},
+  volume    = {9},
+  pages     = {309},
+  note      = {M31 HI integrated flux reference}
+}
+
+% --- Complex C High-Velocity Cloud ---
+
+@article{wakker2007,
+  author    = {Wakker, Bart P. and York, Donald G. and Howk, J. Christopher and
+               Barentsen, Geert and Wilhelm, Ronald and Peletier, Reynier F. and
+               van Woerden, Hugo and Beers, Timothy C. and Ivans, Inese I. and
+               Richter, Philipp and Schwarz, Ulrich J.},
+  title     = {Characterizing the {Complex C} high-velocity cloud: {Distances} and abundances},
+  journal   = {The Astrophysical Journal Letters},
+  year      = {2007},
+  volume    = {670},
+  pages     = {L113--L116},
+  doi       = {10.1086/524222},
+  url       = {https://ui.adsabs.harvard.edu/abs/2007ApJ...670L.113W}
+}
+
+@article{wakker2008,
+  author    = {Wakker, Bart P. and York, Donald G. and Wilhelm, Ronald and
+               Barentsen, Geert and Beers, Timothy C. and Richter, Philipp and
+               Ivans, Inese I. and Howk, J. Christopher and van Woerden, Hugo and
+               Peletier, Reynier F. and Kalberla, Peter M. W.},
+  title     = {Distances to {Galactic} High-Velocity Clouds: {Complex C}},
+  journal   = {The Astrophysical Journal},
+  year      = {2008},
+  volume    = {672},
+  pages     = {298--319},
+  doi       = {10.1086/523845},
+  url       = {https://ui.adsabs.harvard.edu/abs/2008ApJ...672..298W}
+}
+
+% --- HI4PI Survey ---
+
+@article{hi4pi2016,
+  author    = {{HI4PI Collaboration} and Ben Bekhti, N. and Fl{\"o}er, L. and
+               Keller, R. and Kerp, J. and Lenz, D. and Winkel, B. and
+               Bailin, J. and Calabretta, M. R. and Dedes, L. and Ford, H. A. and
+               Gibson, B. K. and Haud, U. and Janowiecki, S. and Kalberla, P. M. W. and
+               Lockman, F. J. and McClure-Griffiths, N. M. and Murphy, T. and
+               Nakanishi, H. and Pisano, D. J. and Staveley-Smith, L.},
+  title     = {{HI4PI}: A full-sky {H\,\textsc{i}} survey based on {EBHIS} and {GASS}},
+  journal   = {Astronomy \& Astrophysics},
+  year      = {2016},
+  volume    = {594},
+  pages     = {A116},
+  doi       = {10.1051/0004-6361/201629178},
+  url       = {https://ui.adsabs.harvard.edu/abs/2016A%26A...594A.116H}
+}
+
+% ============================================================
+% 4. CALIBRATION AND METHODOLOGY
+% ============================================================
+
+@article{baars1977,
+  author    = {Baars, Jacob W. M. and Genzel, Reinhard and Pauliny-Toth, Ivan I. K. and Witzel, Arno},
+  title     = {The absolute spectrum of {Cas A}; an accurate flux density scale and a set of secondary calibrators},
+  journal   = {Astronomy \& Astrophysics},
+  year      = {1977},
+  volume    = {61},
+  pages     = {99--106},
+  url       = {https://ui.adsabs.harvard.edu/abs/1977A%26A....61...99B},
+  note      = {Primary flux calibration standard — Cas A reference flux 2723 Jy at 1420 MHz; secular decrease 0.77\%/yr}
+}
+
+@techreport{langston2015,
+  author    = {Langston, Glen},
+  title     = {{LightWork Memo 4}: System Temperature Measurements},
+  institution = {West Virginia University Radio Astronomy},
+  year      = {2015},
+  month     = {July},
+  url       = {https://github.com/WVURAIL/lightwork/blob/master/memos/LightWorkMemo004-r3.pdf}
+}
+
+@techreport{langston2017memo14,
+  author    = {Langston, Glen},
+  title     = {{LightWork Memo 14}: Galactic Map},
+  institution = {West Virginia University Radio Astronomy},
+  year      = {2017},
+  month     = {February},
+  url       = {https://github.com/WVURAIL/lightwork/blob/master/memos/LightWorkMemo014r9.pdf}
+}
+
+@techreport{langston2017memo18,
+  author    = {Langston, Glen and Smith, E. and Knudsen, S.},
+  title     = {{LightWork Memo 18}: Galactic Spectra Data Overview},
+  institution = {West Virginia University Radio Astronomy},
+  year      = {2017},
+  month     = {August},
+  url       = {https://github.com/WVURAIL/lightwork/blob/master/memos/LightWorkMemo018-r1.pdf}
+}
+
+@techreport{langston2017memo19,
+  author    = {Langston, Glen and Smith, E. and Knudsen, S.},
+  title     = {{LightWork Memo 19}: Observing Steps to Make Your Galactic Map},
+  institution = {West Virginia University Radio Astronomy},
+  year      = {2017},
+  month     = {August},
+  url       = {https://wvurail.org/lightwork/memos/LightWorkMemo019-r1.pdf}
+}
+
+@techreport{langston2018memo20,
+  author    = {Langston, Glen and Bandura, Kevin},
+  title     = {{LightWork Memo 20}: {GNUradio} Companion and Radio Astronomy},
+  institution = {West Virginia University Radio Astronomy},
+  year      = {2018},
+  month     = {May},
+  url       = {https://github.com/WVURAIL/lightwork/blob/master/memos/LightWorkMemo020-r3.pdf}
+}
+
+% ============================================================
+% 5. RFI MITIGATION
+% ============================================================
+
+@article{qin2025,
+  author    = {Qin, Hao and others},
+  title     = {Noise Reduction Method for Radio Astronomy Single Station Observation Based on Wavelet Transform and Mathematical Morphology},
+  journal   = {arXiv e-prints},
+  year      = {2025},
+  eprint    = {2508.00386},
+  archivePrefix = {arXiv},
+  primaryClass = {astro-ph.IM},
+  url       = {https://arxiv.org/abs/2508.00386},
+  note      = {RFI mitigation methodology — wavelet transform + mathematical morphology; informs BRRO RFI pipeline design}
+}
+
+@article{akeret2017,
+  author    = {Akeret, J{\"o}el and Chang, Chihway and Lucchi, Aurelien and Refregier, Alexandre},
+  title     = {Radio frequency interference mitigation using deep convolutional neural networks},
+  journal   = {Astronomy and Computing},
+  year      = {2017},
+  volume    = {18},
+  pages     = {35--39},
+  doi       = {10.1016/j.ascom.2017.01.002},
+  url       = {https://arxiv.org/abs/1609.09077},
+  note      = {Foundational paper for deep learning RFI flagging in radio astronomy.
+               Uses convolutional neural networks (CNNs) trained on simulated RFI.
+               Applied to time-frequency spectrograms — directly analogous to 
+               single-dish HI observation data format.}
+}
+
+@article{vos2019,
+  author    = {Vos, Etienne E. and Bassett, Bruce A. and Kuttel, Michelle M.},
+  title     = {Radio Frequency Interference Detection Using Autoencoders},
+  journal   = {arXiv e-prints},
+  year      = {2019},
+  eprint    = {1907.01546},
+  archivePrefix = {arXiv},
+  primaryClass = {astro-ph.IM},
+  url       = {https://arxiv.org/abs/1907.01546},
+  note      = {Autoencoder-based RFI detection — unsupervised approach, does not 
+               require labelled training data. Relevant to urban single-dish 
+               observations where RFI labels are unavailable.}
+}
+
+@article{yang2020,
+  author    = {Yang, Jing and Gao, Feng and Zhang, Zhongwei and Ma, Shouli and Zhao, Shuqiang},
+  title     = {Detecting RFI in Radio Astronomy Using Efficient Deep Neural Networks},
+  journal   = {Proceedings of the International Astronomical Union},
+  year      = {2020},
+  note      = {Practical efficiency-focused approach — relevant for pipeline 
+               implementation on Raspberry Pi class hardware.
+               Verify full citation details on NASA ADS before citing.}
+}
+
+@article{sun2022,
+  author    = {Sun, He and others},
+  title     = {Machine learning for radio astronomy: a review},
+  journal   = {arXiv e-prints},
+  year      = {2022},
+  eprint    = {2204.01482},
+  archivePrefix = {arXiv},
+  primaryClass = {astro-ph.IM},
+  url       = {https://arxiv.org/abs/2204.01482},
+  note      = {Broad review of ML applications in radio astronomy including RFI 
+               flagging, source finding, and calibration. Good entry point for 
+               literature survey. Verify author list on arXiv before citing.}
+}
+
+@article{kerrigan2019,
+  author    = {Kerrigan, Joshua and others},
+  title     = {Optimizing Sparse {RFI} Prediction using Deep Learning},
+  journal   = {Monthly Notices of the Royal Astronomical Society},
+  year      = {2019},
+  volume    = {488},
+  pages     = {2605--2615},
+  doi       = {10.1093/mnras/stz1865},
+  url       = {https://arxiv.org/abs/1902.02026},
+  note      = {Deep learning for sparse RFI — relevant to cases where interference
+               occupies a small fraction of the band, as expected in the 1420\,MHz
+               HI passband with SAW filter protection.}
+}
+
+@misc{mitll_nn_rfi,
+  author       = {{MIT Lincoln Laboratory}},
+  title        = {Neural Network Systems and Methods for Removing Noise from Signals},
+  howpublished = {MIT Lincoln Laboratory Technology Transfer},
+  url          = {https://www.ll.mit.edu/partner-us/available-technologies/neural-network-systems-and-methods-removing-noise-signals},
+  year         = {2024},
+  note         = {Technology transfer page — not directly citable in thesis.
+                  Find underlying patent or publication before citing.
+                  Included here as a pointer to the institutional work.
+                  Search MIT LL publications for associated paper.}
+}
+
+% ============================================================
+% 6. AMATEUR AND LOW-COST RADIO ASTRONOMY
+% ============================================================
+
+@article{phelps2024,
+  author    = {Phelps, J.},
+  title     = {Galactic Neutral Hydrogen Structures Spectroscopy and Kinematics: Designing a Home Radio Telescope for 21 cm Emission},
+  journal   = {arXiv e-prints},
+  year      = {2024},
+  eprint    = {2411.00057},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2411.00057},
+  note      = {Not peer reviewed. Reviewed 2026-05-08 — filed in reading\_notes/. 
+               Useful baseline comparison: 1m dish urban HI detection in Los Angeles.
+               Setup inferior to BRRO but demonstrates urban detection is achievable.
+               Signal chain: Nooelec H1 LNA + RTL-SDR V2. Software: GNU Radio / 
+               Langston NSF stack.}
+}
+
+@article{fung2023,
+  author    = {Fung, L. and Wai Kit Lau, A. and Hung Chan, K. and Tony Shing, M.},
+  title     = {{WTH! Wok the Hydrogen}: Measurement of Galactic Neutral Hydrogen in Noisy Urban Environment Using Kitchenware},
+  journal   = {arXiv e-prints},
+  year      = {2023},
+  eprint    = {2309.15163},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2309.15163}
+}
+
+% ============================================================
+% 7. TEXTBOOKS
+% ============================================================
+
+@book{marr2015vol1,
+  author    = {Marr, Jonathan M. and Snell, Ronald L. and Kurtz, Stanley E.},
+  title     = {Fundamentals of Radio Astronomy: Observational Methods},
+  publisher = {CRC Press / Taylor \& Francis},
+  year      = {2015},
+  volume    = {1},
+  note      = {First undergraduate textbook exclusively devoted to radio astronomy 
+               telescopes and observation methods. No prior astronomy knowledge required.
+               Covers instrumentation, telescopes, observation methods, aperture synthesis.
+               Lab exercises using MIT Haystack SRT/VSRT included.
+               Primary undergraduate reference for BRRO programme.}
+}
+
+@book{marr2015vol2,
+  author    = {Snell, Ronald L. and Kurtz, Stanley E. and Marr, Jonathan M.},
+  title     = {Fundamentals of Radio Astronomy: Astrophysics},
+  publisher = {CRC Press / Taylor \& Francis},
+  year      = {2015},
+  volume    = {2},
+  note      = {Covers physical phenomena giving rise to radio emissions.
+               Full derivations available for most equations.
+               Addresses the frustration with Condon \& Ransom --- use as 
+               primary astrophysics reference where derivations needed.}
+}
+
+@book{wilson2013,
+  author    = {Wilson, Thomas L. and Rohlfs, Kristen and H{\"u}ttemeister, Susanne},
+  title     = {Tools of Radio Astronomy},
+  publisher = {Springer},
+  year      = {2013},
+  edition   = {6th},
+  doi       = {10.1007/978-3-642-39950-3}
+}
+
+@book{carroll2017,
+  author    = {Carroll, Bradley W. and Ostlie, Dale A.},
+  title     = {An Introduction to Modern Astrophysics},
+  publisher = {Cambridge University Press},
+  year      = {2017},
+  edition   = {2nd},
+  note      = {Chapter 31 — Interstellar Medium}
+}
+
+@book{binney1998,
+  author    = {Binney, James and Merrifield, Michael},
+  title     = {Galactic Astronomy},
+  publisher = {Princeton University Press},
+  year      = {1998},
+  note      = {Chapter 8 — HI and spiral structure}
+}
+
+@book{condon2016,
+  author    = {Condon, James J. and Ransom, Scott M.},
+  title     = {Essential Radio Astronomy},
+  publisher = {Princeton University Press},
+  year      = {2016},
+  url       = {https://www.cv.nrao.edu/~sransom/web/Ch1.html},
+  note      = {Online version freely available. Derivations sometimes lacking ---
+               supplement with Marr, Snell \& Kurtz Vol.~2 where needed.}
+}
+
+@book{laufer2023,
+  author    = {Laufer, Carl},
+  title     = {The Hobbyist's Guide to the {RTL-SDR}: Really Cheap Software Defined Radio},
+  publisher = {Self-published},
+  year      = {2023},
+  note      = {Arrived 2026-05-04. Key chapters: tricks, performance, antennas,
+               measuring filters. Read before V4c commissioning.}
+}
+
+% ============================================================
+% 8. TECHNICAL DOCUMENTATION AND DATASHEETS
+% ============================================================
+
+@techreport{qpl9547_datasheet,
+  author      = {{Qorvo}},
+  title       = {{QPL9547} Low Noise Amplifier Data Sheet},
+  institution = {Qorvo},
+  year        = {2020},
+  note        = {LNA1 and LNA2 in Discovery Dish HI Feed signal chain.
+                 Key values at 1420\,MHz (interpolated): NF~0.17\,dB, 
+                 Gain~21.5\,dB, OIP3~+38.5\,dBm.
+                 Filed in equipment/datasheets/}
+}
+
+@techreport{ta1077a_datasheet,
+  author      = {{Tai-Saw Technology}},
+  title       = {{TA1077A} SAW Bandpass Filter},
+  institution = {Tai-Saw Technology Co. Ltd.},
+  note        = {SAW1 (F1) in HI Feed. Centre 1420\,MHz, 72\,MHz BW, 
+                 3.5\,dB IL, 42\,dB OOB rejection, 200\,$\Omega$ balanced input.
+                 Identified from PCB photo — awaiting KrakenRF confirmation.
+                 Filed in equipment/datasheets/}
+}
+
+@techreport{ta2494a_datasheet,
+  author      = {{Tai-Saw Technology}},
+  title       = {{TA2494A} SAW Bandpass Filter},
+  institution = {Tai-Saw Technology Co. Ltd.},
+  note        = {SAW2 (F2) in HI Feed. Centre 1420\,MHz, 80\,MHz BW,
+                 3.5\,dB IL, 24\,dB OOB rejection, 50\,$\Omega$ output.
+                 Identified from PCB photo — awaiting KrakenRF confirmation.
+                 Filed in equipment/datasheets/}
+}
+
+@techreport{rtlsdr_v4_datasheet,
+  author      = {{RTL-SDR Blog}},
+  title       = {{RTL-SDR Blog V4} Datasheet v1.0},
+  institution = {RTL-SDR Blog},
+  year        = {2023},
+  note        = {8-bit ADC, 1\,PPM TCXO, triplexer provides 28--43\,dB OOB 
+                 isolation at 1420\,MHz. Chain A RFI monitoring receiver.
+                 Filed in equipment/datasheets/}
+}
+
+@techreport{airspy_r2_docs,
+  author      = {{Airspy}},
+  title       = {{Airspy R2} Technical Documentation},
+  institution = {Airspy},
+  url         = {https://airspy.com/airspy-r2/},
+  note        = {12-bit ADC, 10\,Msps, 24--1800\,MHz. Chain B science SDR.
+                 Phase 4 addition.}
+}
