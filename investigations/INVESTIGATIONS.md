@@ -23,9 +23,10 @@ specific programme — potentially publishable in SARA proceedings.
 
 | ID | Title | Status | Started | Completed |
 |---|---|---|---|---|
-| INV001 | Signal Chain Noise Budget and Upgrade Path Analysis | In planning | 2026-04-28 | |
+| INV001 | Signal Chain Noise Budget and Upgrade Path Analysis | **Active** — component values confirmed; CAL-000 ready; Cas A baseline pending first light | 2026-04-28 | |
 | INV002 | Digital Filter Design for HI Spectroscopy Pipeline | Planned | | |
 | INV003 | RFI Flagging Algorithm Development and Validation | Planned | | |
+| INV004 | Machine Learning RFI Mitigation — Training Corpus and Pipeline | **Concept** — data collection begins Phase 3; implementation Phase 5 | 2026-05-13 | |
 
 ---
 
@@ -52,10 +53,29 @@ This structure mirrors a journal paper and provides practice for thesis writing.
 investigations/
 ├── INVESTIGATIONS.md                    ← this file
 ├── INV001_noise_budget/
-│   ├── INVESTIGATIONS.md                ← investigation overview and status
-│   ├── analysis.py              ← Python Friis model
-│   ├── measurements.csv         ← measured data
-│   └── results.md               ← findings and conclusions
+│   ├── INV001_noise_budget.md           ← investigation overview and status
+│   ├── analysis.py                      ← Python Friis model
+│   ├── measurements.csv                 ← measured data
+│   └── results.md                       ← findings and conclusions
 ├── INV002_digital_filters/
-└── INV003_rfi_flagging/
+│   └── INV002_digital_filters.md
+├── INV003_rfi_flagging/
+│   └── INV003_rfi_flagging.md
+└── INV004_ml_rfi/
+    └── INV004_ml_rfi.md                 ← ML RFI mitigation — concept and data strategy
 ```
+
+---
+
+## Investigation Status Notes
+
+**INV001:** QPL9547 LNA confirmed (both LNA1 and LNA2). SAW filter IDs
+(TA1077A, TA2494A) identified from PCB — awaiting KrakenRF confirmation.
+ADF4351 and V4c both in hand — CAL-000 ready to execute. Friis calculation
+can proceed with interpolated QPL9547 values; update when SAW confirmed.
+Cas A baseline measurement deferred until first light (dish due August 2026).
+
+**INV004:** Long-horizon investigation. Data collection begins Phase 3
+alongside first RFI surveys. No implementation until Phase 5. Data schema
+must be finalised before Phase 3 logging begins — see INV004_ml_rfi.md
+for required fields and HI4PI lookup pipeline requirements.
