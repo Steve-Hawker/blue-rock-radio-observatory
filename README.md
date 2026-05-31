@@ -175,6 +175,7 @@ blue-rock-radio-observatory/
 │
 ├── build/                           ← construction journal and photos
 │   ├── BUILD_JOURNAL.md
+│   ├── INSPECTION_LOG.md            ← physical inspection record for all components
 │   └── photos/
 │
 ├── calendar/                        ← observing window calendar files
@@ -222,4 +223,4 @@ Expected 2026: ~2567 Jy.
 
 ---
 
-*Last updated: 2026-05-13 — INV004 added; references/ directory added; scripts expanded*
+*Last updated: 2026-05-29 — INV004 added; references/ directory added; scripts expanded; INSPECTION_LOG.md added*
