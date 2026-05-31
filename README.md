@@ -80,6 +80,7 @@ Full equipment details in `equipment/` directory.
 blue-rock-radio-observatory/
 │
 ├── README.md                        ← this file
+├── NEXT.md                          ← what to do next — session start reference
 ├── RESEARCH_PLAN.md                 ← full programme plan 2026–2031
 ├── LEARNING_PLAN.md                 ← structured self-study programme
 ├── LEARNING_LOG.md                  ← chronological learning log with hours tracking
@@ -226,4 +227,4 @@ Expected 2026: ~2567 Jy.
 
 ---
 
-*Last updated: 2026-05-29 — LEARNING_LOG.md added; INV005 added; DIPOLE_ANTENNA_DESIGN v3.0*
+*Last updated: 2026-05-29 — NEXT.md added; LEARNING_LOG.md added; INV005 added; DIPOLE_ANTENNA_DESIGN v3.0*
