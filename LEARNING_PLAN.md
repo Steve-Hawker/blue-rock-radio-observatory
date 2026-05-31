@@ -2,7 +2,7 @@
 
 **Observer:** Steve Hawker BEng MBA FRAS  
 **Repository:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
-**Plan version:** 1.8  
+**Plan version:** 1.9  
 **Date:** 2026-05-29  
 
 *This is a living document. Update it as reading is completed, understanding develops,
@@ -100,6 +100,8 @@ times — derives from these fundamentals.
 | SARA Journal — amateur receiver noise articles | Journal | Recommended | Not started |
 | QPL9547 datasheet | Datasheet | Essential | Not started |
 | SAW Filter datasheets (when obtained) | Datasheet | Essential | Not started |
+| **Stutzman & Thiele — *Antenna Theory and Design* (3rd ed.)** | Textbook | Recommended — dipole and polarisation chapters | Not started |
+| **Ansys Innovation Space — Design of the Half-Wave Dipole** | Free online course | **Recommended — read before dipole installation** | Not started |
 
 ### Marr, Snell & Kurtz — Reading Guide
 
@@ -130,6 +132,23 @@ supplementary depth for specific topics.
 3. Vol. 2 — HI and ISM chapters (before first light, alongside NRAO ERA)
 4. Vol. 1 — observation methods in detail (during Phase 4)
 5. Vol. 1 — aperture synthesis overview (Phase 6 planning)
+
+### Ansys Innovation Space — Design of the Half-Wave Dipole
+
+Free online course directly applicable to the Blue Rock reference dipole.
+Read before dipole installation — confirms design decisions and provides
+accessible dipole theory without heavy mathematics.
+
+- Course: https://innovationspace.ansys.com/product/design-of-the-half-wave-dipole/
+- Intro PDF: https://innovationspace.ansys.com/courses/wp-content/uploads/sites/5/2022/07/DesignOfTheHalfWaveDipole_Introduction.pdf
+- Far-field pattern PDF: https://innovationspace.ansys.com/courses/wp-content/uploads/sites/5/2022/07/DesignOfTheHalfWaveDipole_FarFieldPattern.pdf
+
+Key topics for Blue Rock:
+- Half-wave element length (105mm per element at 1420MHz — confirm)
+- E-plane HPBW ~78° — why the dipole sees a much wider solid angle than the dish
+- H-plane omnidirectional — why vertical orientation catches RFI from all azimuths
+- Null positions — 0° and 180° off the ends
+- Ground effects at different mounting heights
 
 ### Notes
 *(Add notes here as reading progresses)*
@@ -539,8 +558,11 @@ Additional reading needed (not yet in learning plan):
 
 | When | What | Topic | Why |
 |---|---|---|---|
-| **Now — May 2026** | Laufer — tricks, performance, antennas | 4 | Before V4c arrives |
+| **Now — May 2026** | Laufer — tricks, performance, antennas | 4 | V4c in hand |
 | **Now — May 2026** | Laufer — measuring filters | 4 | Before commissioning |
+| **Now — Jun 2026** | **Ansys — Design of the Half-Wave Dipole (free)** | 2 | **Before dipole installation — confirms design decisions** |
+| **Now — Jun 2026** | **Briggs, Bell & Kesteven 2000 — abstract + intro** | 5 | **Reference channel architecture — foundational paper** |
+| **Now — Jun 2026** | **Urban RFI paper 2025 (arXiv:2505.19372)** | 5 | **Directly relevant to San Jose site assessment** |
 | **May–Jul 2026** | Clark & Clark Section 1 | 4 | GNU Radio installation |
 | **May–Jul 2026** | NRAO ERA — receiver systems | 2 | Before RFI surveys |
 | **May–Jul 2026** | QPL9547 datasheet — study carefully | 2 | INV001 Friis calculation |
@@ -757,6 +779,7 @@ and answered over time.*
 | 1.6 | 2026-05-08 | Add FL-8 — Phelps 2024 arXiv:2411.00057; noted not peer reviewed; updated checklist to 8 items, 16-25 hours |
 | 1.7 | 2026-05-10 | Add Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 1 + Vol. 2; added to Topics 1, 2, 3 resource tables; added reading guide; added to Phase 4 prerequisites and summary priority table |
 | 1.8 | 2026-05-29 | Marr, Snell & Kurtz Vol. 1 + Vol. 2 requested from UCLan library — expect response ~mid-Jun 2026; status updated in all three topic tables |
+| 1.9 | 2026-05-29 | Dipole session: add Ansys half-wave dipole course + Stutzman & Thiele to Topic 2 resources; add Ansys reading guide; add Briggs et al. 2000 + urban RFI 2025 to priority table; priority table updated |
 
 ---
 

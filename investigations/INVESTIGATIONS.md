@@ -27,6 +27,7 @@ specific programme — potentially publishable in SARA proceedings.
 | INV002 | Digital Filter Design for HI Spectroscopy Pipeline | Planned | | |
 | INV003 | RFI Flagging Algorithm Development and Validation | Planned | | |
 | INV004 | Machine Learning RFI Mitigation — Training Corpus and Pipeline | **Concept** — data collection begins Phase 3; implementation Phase 5 | 2026-05-13 | |
+| INV005 | Reference Channel Flagging Effectiveness | **Concept** — characterise what fraction of RFI events dipole catches vs misses; false positive rate | 2026-05-29 | |
 
 ---
 
@@ -61,8 +62,8 @@ investigations/
 │   └── INV002_digital_filters.md
 ├── INV003_rfi_flagging/
 │   └── INV003_rfi_flagging.md
-└── INV004_ml_rfi/
-    └── INV004_ml_rfi.md                 ← ML RFI mitigation — concept and data strategy
+└── INV005_reference_channel/
+    └── INV005_reference_channel.md  ← dipole flagging effectiveness — concept
 ```
 
 ---
@@ -75,7 +76,8 @@ ADF4351 and V4c both in hand — CAL-000 ready to execute. Friis calculation
 can proceed with interpolated QPL9547 values; update when SAW confirmed.
 Cas A baseline measurement deferred until first light (dish due August 2026).
 
-**INV004:** Long-horizon investigation. Data collection begins Phase 3
-alongside first RFI surveys. No implementation until Phase 5. Data schema
-must be finalised before Phase 3 logging begins — see INV004_ml_rfi.md
-for required fields and HI4PI lookup pipeline requirements.
+**INV005:** Concept captured 2026-05-29 from dipole design session. Characterise
+reference channel (Chain A dipole) flagging effectiveness — what fraction of RFI
+events does the dipole catch, what fraction does it miss, and what is the false
+positive rate? Data collection begins Phase 3 alongside INV004. Potentially
+publishable in SARA. See OPEN_ITEMS.md — Reference channel investigation.

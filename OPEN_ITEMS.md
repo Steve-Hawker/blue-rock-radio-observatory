@@ -126,7 +126,11 @@ Not a science instrument. Can be added later if warranted.
 | Vent cap material | Standard 40mm squash ball, diagonal cut | Omnidirectional rain protection; ~$7/4-pack eBay |
 | ADS-B monitoring | dump1090 on Pi 3 via V4c — Phase 3 | No extra hardware; validates V4c + SAW rejection at 1090 MHz |
 | Cable gland arrangement | 4 penetrations: PoE / DC+sensor / vent / RF | RF isolated in own gland |
-| Wind data | External source — no hardware required | Anemometer + MCP3008 removed from BOM |
+| Dipole mounting location | PVC fence — RF transparent, free-space behaviour, separated from enclosure noise | Rejected: window (boundary effects), stainless enclosure (acts as ground plane), Discovery Drive mount (near field of dish, pattern undefined) |
+| Dipole orientation | Vertical | Urban RFI predominantly vertically polarised; H-plane omnidirectional catches all azimuths; dependency — verify feed polarisation |
+| Dipole height | ~150cm (5ft, ~7λ) on fence | Above λ/2 minimum; matches dish feed height; suction cup secure at this height |
+| Dipole role | Flagging/veto system — not cancellation | Dish 17° beam and dipole 78°×360° pattern too different for clean subtraction; correlated RFI = terrestrial → flag and excise |
+| Reference channel investigation | **Potential INV005** — characterise what fraction of RFI events dipole catches vs misses | Data collection begins Phase 3; publishable in SARA |
 | SDR junction box (Faraday shield) | Southwire 4"×2"×1-7/8" steel handy box | ~$2 Home Depot; shields SDRs from Pi 5 noise; lid faces Pi cluster; copper tape seal; verify SDR fit before closing |
 | Internal DDOEE BME280 | **CONFIRMED 2026-05-13** — inside SDR junction box | Address 0x76 (SDO to GND); SDR thermal + condensation monitoring; exits via copper foil wrapped egress |
 | Power architecture | 12V Tycon + DN510 12V→5V + Drive direct from 12V | 24V architecture considered and rejected — single DC-DC simpler; confirmed 2026-05-13 |
@@ -186,6 +190,9 @@ Document results in rfi/RFI_OVERVIEW.md.
 | ~~LNA2 identification~~ | **RESOLVED 2026-05-07** — QPL9547 | ✓ |
 | SAW filter confirmation | TA1077A + TA2494A from PCB analysis — not yet confirmed by KrakenRF | Follow-up message sent |
 | ~~Tycon DIN bracket screw hole spacing~~ | **RESOLVED** — Tycon includes mounting brackets; no angle bar required | ✓ |
+| Discovery Dish HI feed polarisation | Vertical dipole orientation assumes RFI is predominantly vertically polarised — if feed is linear horizontal, cross-polarisation reduces reference channel effectiveness | Check feed datasheet / KrakenRF documentation before dipole installation |
+| Dipole suction cup position on fence | Mark position on PVC fence for session repeatability | At installation |
+| Dipole coax run length | Measure exact fence-to-enclosure distance | At installation |
 | dkplnt DN510 operating temperature | Not stated in listing | Check datasheet |
 | Discovery Drive power consumption under slew | Estimated ~12W | Measure when arrives |
 | ADF4351 SPI library for Pi | Python library needed | **V4c arrived — research now** |
@@ -359,3 +366,4 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 8.0 | 2026-05-11 | V4c + dipole arrived early; CAL-000 unblocked and ready to proceed |
 | 10.0 | 2026-05-13 | dkplnt DN510 arrived; Southwire junction box confirmed; internal BME280 confirmed (inside junction box, 0x76); 12V power architecture confirmed; 7 new design documents added to design/ |
 | 12.0 | 2026-05-29 | Tycon arrived; includes mounting brackets — aluminium angle bar not required; angle bracket item removed from BOM |
+| 13.0 | 2026-05-29 | Dipole session: orientation (vertical), mounting (PVC fence, 150cm), role (flagging not cancellation) all documented; feed polarisation check added as open item; INV005 reference channel flagging noted |

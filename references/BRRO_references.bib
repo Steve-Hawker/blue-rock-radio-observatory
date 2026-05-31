@@ -233,6 +233,67 @@
   note      = {RFI mitigation methodology — wavelet transform + mathematical morphology; informs BRRO RFI pipeline design}
 }
 
+@article{briggs2000,
+  author    = {Briggs, Frank H. and Bell, John F. and Kesteven, Michael J.},
+  title     = {Removing Radio Interference from Contaminated Astronomical Spectra Using an Independent Reference Signal and Closure Relations},
+  journal   = {The Astronomical Journal},
+  year      = {2000},
+  volume    = {120},
+  pages     = {3351--3361},
+  doi       = {10.1086/316871},
+  eprint    = {astro-ph/0006222},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/astro-ph/0006222},
+  note      = {Foundational paper for reference channel RFI architecture.
+               Describes cross-power spectrum cancellation using independent
+               reference antenna. Directly informs BRRO dual-chain (Chain A
+               dipole / Chain B dish) flagging methodology.
+               Read abstract + introduction before dipole commissioning.}
+}
+
+@article{urbanrfi2025,
+  author    = {others},
+  title     = {Temporal Variability in Low-Frequency Radio Interference},
+  journal   = {arXiv e-prints},
+  year      = {2025},
+  eprint    = {2505.19372},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2505.19372},
+  note      = {High-cadence RFI monitoring at urban and rural sites.
+               Directly relevant to San Jose site assessment methodology
+               and temporal characterisation of 1420\,MHz RFI environment.
+               Verify full author list on arXiv before citing.}
+}
+
+% ============================================================
+% 9. ANTENNA THEORY
+% ============================================================
+
+@book{stutzman2012,
+  author    = {Stutzman, Warren L. and Thiele, Gary A.},
+  title     = {Antenna Theory and Design},
+  publisher = {Wiley},
+  year      = {2012},
+  edition   = {3rd},
+  note      = {Standard undergraduate antenna theory text. Dipole and
+               polarisation chapters directly relevant to BRRO reference
+               dipole design. Dip in as needed for theoretical depth;
+               not required cover-to-cover.}
+}
+
+@misc{ansys_dipole_course,
+  author       = {{Ansys Innovation Space}},
+  title        = {Design of the Half-Wave Dipole},
+  howpublished = {Free online course},
+  url          = {https://innovationspace.ansys.com/product/design-of-the-half-wave-dipole/},
+  year         = {2022},
+  note         = {Free accessible course covering half-wave dipole design,
+                  far-field pattern, E-plane HPBW (~78°), H-plane omnidirectional,
+                  null positions, and ground effects. Read before dipole installation.
+                  Intro PDF: https://innovationspace.ansys.com/courses/wp-content/uploads/sites/5/2022/07/DesignOfTheHalfWaveDipole_Introduction.pdf
+                  Far-field PDF: https://innovationspace.ansys.com/courses/wp-content/uploads/sites/5/2022/07/DesignOfTheHalfWaveDipole_FarFieldPattern.pdf}
+}
+
 @article{akeret2017,
   author    = {Akeret, J{\"o}el and Chang, Chihway and Lucchi, Aurelien and Refregier, Alexandre},
   title     = {Radio frequency interference mitigation using deep convolutional neural networks},
