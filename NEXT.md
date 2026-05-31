@@ -3,7 +3,7 @@
 *Single reference for session start. Updated end of each session.
 For full detail see OPEN_ITEMS.md, BUILD_JOURNAL.md, LEARNING_PLAN.md.*
 
-**Last updated:** 2026-05-29  
+**Last updated:** 2026-05-29 — Clark & Clark added to learning queue  
 **Current phase:** Phase 2 → Phase 3 transition  
 
 ---
@@ -117,10 +117,11 @@ In priority order:
 
 1. Ansys half-wave dipole course — **now, before installation**
 2. Laufer — tricks, performance, antennas chapters — **now, V4c in hand**
-3. Briggs, Bell & Kesteven 2000 — abstract + intro — **soon**
-4. Urban RFI paper arXiv:2505.19372 — **soon, site assessment context**
-5. Marr Vol. 1 — when received from UCLan library
-6. NRAO ERA — receiver systems — before first RFI survey
+3. Clark & Clark — Section 1 (GNU Radio installation and basics) — **May–Jul 2026**
+4. Briggs, Bell & Kesteven 2000 — abstract + intro — **soon**
+5. Urban RFI paper arXiv:2505.19372 — **soon, site assessment context**
+6. Marr Vol. 1 — when received from UCLan library
+7. NRAO ERA — receiver systems — before first RFI survey
 
 ---
 
