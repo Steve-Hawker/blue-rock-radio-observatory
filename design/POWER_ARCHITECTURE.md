@@ -66,7 +66,7 @@ and maintenance schedule.
 | Component | Role | Location | Status |
 |---|---|---|---|
 | TP-Link Omada PoE++ | PoE injector — 802.3bt | Indoors | Arrived 2026-05-10 ✓ |
-| Tycon POE-SPLT-BT-UNI-P | PoE splitter — set to **12V** | DDOEE (outdoors) | To order |
+| Tycon POE-SPLT-BT-UNI-P | PoE splitter — set to **12V** | DDOEE (outdoors) | Arrived 2026-05-29 ✓ |
 | dkplnt DN510 | 12V→5V DC-DC — 50W 10A | DDOEE (outdoors) | Arrived 2026-05-13 ✓ |
 | CAT6 F/UTP stranded outdoor | Data + power to DDOEE | House to tripod | To order (30ft × 2) |
 
@@ -160,7 +160,7 @@ higher input-to-output ratio, marginally improving efficiency. However:
 | Operating temperature | -40°C to +75°C |
 | Output voltage | Selectable — **set to 12V** |
 | Combined output power | Up to 72W from 90W input |
-| Mounting | DIN mount (use as jig for angle bracket — see ENCLOSURE_DESIGN.md) |
+| Mounting | Included mounting brackets — bolt direct to plate via rivnuts |
 | Housing | Metal |
 
 **Important:** The Tycon outputs ONE voltage. The selector switch must be
@@ -354,7 +354,7 @@ All components mount to the 315×200mm galvanised steel DIN plate via rivet nuts
 
 | Component | Method | Notes |
 |---|---|---|
-| Tycon POE-SPLT-BT-UNI-P | Angle bracket (25×25×2mm Al) + rivnuts | DIN bracket used as drilling jig |
+| Tycon POE-SPLT-BT-UNI-P | Included mounting brackets + rivnuts | Arrived 2026-05-29 ✓ — no angle bar required |
 | dkplnt DN510 | 4× corner rivnuts, bolted | Aluminium case to plate for heat path |
 | Raspberry Pi 2/3/5 | M2.5 standoffs into rivnuts | Al/Cu standoffs preferred |
 | DUOPURUI switch | Velcro on top of Tycon | Minimal weight |
@@ -414,4 +414,4 @@ No specific power sequencing required — all devices tolerate simultaneous powe
 | 1.5 | 2026-05-07 | Add custom USB-C power distribution board |
 | 1.6 | 2026-05-07 | Add cable gland plan |
 | 2.0 | 2026-05-10 | TL-POE170S → Omada PoE++; 4-gland plan; RF in own gland; sensor cable = Cat6 pairs; DUOPURUI added; grounding section; Phase 4 budget corrected to 3 Pis; galvanised vs stainless clarified |
-| 3.0 | 2026-05-13 | Absorb POWER_DESIGN.md content; 24V architecture considered and rejected — 12V confirmed (single DC-DC, Drive direct from 12V); voltage drop calculation added; full wiring diagram; power sequencing; QILIPSU dimensions confirmed; DN510 arrived; USB EMI section added; cross-references to ENCLOSURE_DESIGN, RF_DESIGN, HEAT_DESIGN, CABLE_DESIGN |
+| 3.1 | 2026-05-29 | Tycon arrived — includes mounting brackets; angle bar removed; status updated to arrived | 24V architecture considered and rejected — 12V confirmed (single DC-DC, Drive direct from 12V); voltage drop calculation added; full wiring diagram; power sequencing; QILIPSU dimensions confirmed; DN510 arrived; USB EMI section added; cross-references to ENCLOSURE_DESIGN, RF_DESIGN, HEAT_DESIGN, CABLE_DESIGN |

@@ -301,7 +301,7 @@ RF and thermal performance.
 
 | Component | Method |
 |---|---|
-| Tycon POE-SPLT-BT-UNI-P | Angle bracket (25×25×2mm Al) + rivnuts; DIN bracket as drilling jig |
+| Tycon POE-SPLT-BT-UNI-P | Included mounting brackets + rivnuts | Arrived 2026-05-29 ✓ — no angle bar required |
 | dkplnt DN510 | 4× corner rivnuts; aluminium case to plate with thermal compound |
 | EPLZON stripboard | 25mm standoffs above DN510; rivnuts into plate |
 | DUOPURUI switch | Velcro on top of Tycon |
@@ -408,4 +408,4 @@ Recommended assembly order to avoid rework:
 
 | Version | Date | Changes |
 |---|---|---|
-| 1.0 | 2026-05-13 | Initial document — QILIPSU selected, Southwire junction box confirmed, BME280 inside junction box confirmed, 12V power architecture, 4-gland plan, 23-step build sequence |
+| 1.1 | 2026-05-29 | Tycon arrived — includes mounting brackets; angle bar not required; mounting table updated | QILIPSU selected, Southwire junction box confirmed, BME280 inside junction box confirmed, 12V power architecture, 4-gland plan, 23-step build sequence |
