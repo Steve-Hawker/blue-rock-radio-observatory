@@ -3,7 +3,7 @@
 **Author:** Steve Hawker BEng MBA FRAS  
 **Observatory:** Blue Rock Radio Observatory  
 **Date:** 2026-04-30  
-**Version:** 2.0  
+**Version:** 3.0  
 
 ---
 
@@ -192,7 +192,7 @@ and reactive) and causes significant mismatch loss.
 **Arms:** Custom brass elements, 3.3 cm visible + M5 threaded section  
 **Total arm length:** ~5.3 cm (including 2 cm internal base metal)  
 **Orientation:** Vertical — arms pointing up and down  
-**Mounting:** On Amazon Basics tripod at ~52" height  
+**Mounting:** PVC fence — see Mounting and Installation below  
 **Connection:** SMA to RTL-SDR V4c input, bias tee OFF (passive antenna)  
 **Polarisation:** Vertical linear  
 
@@ -200,6 +200,134 @@ and reactive) and causes significant mismatch loss.
 broadcast) use vertical polarisation. A vertically oriented dipole
 is therefore well matched to the dominant polarisation of urban RFI
 at 1420 MHz.
+
+---
+
+## Orientation Decision
+
+**Decision:** Vertical polarisation  
+**Date:** May 2026  
+
+**Rationale:**
+
+1. **Polarisation match** — dominant urban RFI sources (cellular, WiFi,
+   switching supplies) are predominantly vertically polarised. Vertical
+   dipole maximises coupling to primary interference sources.
+
+2. **Pattern symmetry** — vertical dipole H-plane is omnidirectional in
+   azimuth. Reference channel requires equal sensitivity in all horizontal
+   directions — no preferred azimuth. Every RFI source at any bearing
+   is equally detectable.
+
+3. **Ground interaction** — ground reflection reinforces horizontal
+   sensitivity, appropriate for terrestrial RFI monitoring role.
+
+4. **Mechanical stability** — vertical element on vertical fence mount,
+   natural orientation, no rotation tendency.
+
+**Alternatives considered:**
+
+- *Horizontal* — rejected: figure-of-eight H-plane pattern creates azimuthal
+  blind spots; reduces terrestrial RFI catch; no compensating advantage for
+  reference channel role.
+- *Angled* — rejected: no clear benefit; complicates pattern characterisation.
+
+**Dependency:**
+Verify Discovery Dish HI feed polarisation — if linear horizontal, the dipole
+is cross-polarised to the dish and reference channel effectiveness for
+feed-coupled RFI is reduced. If feed is circular this is less critical.
+See OPEN_ITEMS.md — feed polarisation check.
+
+**Review trigger:**
+If RFI flagging rate is unexpectedly low after commissioning, re-examine
+polarisation match to local sources.
+
+---
+
+## Mounting and Installation
+
+### Location — PVC Fence
+
+**Decision:** Mount on PVC garden fence.
+
+| Option | Assessment |
+|---|---|
+| Window adjacent to tripod | Rejected — boundary effects unpredictable; window frame acts as partial ground plane |
+| **PVC fence** | **Selected** — RF transparent; free-space dipole behaviour; separated from enclosure noise |
+| Stainless steel enclosure | Rejected — SS acts as ground plane; alters pattern to monopole-like; pattern is enclosure-geometry dependent |
+| Discovery Drive mount (tracks dish) | Rejected — near field of dish reflector; pattern completely altered and uncharacterisable; cable management requires rotary joint; pattern changes with every elevation angle |
+
+**Why fence wins:**
+- PVC is essentially invisible to RF — no ground plane effect, no detuning
+- Physical separation from enclosure and Pi cluster switching noise
+- Fixed, repeatable position — mark suction cup location each session
+- Free-space dipole behaviour — pattern is characterisable and documentable
+
+### Physical Parameters
+
+| Parameter | Value | Notes |
+|---|---|---|
+| Fence material | PVC | RF transparent — confirmed |
+| Fence height | 6ft (183cm) | |
+| Dipole mounting height | ~150cm (5ft, ~7λ) | Suction cup secure at this height |
+| Rationale for height | ~7λ above ground — minimal ground reflection effects | Above 2λ recommended minimum |
+| Distance from tripod | ~3ft (~91cm, ~4.3λ) | Far field of both antennas |
+| Separation in wavelengths | ~4.3λ | Both antennas in each other's far field |
+| Coax run | ~6–8ft (measure precisely at installation) | Shielded throughout |
+| Session repeatability | Mark suction cup position on fence | Document in session log |
+
+### Height Rationale
+
+| Height | Wavelengths | Assessment |
+|---|---|---|
+| λ/2 = ~10cm | 0.5λ | Absolute minimum — poor pattern |
+| λ = ~21cm | 1λ | Practical minimum |
+| 2λ = ~42cm | 2λ | Recommended minimum |
+| **150cm** | **~7λ** | **Selected — minimal ground effects** |
+
+At ~7λ: pattern closely approximates free-space behaviour; ground
+reflection effects small; approximately matches dish feed height
+(~127cm + focal length adjustment), sampling the same vertical
+slice of the RF environment as the science channel.
+
+### Role — Flagging, Not Cancellation
+
+**Key conclusion:** The dipole is a **veto/flagging system**, not a
+cancellation system.
+
+The Discovery Dish has a 17° beam pointing at a specific patch of sky.
+The dipole sees ~78° (E-plane HPBW) × 360° (H-plane omnidirectional).
+They are looking at very different solid angles simultaneously. Clean
+subtraction of dipole signal from dish signal is not viable — the
+patterns are too different for coherent cancellation.
+
+**The dipole's value:**
+- When the dipole sees a spike at 1420 MHz → flag that integration
+  in the science channel as potentially contaminated
+- RFI correlated between dipole (Chain A) and dish (Chain B) = terrestrial
+  interference → flag and excise
+- Signal uncorrelated between channels = potentially real astronomy
+
+This is the approach described in Briggs, Bell & Kesteven (2000) —
+cross-power spectrum flagging using an independent reference signal.
+
+**Research opportunity:**
+Characterising how well the dipole flags real contamination events in
+the dish data is itself a methodology contribution — see INV005
+(investigations/INV005_reference_channel/). Questions to answer:
+- What fraction of RFI events does the dipole catch?
+- What fraction does it miss?
+- What is the false positive rate?
+
+### Installation Checklist
+
+- [ ] Confirm PVC fence material (RF transparent)
+- [ ] Mark suction cup position at 150cm height on fence
+- [ ] Measure precise coax run length (fence to enclosure entry gland)
+- [ ] Document in session log: dipole height, orientation, coax length
+- [ ] Verify feed polarisation (see Orientation Decision — dependency above)
+- [ ] Run CAL-000 with ADF4351 — measure actual mismatch loss of interim
+      stock arms at 1420 MHz before custom elements are fabricated
 
 ---
 
@@ -258,12 +386,19 @@ in all RFI survey sessions until custom elements are installed.
 
 - Balanis, C.A. — *Antenna Theory: Analysis and Design* — dipole impedance
   and radiation patterns (standard reference)
+- Stutzman, W.L. & Thiele, G.A. — *Antenna Theory and Design* (3rd ed., Wiley 2012) —
+  dipole and polarisation chapters
+- Briggs, Bell & Kesteven (2000) — *AJ* 120, 3351 — reference channel RFI flagging
+  architecture; arXiv:astro-ph/0006222
+- Ansys Innovation Space — *Design of the Half-Wave Dipole* (free course) —
+  https://innovationspace.ansys.com/product/design-of-the-half-wave-dipole/
 - RTL-SDR Blog dipole kit guide — equipment/datasheets/ (this repository)
 - RTL-SDR Blog V4 users guide — equipment/datasheets/ (this repository)
 - DUAL_SDR_ARCHITECTURE.md — Chain A system context (this repository)
 - SDR_SELECTION.md — V4 selection rationale (this repository)
 - ADF4351_CALIBRATION.md — CAL-000 mismatch loss measurement (this repository)
 - INV003_rfi_flagging — RFI flagging algorithm (this repository)
+- INV005_reference_channel — reference channel flagging effectiveness (this repository)
 
 ---
 
@@ -273,6 +408,7 @@ in all RFI survey sessions until custom elements are installed.
 |---|---|---|
 | 1.0 | 2026-04-30 | Initial document — λ/4 rationale, mismatch loss analysis, configuration |
 | 2.0 | 2026-05-04 | Major revision — discovered stock arms cannot reach 1420 MHz resonant length; custom brass element solution documented; interim configuration defined; CAL-000 measurement added |
+| 3.0 | 2026-05-29 | Add orientation decision (vertical — rationale, alternatives, dependency on feed polarisation, review trigger); add mounting and installation section (PVC fence selected over window/enclosure/Drive mount; height 150cm/~7λ; physical parameters table; role clarified as flagging not cancellation; Briggs 2000 reference channel architecture; INV005 cross-reference; installation checklist); references expanded |
 
 
 ---
