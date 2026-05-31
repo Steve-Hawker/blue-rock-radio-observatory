@@ -82,6 +82,7 @@ blue-rock-radio-observatory/
 ├── README.md                        ← this file
 ├── RESEARCH_PLAN.md                 ← full programme plan 2026–2031
 ├── LEARNING_PLAN.md                 ← structured self-study programme
+├── LEARNING_LOG.md                  ← chronological learning log with hours tracking
 ├── TOOLS_PLAN.md                    ← tools roles and workflow
 ├── QUICK_REFERENCE.md               ← pre/post session checklists
 ├── OPEN_ITEMS.md                    ← unresolved questions and pending decisions
@@ -158,8 +159,10 @@ blue-rock-radio-observatory/
 │   │   └── INV002_digital_filters.md
 │   ├── INV003_rfi_flagging/
 │   │   └── INV003_rfi_flagging.md
-│   └── INV004_ml_rfi/
-│       └── INV004_ml_rfi.md         ← ML RFI mitigation — concept; data collection Phase 3+
+│   ├── INV004_ml_rfi/
+│   │   └── INV004_ml_rfi.md         ← ML RFI mitigation — concept; data collection Phase 3+
+│   └── INV005_reference_channel/
+│       └── INV005_reference_channel.md ← dipole flagging effectiveness — concept
 │
 ├── references/                      ← bibliography and citation management
 │   └── BRRO_references.bib          ← BibTeX reference library for Zotero / thesis
@@ -223,4 +226,4 @@ Expected 2026: ~2567 Jy.
 
 ---
 
-*Last updated: 2026-05-29 — INV004 added; references/ directory added; scripts expanded; INSPECTION_LOG.md added*
+*Last updated: 2026-05-29 — LEARNING_LOG.md added; INV005 added; DIPOLE_ANTENNA_DESIGN v3.0*
