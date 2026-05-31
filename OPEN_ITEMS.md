@@ -12,7 +12,7 @@ resolved or new ones arise.
 
 | Item | Status | Notes |
 |---|---|---|
-| Tycon POE-SPLT-BT-UNI-P | Ordered 2026-05-27 | ~2026-06-10; set to 12V |
+| Tycon POE-SPLT-BT-UNI-P | **Arrived 2026-05-29** ✓ | Includes mounting brackets — aluminium angle bar not required |
 | ~~VCELINK M242 ethernet switch~~ | **SUPERSEDED 2026-05-08** | Replaced by DUOPURUI 1→3 switch |
 | ~~TP-Link TL-POE170S~~ | **SUPERSEDED 2026-05-08** | Replaced by TP-Link Omada PoE++ |
 | TP-Link Omada PoE++ injector | **Arrived 2026-05-10** ✓ | ASIN B09SXSN3XT — confirm output wattage from datasheet |
@@ -43,7 +43,7 @@ resolved or new ones arise.
 | Ferrite chokes for USB cables | To order | RFI mitigation |
 | Short SMA cables (internal) | To order | SDR to coax connections inside enclosure |
 | M5 threaded rod (brass) | To purchase | Custom dipole elements |
-| Right-angle aluminium bracket | To purchase | For Tycon mounting — 25×25×2mm |
+| ~~Right-angle aluminium bracket~~ | **NOT REQUIRED** | Tycon includes mounting brackets |
 | microSD card 32GB | To purchase | For Pi OS install |
 | M3 brass standoffs | To purchase | Equal height both sides in Hammond box |
 | Mounting bolts | To purchase | Hammond box to Drive bracket |
@@ -60,7 +60,7 @@ resolved or new ones arise.
 
 | Component | Location on plate | Notes |
 |---|---|---|
-| Tycon POE-SPLT-BT-UNI-P | Left, on side | Angle bracket mount |
+| Tycon POE-SPLT-BT-UNI-P | Left, on side | Included mounting brackets — bolt direct to plate via rivnuts |
 | DUOPURUI ethernet switch 1→3 | On top of Tycon | Velcro; replaces VCELINK M242 |
 | dkplnt DN510 | Under stripboard | Rivnuts |
 | EPLZON stripboard | Top, on 25mm standoffs over DN510 | 6× USB-C breakout sockets + voltmeters |
@@ -185,7 +185,7 @@ Document results in rfi/RFI_OVERVIEW.md.
 |---|---|---|
 | ~~LNA2 identification~~ | **RESOLVED 2026-05-07** — QPL9547 | ✓ |
 | SAW filter confirmation | TA1077A + TA2494A from PCB analysis — not yet confirmed by KrakenRF | Follow-up message sent |
-| Tycon DIN bracket screw hole spacing | Drilling jig for angle bracket | Measure when arrives |
+| ~~Tycon DIN bracket screw hole spacing~~ | **RESOLVED** — Tycon includes mounting brackets; no angle bar required | ✓ |
 | dkplnt DN510 operating temperature | Not stated in listing | Check datasheet |
 | Discovery Drive power consumption under slew | Estimated ~12W | Measure when arrives |
 | ADF4351 SPI library for Pi | Python library needed | **V4c arrived — research now** |
@@ -358,4 +358,4 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 7.0 | 2026-05-10 | Anemometer + MCP3008 removed; cable glands revised to 4 penetrations; sensor cable = Cat6 pairs; RF isolated; POWER_ARCHITECTURE v2.0; Phase 4 power budget corrected |
 | 8.0 | 2026-05-11 | V4c + dipole arrived early; CAL-000 unblocked and ready to proceed |
 | 10.0 | 2026-05-13 | dkplnt DN510 arrived; Southwire junction box confirmed; internal BME280 confirmed (inside junction box, 0x76); 12V power architecture confirmed; 7 new design documents added to design/ |
-| 11.0 | 2026-05-27 | Tycon ordered (~Jun 10); squash balls ordered (May 23, ~Jun 7); QILIPSU arrived May 24; Rust-Oleum arrived May 13; BME280, LSM6DSOX, Qwiic cables, Hammond 1591DBU all arrived May 20 |
+| 12.0 | 2026-05-29 | Tycon arrived; includes mounting brackets — aluminium angle bar not required; angle bracket item removed from BOM |
