@@ -207,7 +207,7 @@ Document results in rfi/RFI_OVERVIEW.md.
 |---|---|---|
 | DIPOLE_ANTENNA_DESIGN.md | Confirm M5 thread when dipole kit arrives | When V4c arrives |
 | E001 → E002 | Create E002 when Phase 3 begins | When V4c arrives |
-| POWER_ARCHITECTURE.md | **Updated v3.0 — absorbs POWER_DESIGN.md** | Done |
+| LEARNING_PLAN.md | After completing Ansys dipole course — review full Ansys Innovation Space catalogue and extend learning plan with relevant courses | After dipole course complete |
 | ENCLOSURE_DESIGN.md | **New v1.0 — QILIPSU, junction box, build sequence** | Done |
 | RF_DESIGN.md | **New v1.0 — RF shielding, ferrite spec, junction box** | Done |
 | HEAT_DESIGN.md | **New v1.0 — thermal chain, interface materials, BME280** | Done |
@@ -366,4 +366,5 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 8.0 | 2026-05-11 | V4c + dipole arrived early; CAL-000 unblocked and ready to proceed |
 | 10.0 | 2026-05-13 | dkplnt DN510 arrived; Southwire junction box confirmed; internal BME280 confirmed (inside junction box, 0x76); 12V power architecture confirmed; 7 new design documents added to design/ |
 | 12.0 | 2026-05-29 | Tycon arrived; includes mounting brackets — aluminium angle bar not required; angle bracket item removed from BOM |
-| 13.0 | 2026-05-29 | Dipole session: orientation (vertical), mounting (PVC fence, 150cm), role (flagging not cancellation) all documented; feed polarisation check added as open item; INV005 reference channel flagging noted |
+| 13.0 | 2026-05-29 | Dipole session: orientation/mounting/role documented; feed polarisation check added; INV005 noted |
+| 14.0 | 2026-05-29 | Add Ansys catalogue review action to documentation list and learning plan |

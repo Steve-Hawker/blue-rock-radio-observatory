@@ -2,7 +2,7 @@
 
 **Observer:** Steve Hawker BEng MBA FRAS  
 **Repository:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
-**Plan version:** 1.9  
+**Plan version:** 1.10  
 **Date:** 2026-05-29  
 
 *This is a living document. Update it as reading is completed, understanding develops,
@@ -149,6 +149,11 @@ Key topics for Blue Rock:
 - H-plane omnidirectional — why vertical orientation catches RFI from all azimuths
 - Null positions — 0° and 180° off the ends
 - Ground effects at different mounting heights
+
+**After completing this course:** Review the full Ansys Innovation Space
+catalogue (https://innovationspace.ansys.com) for further relevant courses
+— antenna arrays, transmission lines, electromagnetic simulation — and
+extend the learning plan accordingly. Many courses are free.
 
 ### Notes
 *(Add notes here as reading progresses)*
@@ -780,6 +785,7 @@ and answered over time.*
 | 1.7 | 2026-05-10 | Add Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 1 + Vol. 2; added to Topics 1, 2, 3 resource tables; added reading guide; added to Phase 4 prerequisites and summary priority table |
 | 1.8 | 2026-05-29 | Marr, Snell & Kurtz Vol. 1 + Vol. 2 requested from UCLan library — expect response ~mid-Jun 2026; status updated in all three topic tables |
 | 1.9 | 2026-05-29 | Dipole session: add Ansys half-wave dipole course + Stutzman & Thiele to Topic 2 resources; add Ansys reading guide; add Briggs et al. 2000 + urban RFI 2025 to priority table; priority table updated |
+| 1.10 | 2026-05-29 | Add post-dipole-course action: review full Ansys Innovation Space catalogue and extend learning plan |
 
 ---
 
