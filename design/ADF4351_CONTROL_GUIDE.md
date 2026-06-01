@@ -74,12 +74,14 @@ GPIO24[18] [17] 3V3     ← Lock detect input
 ### RF connections
 
 ```
-ADF4351 RF output
-    → SMA cable
-        → 30 dB attenuator
-            → SMA cable
-                → RTL-SDR V4c SMA input
+ADF4351 RF output → 30 dB attenuator → RTL-SDR V4c SMA input
 ```
+
+The Gwave 30 dB attenuator is SMA male-female — it connects inline
+directly between the ADF4351 output and the V4c input. No cable
+required if the geometry allows a direct connection. Use one short
+SMA cable only if the physical layout makes a direct connection
+awkward.
 
 **Always connect the 30 dB attenuator before powering the ADF4351.**
 Without attenuation the ADF4351 output (~+5 dBm) will saturate
