@@ -39,6 +39,9 @@ These are ready to execute today.
 - [ ] **Install Python dependencies on Pi 3** — `pip3 install RPi.GPIO spidev`
 - [ ] **Wire ADF4351 to Pi 3 GPIO** — see `design/ADF4351_CONTROL_GUIDE.md`
 - [ ] **Install Raspberry Pi OS on Pi 3** — fresh install on microSD
+- [ ] **Assign static IPs to Pi 2 and Pi 3** — set DHCP reservations in router
+      admin page using each Pi's MAC address; simplifies SSH and GQRX
+      connections; do this before first network session
 
 ### Learning
 - [ ] **Ansys half-wave dipole course** — free, do before dipole installation

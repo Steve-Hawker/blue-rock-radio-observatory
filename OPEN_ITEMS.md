@@ -190,7 +190,7 @@ Document results in rfi/RFI_OVERVIEW.md.
 | ~~LNA2 identification~~ | **RESOLVED 2026-05-07** — QPL9547 | ✓ |
 | SAW filter confirmation | TA1077A + TA2494A from PCB analysis — not yet confirmed by KrakenRF | Follow-up message sent |
 | ~~Tycon DIN bracket screw hole spacing~~ | **RESOLVED** — Tycon includes mounting brackets; no angle bar required | ✓ |
-| Discovery Dish HI feed polarisation | Vertical dipole orientation assumes RFI is predominantly vertically polarised — if feed is linear horizontal, cross-polarisation reduces reference channel effectiveness | Check feed datasheet / KrakenRF documentation before dipole installation |
+| Static IP addresses for Pi 2 and Pi 3 | DHCP reservations in router — use MAC addresses; simplifies SSH and GQRX connections | Before first network session |
 | Dipole suction cup position on fence | Mark position on PVC fence for session repeatability | At installation |
 | Dipole coax run length | Measure exact fence-to-enclosure distance | At installation |
 | dkplnt DN510 operating temperature | Not stated in listing | Check datasheet |
@@ -369,3 +369,4 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 13.0 | 2026-05-29 | Dipole session: orientation/mounting/role documented; feed polarisation check added; INV005 noted |
 | 14.0 | 2026-05-29 | Add Ansys catalogue review action |
 | 15.0 | 2026-06-01 | ADF4351 SPI library resolved — script + guide written |
+| 16.0 | 2026-06-01 | Add static IP assignment for Pis to open items |
