@@ -2,8 +2,8 @@
 
 **Observer:** Steve Hawker BEng MBA FRAS  
 **Repository:** https://github.com/Steve-Hawker/blue-rock-radio-observatory  
-**Plan version:** 1.10  
-**Date:** 2026-05-29  
+**Plan version:** 1.11  
+**Date:** 2026-06-01  
 
 *This is a living document. Update it as reading is completed, understanding develops,
 and new topics are identified. Commit each update with a version note.*
@@ -42,8 +42,8 @@ at 1420.405 MHz. This underpins every scientific claim made in the thesis.
 
 | Resource | Type | Priority | Status |
 |---|---|---|---|
-| Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 1 (Observational Methods) | Textbook | **Essential — primary undergraduate reference** | Requested from UCLan library 2026-05-29 — expect response ~mid-Jun 2026 |
-| Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 2 (Astrophysics) | Textbook | **Essential — covers HI physics with full derivations** | Requested from UCLan library 2026-05-29 — expect response ~mid-Jun 2026 |
+| Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 1 (Observational Methods) | Textbook | **Essential — primary undergraduate reference** | UCLan ebook access confirmed 2026-06-01 — available within 72 hours |
+| Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 2 (Astrophysics) | Textbook | **Essential — covers HI physics with full derivations** | UCLan ebook access confirmed 2026-06-01 — available within 72 hours |
 | Carroll & Ostlie — *Introduction to Modern Astrophysics* Ch. 31 (ISM) | Textbook | Essential | Not started |
 | NRAO Essential Radio Astronomy — HI and ISM chapters | Online, free | Essential | Not started |
 | Kalberla & Kerp 2009 — *ARA&A* 47, 27 "The HI Distribution of the Milky Way" | Review paper, free via NASA ADS | Essential | Not started |
@@ -92,7 +92,7 @@ times — derives from these fundamentals.
 
 | Resource | Type | Priority | Status |
 |---|---|---|---|
-| Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 1 (Observational Methods) | Textbook | **Essential — instrumentation, telescopes, observation methods; lab exercises included** | Requested from UCLan library 2026-05-29 — expect response ~mid-Jun 2026 |
+| Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 1 (Observational Methods) | Textbook | **Essential — instrumentation, telescopes, observation methods; lab exercises included** | UCLan ebook access confirmed 2026-06-01 — available within 72 hours |
 | Wilson, Rohlfs & Hüttemeister — *Tools of Radio Astronomy* Ch. 1, 4, 7 | Textbook | Essential | Not started |
 | Kraus — *Radio Astronomy* Ch. 3, 7 | Textbook | Essential | Not started |
 | Pozar — *Microwave Engineering* Ch. 10 (noise) | Textbook | Friis section only | Not started |
@@ -191,7 +191,7 @@ galactic structure, rotation, and evolution.
 
 | Resource | Type | Priority | Status |
 |---|---|---|---|
-| Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 2 (Astrophysics) | Textbook | **Essential — HI and galactic structure with full derivations** | Requested from UCLan library 2026-05-29 — expect response ~mid-Jun 2026 |
+| Marr, Snell & Kurtz — *Fundamentals of Radio Astronomy* Vol. 2 (Astrophysics) | Textbook | **Essential — HI and galactic structure with full derivations** | UCLan ebook access confirmed 2026-06-01 — available within 72 hours |
 | Binney & Merrifield — *Galactic Astronomy* Ch. 8 (HI and spiral structure) | Textbook | Essential | Not started |
 | Chemin, Carignan & Foster 2009 — *AJ* 137, 3452 (M31 HI rotation curve) | Key paper | Essential | Not started |
 | Wakker et al. 2007 — *ApJ* 670, L113 (Complex C distance) | Key paper | Essential | Not started |
@@ -786,6 +786,7 @@ and answered over time.*
 | 1.8 | 2026-05-29 | Marr, Snell & Kurtz Vol. 1 + Vol. 2 requested from UCLan library — expect response ~mid-Jun 2026; status updated in all three topic tables |
 | 1.9 | 2026-05-29 | Dipole session: add Ansys half-wave dipole course + Stutzman & Thiele to Topic 2 resources; add Ansys reading guide; add Briggs et al. 2000 + urban RFI 2025 to priority table; priority table updated |
 | 1.10 | 2026-05-29 | Add post-dipole-course action: review full Ansys Innovation Space catalogue and extend learning plan |
+| 1.11 | 2026-06-01 | Marr, Snell & Kurtz Vol. 1 + Vol. 2 — UCLan ebook access confirmed; available within 72 hours |
 
 ---
 

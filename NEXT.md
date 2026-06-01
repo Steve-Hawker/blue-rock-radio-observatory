@@ -3,7 +3,7 @@
 *Single reference for session start. Updated end of each session.
 For full detail see OPEN_ITEMS.md, BUILD_JOURNAL.md, LEARNING_PLAN.md.*
 
-**Last updated:** 2026-06-01 — ADF4351 script + guide complete; NEXT.md updated  
+**Last updated:** 2026-06-01 — Marr ebook confirmed; ADF4351 script done; static IP added  
 **Current phase:** Phase 2 → Phase 3 transition  
 
 ---
@@ -56,8 +56,7 @@ These are ready to execute today.
 | Item | Est. arrival | What it unblocks |
 |---|---|---|
 | Squash balls 40mm × 4 | ~2026-06-07 | Hammond 1591DBU sensor box build |
-| Marr, Snell & Kurtz Vol. 1 + Vol. 2 | ~mid-Jun 2026 | Structured reading programme |
-| UCLan library response | ~mid-Jun 2026 | Confirms textbook availability |
+| ~~Marr, Snell & Kurtz Vol. 1 + Vol. 2~~ | **UCLan ebook confirmed 2026-06-01 — available within 72 hours** | Move to learning queue now |
 
 ---
 
@@ -129,7 +128,8 @@ In priority order:
 3. Clark & Clark — Section 1 (GNU Radio installation and basics) — **May–Jul 2026**
 4. Briggs, Bell & Kesteven 2000 — abstract + intro — **soon**
 5. Urban RFI paper arXiv:2505.19372 — **soon, site assessment context**
-6. Marr Vol. 1 — when received from UCLan library
+6. **Marr Vol. 1 — ebook available within 72 hours — read alongside Ansys course**
+7. **Marr Vol. 2 — ebook available within 72 hours — read before first light**
 7. NRAO ERA — receiver systems — before first RFI survey
 
 ---
