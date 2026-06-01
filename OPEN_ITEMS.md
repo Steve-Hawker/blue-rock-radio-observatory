@@ -52,7 +52,8 @@ resolved or new ones arise.
 | Star point lug (brass or copper) | To purchase | Internal DDOEE grounding star point |
 | AWG 12 ground wire | To purchase | Internal DDOEE ground bonds — 2.5mm² minimum |
 | Ferrule kit (1.5mm² + 2.5mm²) | To check/purchase | Crimped terminals for DN510 screw terminals |
-| Credit card (expired) | On hand ✓ | Separation plate — fits card guides in Hammond 1591DBU |
+| Levelling platform (white oak) | To build | White oak flooring grade; exterior paint; corner levelling feet; tripod foot retainers; bull's-eye level; see INV006 |
+| Bull's-eye spirit level (small) | To purchase | For permanent mounting on levelling platform |
 
 ---
 
@@ -131,6 +132,8 @@ Not a science instrument. Can be added later if warranted.
 | Dipole height | ~150cm (5ft, ~7λ) on fence | Above λ/2 minimum; matches dish feed height; suction cup secure at this height |
 | Dipole role | Flagging/veto system — not cancellation | Dish 17° beam and dipole 78°×360° pattern too different for clean subtraction; correlated RFI = terrestrial → flag and excise |
 | Reference channel investigation | **Potential INV005** — characterise what fraction of RFI events dipole catches vs misses | Data collection begins Phase 3; publishable in SARA |
+| Pointing model approach | Radio source transits (Cas A primary) for azimuth; IMU for elevation correction; minimum 3-parameter model per axis | Smartphone compass ±5–10° in urban environment — rough orientation only; see INV006 |
+| Levelling platform | White oak, adjustable corner feet, tripod foot retainers, bull's-eye level | Eliminates tilt as systematic pointing error; ~0.03° levelling accuracy; see INV006 |
 | SDR junction box (Faraday shield) | Southwire 4"×2"×1-7/8" steel handy box | ~$2 Home Depot; shields SDRs from Pi 5 noise; lid faces Pi cluster; copper tape seal; verify SDR fit before closing |
 | Internal DDOEE BME280 | **CONFIRMED 2026-05-13** — inside SDR junction box | Address 0x76 (SDO to GND); SDR thermal + condensation monitoring; exits via copper foil wrapped egress |
 | Power architecture | 12V Tycon + DN510 12V→5V + Drive direct from 12V | 24V architecture considered and rejected — single DC-DC simpler; confirmed 2026-05-13 |
@@ -370,3 +373,4 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 14.0 | 2026-05-29 | Add Ansys catalogue review action |
 | 15.0 | 2026-06-01 | ADF4351 SPI library resolved — script + guide written |
 | 16.0 | 2026-06-01 | Add static IP assignment for Pis to open items |
+| 17.0 | 2026-06-01 | INV006 pointing model concept; levelling platform added to BOM; pointing model and levelling decisions captured |

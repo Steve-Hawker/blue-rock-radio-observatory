@@ -163,8 +163,10 @@ blue-rock-radio-observatory/
 │   │   └── INV003_rfi_flagging.md
 │   ├── INV004_ml_rfi/
 │   │   └── INV004_ml_rfi.md         ← ML RFI mitigation — concept; data collection Phase 3+
-│   └── INV005_reference_channel/
-│       └── INV005_reference_channel.md ← dipole flagging effectiveness — concept
+│   ├── INV005_reference_channel/
+│   │   └── INV005_reference_channel.md ← dipole flagging effectiveness — concept
+│   └── INV006_pointing_model/
+│       └── INV006_pointing_model.md    ← Drive pointing model and mount calibration — concept
 │
 ├── references/                      ← bibliography and citation management
 │   └── BRRO_references.bib          ← BibTeX reference library for Zotero / thesis
@@ -229,4 +231,4 @@ Expected 2026: ~2567 Jy.
 
 ---
 
-*Last updated: 2026-06-01 — adf4351_control.py + ADF4351_CONTROL_GUIDE added; ADF4351_CALIBRATION v1.3; NEXT.md added; LEARNING_LOG added; INV005 added*
+*Last updated: 2026-06-01 — INV006 pointing model added; levelling platform; adf4351_control.py; ADF4351_CALIBRATION v1.3*

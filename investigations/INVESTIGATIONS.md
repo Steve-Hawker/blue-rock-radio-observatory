@@ -28,6 +28,7 @@ specific programme — potentially publishable in SARA proceedings.
 | INV003 | RFI Flagging Algorithm Development and Validation | Planned | | |
 | INV004 | Machine Learning RFI Mitigation — Training Corpus and Pipeline | **Concept** — data collection begins Phase 3; implementation Phase 5 | 2026-05-13 | |
 | INV005 | Reference Channel Flagging Effectiveness | **Concept** — characterise what fraction of RFI events dipole catches vs misses; false positive rate | 2026-05-29 | |
+| INV006 | Pointing Model and Mount Calibration | **Concept** — characterise Drive pointing error; develop pointing model from radio source transits; IMU-assisted elevation correction | 2026-06-01 | |
 
 ---
 
@@ -62,8 +63,8 @@ investigations/
 │   └── INV002_digital_filters.md
 ├── INV003_rfi_flagging/
 │   └── INV003_rfi_flagging.md
-└── INV005_reference_channel/
-    └── INV005_reference_channel.md  ← dipole flagging effectiveness — concept
+└── INV006_pointing_model/
+    └── INV006_pointing_model.md     ← Drive pointing characterisation and model — concept
 ```
 
 ---
@@ -76,7 +77,12 @@ ADF4351 and V4c both in hand — CAL-000 ready to execute. Friis calculation
 can proceed with interpolated QPL9547 values; update when SAW confirmed.
 Cas A baseline measurement deferred until first light (dish due August 2026).
 
-**INV005:** Concept captured 2026-05-29 from dipole design session. Characterise
+**INV006:** Concept captured 2026-06-01. Characterise Discovery Drive pointing
+error behaviour (systematic vs random); develop pointing model from radio source
+transits (Cas A primary calibrator); use LSM6DSOX IMU for elevation verification
+and correction. Smartphone compass (±5–10° urban) suitable for rough orientation
+only — not for calibrated pointing. Levelling platform (white oak) planned to
+eliminate tripod tilt as systematic error source. See INV006_pointing_model.md. Characterise
 reference channel (Chain A dipole) flagging effectiveness — what fraction of RFI
 events does the dipole catch, what fraction does it miss, and what is the false
 positive rate? Data collection begins Phase 3 alongside INV004. Potentially

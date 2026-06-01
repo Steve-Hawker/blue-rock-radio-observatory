@@ -85,7 +85,8 @@ is received and assembled.*
 | EZRa installed and tested | Before dish arrives | | |
 | First RFI survey — dipole + V4c | Before dish arrives | | |
 | dump1090 ADS-B — SAW filter validation | Before dish arrives | | |
-| Discovery Drive mounted on tripod | On arrival | | |
+| Levelling platform — design and build | Before first light | | |
+| Tripod deployed on levelling platform | Before first light | | |
 | Dish assembled | Aug 2026 | | |
 | Feed mounted and connected | Aug 2026 | | |
 | Full signal chain connected | Aug 2026 | | |
@@ -220,6 +221,33 @@ chain. All core DDOEE electronics are now in hand.
 
 **Cross-references:** design/ENCLOSURE_DESIGN.md — Build Sequence,
 POWER_ARCHITECTURE.md, OPEN_ITEMS.md
+
+---
+
+### 2026-06-01 — Levelling Platform Design Decision
+
+Pointing calibration discussion identified that the patio slope requires
+a levelling platform for repeatable tripod placement. White oak (flooring
+grade) selected — dense, stable, naturally weather resistant, takes paint well.
+
+Design: wooden square with adjustable corner feet (M8/M10 threaded rod,
+rubber pads, lock nuts), tripod foot retainers (three-point cradle),
+and a bull's-eye spirit level fixed to the surface.
+
+Levelling tool: 3ft builder's level, accurate to ~0.03° — well within
+IMU calibration uncertainty of ~0.2–0.6°. Not the limiting factor.
+
+Key insight: a 1° tripod tilt introduces azimuth-dependent elevation
+errors up to ~0.96° at 74° elevation (Cas A transit). Levelling to
+0.03° reduces this to ~0.03° — negligible.
+
+**Actions:**
+- [ ] Measure tripod foot spread — determines platform dimensions
+- [ ] Design retainer blocks for tripod feet
+- [ ] Purchase corner levelling feet and bull's-eye level
+- [ ] Build and paint platform before first science session
+
+**Cross-references:** INV006_pointing_model.md, OPEN_ITEMS.md
 
 ---
 
