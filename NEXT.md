@@ -3,7 +3,7 @@
 *Single reference for session start. Updated end of each session.
 For full detail see OPEN_ITEMS.md, BUILD_JOURNAL.md, LEARNING_PLAN.md.*
 
-**Last updated:** 2026-05-29 — Clark & Clark added to learning queue  
+**Last updated:** 2026-06-01 — ADF4351 script + guide complete; NEXT.md updated  
 **Current phase:** Phase 2 → Phase 3 transition  
 
 ---
@@ -26,13 +26,19 @@ These are ready to execute today.
       ferrule kit (1.5mm² + 2.5mm²), copper braid straps
 
 ### Calibration
-- [ ] **CAL-000** — V4c SDR baseline with ADF4351 — both in hand, ready to go
+- [ ] **CAL-000** — V4c SDR baseline with ADF4351 — hardware ready, script ready
       Procedure: `design/ADF4351_CALIBRATION.md`
+      Script: `python3 scripts/adf4351_control.py --cal000`
+      Guide: `design/ADF4351_CONTROL_GUIDE.md`
+      Prerequisites: Pi 3 OS installed, SPI enabled, dependencies installed, ADF4351 wired
 
 ### Software
+- [x] **ADF4351 SPI Python script written** — `scripts/adf4351_control.py` ✓
+- [x] **ADF4351 user guide written** — `design/ADF4351_CONTROL_GUIDE.md` ✓
+- [ ] **Enable SPI on Pi 3** — `sudo raspi-config` → Interface Options → SPI
+- [ ] **Install Python dependencies on Pi 3** — `pip3 install RPi.GPIO spidev`
+- [ ] **Wire ADF4351 to Pi 3 GPIO** — see `design/ADF4351_CONTROL_GUIDE.md`
 - [ ] **Install Raspberry Pi OS on Pi 3** — fresh install on microSD
-- [ ] **Research ADF4351 SPI Python library** for Pi — needed before
-      CAL-001 through CAL-004
 
 ### Learning
 - [ ] **Ansys half-wave dipole course** — free, do before dipole installation

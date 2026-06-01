@@ -133,7 +133,8 @@ blue-rock-radio-observatory/
 │   │   ├── BRRO_system_architecture_v5.mermaid
 │   │   └── DDOEE_mounting_plate_v2.svg  ← three-Pi layout, Phase 2–3 (update pending)
 │   ├── ADC_BIT_RESOLUTION.md
-│   ├── ADF4351_CALIBRATION.md       ← signal source calibration procedures v1.2
+│   ├── ADF4351_CALIBRATION.md       ← signal source calibration procedures v1.3
+│   ├── ADF4351_CONTROL_GUIDE.md     ← user guide for adf4351_control.py
 │   ├── BEAM_AND_RESOLUTION.md
 │   ├── CABLE_DESIGN.md              ← Cat6, conduit, USB, ferrite BOM v1.0
 │   ├── DAILY_OBSERVING_WINDOWS.md
@@ -186,6 +187,7 @@ blue-rock-radio-observatory/
 │   └── BRRO_observing_windows_202609_202701.ics
 │
 ├── scripts/                         ← Python utility scripts
+│   ├── adf4351_control.py           ← ADF4351 SPI control for calibration procedures
 │   ├── target_visibility.py         ← transit elevations and availability
 │   ├── generate_calendar.py         ← generate .ics observing windows
 │   ├── galactic_plane_track.py      ← Galactic plane coordinate transforms
@@ -227,4 +229,4 @@ Expected 2026: ~2567 Jy.
 
 ---
 
-*Last updated: 2026-05-29 — NEXT.md added; LEARNING_LOG.md added; INV005 added; DIPOLE_ANTENNA_DESIGN v3.0*
+*Last updated: 2026-06-01 — adf4351_control.py + ADF4351_CONTROL_GUIDE added; ADF4351_CALIBRATION v1.3; NEXT.md added; LEARNING_LOG added; INV005 added*

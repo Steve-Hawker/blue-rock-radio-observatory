@@ -195,7 +195,7 @@ Document results in rfi/RFI_OVERVIEW.md.
 | Dipole coax run length | Measure exact fence-to-enclosure distance | At installation |
 | dkplnt DN510 operating temperature | Not stated in listing | Check datasheet |
 | Discovery Drive power consumption under slew | Estimated ~12W | Measure when arrives |
-| ADF4351 SPI library for Pi | Python library needed | **V4c arrived — research now** |
+| ~~ADF4351 SPI library for Pi~~ | **RESOLVED** — `scripts/adf4351_control.py` written; guide in `design/ADF4351_CONTROL_GUIDE.md` | ✓ |
 | GPSDO reference for ADF4351 | Deferred | If LO error >1 kHz after CAL-001, upgrade to GPSDO (~$75) |
 | TP-Link Omada PoE++ output wattage | Not yet confirmed | Pull datasheet when arrives; update power budget |
 
@@ -367,4 +367,5 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 10.0 | 2026-05-13 | dkplnt DN510 arrived; Southwire junction box confirmed; internal BME280 confirmed (inside junction box, 0x76); 12V power architecture confirmed; 7 new design documents added to design/ |
 | 12.0 | 2026-05-29 | Tycon arrived; includes mounting brackets — aluminium angle bar not required; angle bracket item removed from BOM |
 | 13.0 | 2026-05-29 | Dipole session: orientation/mounting/role documented; feed polarisation check added; INV005 noted |
-| 14.0 | 2026-05-29 | Add Ansys catalogue review action to documentation list and learning plan |
+| 14.0 | 2026-05-29 | Add Ansys catalogue review action |
+| 15.0 | 2026-06-01 | ADF4351 SPI library resolved — script + guide written |
