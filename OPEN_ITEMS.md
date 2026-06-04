@@ -48,7 +48,7 @@ resolved or new ones arise.
 | M3 brass standoffs | To purchase | Equal height both sides in Hammond box |
 | Mounting bolts | To purchase | Hammond box to Drive bracket |
 | Sticky-backed foam sheet | To purchase | Lid seal on Hammond box |
-| Squash balls (40mm standard, 4-pack) | Ordered 2026-05-23 | ~2026-06-07; diagonal cut vent cap |
+| Squash balls (40mm standard, 4-pack) | **Arrived ~2026-06-07** ✓ | Diagonal cut vent cap for Hammond 1591DBU |
 | Star point lug (brass or copper) | To purchase | Internal DDOEE grounding star point |
 | AWG 12 ground wire | To purchase | Internal DDOEE ground bonds — 2.5mm² minimum |
 | Ferrule kit (1.5mm² + 2.5mm²) | To check/purchase | Crimped terminals for DN510 screw terminals |
@@ -374,3 +374,4 @@ elevation_deg_imu, elevation_deg_rotctl, position_flag
 | 15.0 | 2026-06-01 | ADF4351 SPI library resolved — script + guide written |
 | 16.0 | 2026-06-01 | Add static IP assignment for Pis to open items |
 | 17.0 | 2026-06-01 | INV006 pointing model concept; levelling platform added to BOM; pointing model and levelling decisions captured |
+| 18.0 | 2026-06-07 | Squash balls arrived — Hammond 1591DBU sensor box build unblocked |

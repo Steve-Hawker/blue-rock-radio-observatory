@@ -81,7 +81,7 @@ is received and assembled.*
 | CAL-000 — V4c SDR baseline with ADF4351 | When V4c + ADF4351 in hand | **READY** | |
 | Pi 3 fresh OS install | Before dish arrives | | |
 | DDOEE internal build — stripboard, rivnuts, wiring | Before dish arrives | | |
-| Hammond 1591DBU sensor box build | Before dish arrives | | |
+| Hammond 1591DBU sensor box build | Before dish arrives | **Unblocked ~2026-06-07 (squash balls arrived)** | |
 | EZRa installed and tested | Before dish arrives | | |
 | First RFI survey — dipole + V4c | Before dish arrives | | |
 | dump1090 ADS-B — SAW filter validation | Before dish arrives | | |

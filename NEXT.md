@@ -55,7 +55,7 @@ These are ready to execute today.
 
 | Item | Est. arrival | What it unblocks |
 |---|---|---|
-| Squash balls 40mm × 4 | ~2026-06-07 | Hammond 1591DBU sensor box build |
+| ~~Squash balls 40mm × 4~~ | **Arrived ~2026-06-07** ✓ | Hammond 1591DBU sensor box build now unblocked |
 | ~~Marr, Snell & Kurtz Vol. 1 + Vol. 2~~ | **UCLan ebook confirmed 2026-06-01 — available within 72 hours** | Move to learning queue now |
 
 ---
