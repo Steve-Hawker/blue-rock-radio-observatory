@@ -64,7 +64,7 @@ These are ready to execute today.
 
 | Item | Blocked by | Notes |
 |---|---|---|
-| Hammond 1591DBU build | Squash balls (vent cap) | All other parts in hand |
+| Hammond 1591DBU build | Discovery Drive (due 2026-07-31) | All parts in hand — defer until Drive arrives to verify physical fit |
 | DDOEE internal build | Southwire handy box + remaining BOM items | See bench build sequence below |
 | First RFI survey | Pi 3 OS install + dipole mounted | |
 | dump1090 ADS-B | V4c connected to Pi 3 | SAW filter field validation |
